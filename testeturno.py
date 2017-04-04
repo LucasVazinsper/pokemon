@@ -18,6 +18,8 @@ inimigo_speed=1
 ok=True
 while ok:
     a=int(input("passear (0) ou dormir (1): "))
+    if a==1:
+        break
     if a==0:
         while minha_vida>0 and inimigo_vida>0:
             acao=int(input("atacar:0 correr:1    "))
@@ -44,3 +46,7 @@ while ok:
                     print("Voce venceu!!\n")
                 elif minha_vida<=0:
                     delay_print("Vc perdeu...\n")
+            elif acao!=0 and acao!=1:
+                print("Digite um comando válido ")
+    else:
+        print("Digite um comando válido  ")
