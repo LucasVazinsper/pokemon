@@ -20,3 +20,7 @@ print("pokemonn")
 
 
 print("teste")
+
+print("pokemonn")
+
+print("ronaldo")
