@@ -5,9 +5,18 @@ while n>0:
 	print(a)
 	k=int(input("insira outro numero:  "))
 	print(K+a)
-	
-	
-print("nao gostamos de numeros negativos")	
+
+
+print("nao gostamos de numeros negativos")
 
 
 print("pokemonn")
+
+
+
+
+
+
+
+
+print("teste")
