@@ -49,4 +49,4 @@ while ok:
             elif acao!=0 and acao!=1:
                 print("Digite um comando válido ")  #caso o usuario insira um numero errado
     else:
-        print("Digite um comando válido  ")
+        print("Digite um comando válido 5")
