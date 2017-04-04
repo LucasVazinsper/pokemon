@@ -9,8 +9,8 @@ class Pokemon:
 		self.atk=vatk  # ataque do pokemon
 		self.spd=vspd  # velocidade do pokemon
 		self.tipo=vtipo  #tipo do pokemon
-		self.atributos=print("Type:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\n".format(self.tipo,self.hp,self.atk,self.deff,self.spd))
+		self.atributos="\nType:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\n".format(self.tipo,self.hp,self.atk,self.deff,self.spd)
 
 Charmander = Pokemon(Tipos[1],39,52,43,65)
 Squirtle = Pokemon(Tipos[2],44,48,65,43)
-print(Charmander.atributos,Squirtle.atributos)
+print("Charmander {}\nSquirtle{}\n".format(Charmander.atributos,Squirtle.atributos))
