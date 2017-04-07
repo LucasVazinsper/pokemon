@@ -1,0 +1,12 @@
+pok={"bulbasaur":{"type":"grass",
+					"hp":45,
+					"atk":49,
+					"deff":49,
+					"spd"40,
+					"satk":40,},
+	"charmander":{"type":"fire",
+					"hp":49,
+					"atk":52,
+					"deff":43,
+					"spd":65,
+					"satk":40,}
