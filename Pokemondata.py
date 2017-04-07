@@ -10,3 +10,16 @@ pok={"bulbasaur":{"type":"grass",
 					"deff":43,
 					"spd":65,
 					"satk":40,}
+	"squirtle":{"type":"water",
+	              "hp":44,
+                  "atk":50,
+				  "deff"65,
+				  "spd":43,
+				  "satk":40,}
+
+
+
+
+
+
+				  
