@@ -8,19 +8,21 @@ class Pokemon:
 	#classe de atributos para pokemons
 
 	def __init__(self,vtipo,vhp,vatk,vdeff,vspd,vivatk,vivdeff,vivspd,vev,vmov,vlvl):
-		self.hp=vhp  #vida do pokemon
-		self.deff=vdeff  # defesa do pokemon
-		self.atk=vatk  # ataque do pokemon
-		self.spd=vspd  # velocidade do pokemon
-		self.tipo=vtipo  #tipo do pokemon
+        self.hp=vhp  #vida do pokemon
+        self.deff=vdeff  # defesa do pokemon
+        self.atk=vatk  # ataque do pokemon
+        self.spd=vspd  # velocidade do pokemon
+        self.tipo=vtipo  #tipo do pokemon
         self.ivatk= #IV de ataque
         self.ivspd=vivspd #IV de velocidade
         self.ivdeff=vivdeff #IV de Defesa
         self.ev=vev #Evaluated Value
         self.mov=vmov #Dano da habilidade (ex:Bubbles)
         self.lvl=vlvl #Level do pokemon
-		self.atributos="\nType:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\n".format(self.tipo,self.hp,self.atk,self.deff,self.spd)
+        self.atributos="\nType:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\n".format(self.tipo,self.hp,self.atk,self.deff,self.spd)
 
+
+    def lvlup():
 
 def hp(bhp,ivhp,lvl,ev):
     vida=(((2*bhp+ivhp+(ev/4))*lvl)/100)+lvl+10
