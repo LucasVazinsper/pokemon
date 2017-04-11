@@ -44,3 +44,17 @@ def stats(z):
 
 
 print("vida do pokemon gerado:{}".format(stats(pkmsfracos))) #
+
+
+pok={"bulbasaur":{"type":"grass",
+					"hp":45,
+					"atk":49,
+					"deff":49,
+					"spd"40,
+					"vmov":40,},
+	"charmander":{"type":"grass",
+					"hp":45,
+					"atk":49,
+					"deff":49,
+					"spd"40,
+					"vmov":40,}
