@@ -93,7 +93,7 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "deff":40,
 				  "spd":90,
 				  "satk":40}}
-				  
+
 
 class Pokemon:
     #classe para pokemons
@@ -109,10 +109,10 @@ class Pokemon:
         self.exp=0
         self.atributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\n".format((self.type).capitalize(),self.lvl,self.hp,self.atk,self.deff,self.spd)
 
-        
+
     def attack(self,enemy): #dano do ataque do pokemon
         return ((((2*self.lvl/5)+2)*self.satk*(self.atk/enemy.deff)/50)+2)*(rd.randrange(85,101)/100)
-    
+
     def lvlup(self):
         if self.exp==25:
             self.lvl+=1
@@ -142,14 +142,14 @@ class Pokemon:
             self.lvl+=1
             print("Seu pokemon passou para o lvl{}".format(self.lvl))
         return self.lvl
-        
+
 # class Player:
 #     #Classe do player
-    
+
 #     def __init__(self,pokemon):
 #         self.pokemon1=
-    
-    
+
+
 #     def capture(self,pokemon):
 
 
@@ -192,31 +192,31 @@ while ok:
                 break
             elif acao=="0" and Charmanderplayer.spd>enemy.spd:
                 enemy.hp=enemy.hp-Charmanderplayer.attack(enemy)
-                delay_print("sua vida:{} vida do inimigo:{}\n".format(Charmanderplayer.hp,enemy.hp))
+                delay_print("sua vida:{} vida do inimigo:{}\n".format(int(Charmanderplayer.hp),int(enemy.hp)))
                 if Charmanderplayer.hp>0 and enemy.hp>0:
                     Charmanderplayer.hp+=-enemy.attack(Charmanderplayer)
-                    delay_print("sua vida:{} vida do inimigo:{}\n".format(Charmanderplayer.hp,enemy.hp))
+                    delay_print("sua vida:{} vida do inimigo:{}\n".format(int(Charmanderplayer.hp),int(enemy.hp)))
                 if enemy.hp<=0:
                     delay_print("Voce venceu!!\n")
                     Charmanderplayer.exp+=50
                     Charmanderplayer.lvlup()
-                    
+
                 elif Charmanderplayer.hp<=0:
                     delay_print("Vc perdeu...\n")
             elif acao=="0" and Charmanderplayer.spd<enemy.spd:
                 Charmanderplayer.hp+=-enemy.attack(Charmanderplayer)
-                delay_print("sua vida:{} vida do inimigo:{}\n".format(Charmanderplayer.hp,enemy.hp))
+                delay_print("sua vida:{} vida do inimigo:{}\n".format(int(Charmanderplayer.hp),int(enemy.hp)))
                 if Charmanderplayer.hp>0 and enemy.hp>0:
                     enemy.hp=enemy.hp-Charmanderplayer.attack(enemy)
-                    delay_print("sua vida:{} vida do inimigo:{}\n".format(Charmanderplayer.hp,enemy.hp))
+                    delay_print("sua vida:{} vida do inimigo:{}\n".format(int(Charmanderplayer.hp),int(enemy.hp)))
                 if enemy.hp<=0:
                     delau_print("Voce venceu!!\n")
                     Charmanderplayer.exp+=50
                     Charmanderplayer.lvlup()
- 
+
                 elif Charmanderplayer.hp<=0:
                     delay_print("Vc perdeu...\n")
-                   
+
             else:
                 print("Digite um comando válido ")  #caso o usuario insira um numero errado
     else:
