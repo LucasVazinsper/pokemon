@@ -1,4 +1,4 @@
-pokemondata2={"Venusaur":{"type":"grass",
+pokemondata3={"Venusaur":{"type":"grass",
                     "dexn":2,
 					"hp":80,
 					"atk":122,
