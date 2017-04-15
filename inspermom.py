@@ -130,6 +130,7 @@ class Player():
         self.insperdex=["???"]*151
 
 
+
 import colorama
 from colorama import Fore, Back, Style
 colorama.init()
@@ -249,8 +250,24 @@ Press (4) for walking around in the Fourth Floor\n")
             enemy=Pokemon(pokemondata[pokemon],lvlfloor0)
             message="A wild {} Level:{} appears...\n"
             delay_print(message.format(pokemon.capitalize(),lvlfloor0))
-            delay_print("What pokemon do you want use to battle?")
-            #delay_print(playername.party[0])
-            break
-
-    
+#             delay_print("What pokemon do you want use to battle?")
+#             #delay_print(playername.party[0])
+            while (playername.party[0]).hp>0 and enemy.hp>0:
+                action=input("Are you going to Attack (1) or Run (2)")
+                if action=="2":
+                    delay_print("You ran out of the battle...")
+                if (playername.party[0]).spd > enemy.spd:
+                    delay_print("Your Inspermon's life:{}   Wild {}:{}\n".format(int((playername.party[0]).hp),pokemon.capitalize(),int(enemy.hp)))
+                    enemy.hp-=(playername.party[0]).attack(enemy)
+                    if enemy.hp<=0:
+                        delay_print("The enemy {} fainted...\nYou won!!!\n".format(pokemon))
+                        break
+                    (playername.party[0]).hp-=enemy.attack(playername.party[0])
+                    delay_print("Your Inspermon's life:{}   Wild {}:{}\n".format(int((playername.party[0]).hp),pokemon.capitalize(),int(enemy.hp)))
+                elif (playername.party[0]).spd < enemy.spd:
+                    delay_print("Your Inspermon's life:{}   Wild {}:{}\n".format(int((playername.party[0]).hp),pokemon.capitalize(),int(enemy.hp)))
+                    (playername.party[0]).hp-=enemy.attack(playername.party[0])
+                    if (playername.party[0]).hp<0:
+                        delay_print("Your pokemon fainted...\nYou loose!!!\n")
+                    enemy.hp-=(playername.party[0]).attack(enemy)
+                    delay_print("Your Inspermon's life:{}   Wild {}:{}\n".format(int((playername.party[0]).hp),pokemon.capitalize(),int(enemy.hp)))
