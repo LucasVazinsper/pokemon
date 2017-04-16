@@ -826,8 +826,8 @@ else:
     playername.party=[]
     delay_print("I'm sorry {}, but you have to choose your first Inspermon...\n".format((playername.name).title()))
     delay_print(Fore.GREEN+"\nGrass"+Fore.BLACK+":(1)")
-    delay_print(Fore.BLUE+"\nWater"+Fore.BLACK+":(2)")
-    delay_print(Fore.RED+"\nFire"+Fore.BLACK+":(3)")
+    delay_print(Fore.RED+"\nFire"+Fore.BLACK+":(2)")
+    delay_print(Fore.BLUE+"\nWater"+Fore.BLACK+":(3)")
     firstpokemon2=input("\n")
     if firstpokemon2=="1":
         Bulbasaur=Pokemon(pokemondata["bulbasaur"],5)
@@ -835,14 +835,14 @@ else:
         delay_print("Congratulations!!!\nBulbasaur is your new Inspermon\n")
         delay_print(Bulbasaur.atributes)
         playername.insperdex[Bulbasaur.dexn]="{}-{}:{}".format(Bulbasaur.dexn,Bulbasaur.name,Bulbasaur.type)
-    elif firstpokemon2=="3":
+    elif firstpokemon2=="2":
         Charmander=Pokemon(pokemondata["charmander"],5)
         playername=Player(playername,Charmander)
         delay_print("Congratulations!!!\nCharmander is your new Inspermon\n")
         delay_print(Charmander.atributes)
         playername.insperdex[Squirtle.dexn]="{}-{}:{}".format(Squirtle.dexn,Squirtle.name,Bulbasaur.type)
 
-    elif firstpokemon2=="2":
+    elif firstpokemon2=="3":
         Squirtle=Pokemon(pokemondata["squirtle"],5)
         playername=Player(playername,Squirtle)
         delay_print("Congratulations!!!\nSquirtle is your new Inspermon\n")
