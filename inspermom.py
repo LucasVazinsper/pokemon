@@ -295,7 +295,7 @@ pokemondata3={"venusaur":{"type":"grass",
 				  "deff":85,
 				  "spd":110,
 				  "satk":90},
-	"alakazam":{"Type":"psychic",
+	"alakazam":{"type":"psychic",
                   "name":"Alakazam",
                   "dexn":20,
                   "hp":55,
@@ -414,6 +414,11 @@ class Player():
 def dex(insperdex):
     for i in insperdex:
         print(i)
+
+numeros=[]
+for i in range(10):
+    numeros.append("{}".format(i))
+
 
 
 
@@ -547,11 +552,17 @@ Press (4) for walking around in the Fourth Floor\n")
             for i in range(len(playername.party)):
                 delay_print("{}({})".format(playername.party[i].name,i))
             choose=input()
+            while choose not in numeros:
+                print("Type a valid command")
+                choose=input()
             while (playername.party[int(choose)]).hp>0 and enemy.hp>0:
-                choice=input("Are you going to Attack (1) or Run (2): ")
+                choice=input("Are you going to Attack (1) or Run (2) or Check Status(3):")
                 if choice=="2":
                     delay_print("You ran out of the battle...")
                     break
+                if choice=="3":
+                    print("ronaldo")
+
                 elif (playername.party[int(choose)]).spd > enemy.spd:
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
@@ -667,7 +678,7 @@ Press (4) for walking around in the Fourth Floor\n")
         elif action=="4":
             lvlfloor4=rd.randrange(40,51)
             pokemon,atributes=rd.choice(list(pokemondata3.items()))
-            enemy=Pokemon(pokemondata3[pokemon],lvlfloor1)
+            enemy=Pokemon(pokemondata3[pokemon],lvlfloor4)
             message="A wild {} Level:{} appears...\n"
             delay_print(message.format(pokemon.capitalize(),lvlfloor4))
             playername.insperdex[enemy.dexn]="{}-{}:{}".format(enemy.dexn,enemy.name,enemy.type)
@@ -706,5 +717,5 @@ Press (4) for walking around in the Fourth Floor\n")
                         delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
                         break
 
-        else:
-            delay_print("Type a valid command")
+#         else:
+#             delay_print("Type a valid command")
