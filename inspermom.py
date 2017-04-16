@@ -436,11 +436,11 @@ delay_print("Welcome to the marvelous World of Inspermon")
 input()
 delay_print("You are at Proffesor Daniel's Inspermon Research lab\n")
 
-delay_print("\nHello there! Welcome to the world of INSPERMON! My name is Daniel! People call me the INSPERMON Prof!\n")
+delay_print("\n-Daniel:Hello there! Welcome to the world of INSPERMON! My name is Daniel! People call me the INSPERMON Prof!\n")
 input()
-delay_print("\nThis world is inhabited by creatures called INSPERMON!\n")
+delay_print("\n-Daniel:This world is inhabited by creatures called INSPERMON!\n")
 input()
-delay_print("\nFor some people, INSPERMON are pets. Other use them for fights. Myself… I study INSPERMON as a profession.\n")
+delay_print("\n-Daniel:For some people, INSPERMON are pets. Other use them for fights. Myself… I study INSPERMON as a profession.\n")
 input()
 delay_print("\nFirst, what is your name?")
 playername=input("\n")
@@ -476,7 +476,7 @@ elif firstpokemon=="3":
     playername=Player(playername,Squirtle)
     delay_print("Congratulations!!!\nSquirtle is your new Inspermon\n")
     delay_print(Squirtle.atributes)
-    playername.insperdex[Squirtle.dexn]="{}-{}:{}".format(Squirtle.dexn,Squirtle.name,Bulbasaur.type)
+    playername.insperdex[Squirtle.dexn]="{}-{}:{}".format(Squirtle.dexn,Squirtle.name,Squirtle.type)
 elif firstpokemon=="2":
     Charmander=Pokemon(pokemondata["charmander"],5)
     playername=Player(playername,Charmander)
@@ -524,22 +524,24 @@ Your very own INSPERMON legend is about to unfold!\nA world of dreams and advent
 while True:
     delay_print("You are now in the Insper's Labs\n\
 What do you want to do first??\n\
-Press (1) for walking around in the LAB\n\
+Press (1) to Explore the Insper building\n\
 Press (2) for saving the game\n\
 Press (3) for looking at your INSPERDEX\n\
-Press (4) for sleeping\n")
+Press (4) to Challange the Elite 4\n\
+Press (5) to Go to sleep\n")
     action=input()
-    if action=="4":
+    if action=="5":
         break
     if action=="3":
         dex(playername.insperdex)
     elif action=="1":
         delay_print("Where do you want to go?\n")
         delay_print("Press (0) for walking around in the Ground Floor\n\
-Press (1) for walking around in the First Floor\n\
-Press (2) for walking around in the Second Floor\n\
-Press (3) for walking around in the Third Floor\n\
-Press (4) for walking around in the Fourth Floor\n")
+Press (1) for walking around in the First Floor.\n\
+Press (2) for walking around in the Second Floor.\n\
+Press (3) for walking around in the Third Floor.\n\
+Press (4) for walking around in the Fourth Floor.\n\
+Press (5) to back to the Lab.\n")
         action=input()
         if action=="0":
             lvlfloor0=rd.randrange(1,6)
@@ -716,6 +718,5 @@ Press (4) for walking around in the Fourth Floor\n")
                     if enemy.hp<=0:
                         delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
                         break
-
-#         else:
-#             delay_print("Type a valid command")
+    elif action==4:
+        print("teste")
