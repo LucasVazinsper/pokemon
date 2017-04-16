@@ -910,12 +910,16 @@ Press (5) to exit walking around\n")
                 choose=input()
             maxhp=(playername.party[int(choose)]).hp
             while (playername.party[int(choose)]).hp>0 and enemy.hp>0:
-                choice=input("Are you going to Attack (1) or Run (2) or Check Status(3):")
+                choice=input("Are you going to Attack (1) or Run (2) or Check Status on INSPERDEX(3):")
                 if choice=="2":
                     delay_print("You ran out of the battle...")
+                    delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
+                    hp_potion=input()
+                    if hp_potion=="1":
+                        (playername.party[int(choose)]).hp=maxhp
                     break
                 if choice=="3":
-                    print("ronaldo")
+                    print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).atributes,enemy.name,enemy.atributes))
                 elif (playername.party[int(choose)]).spd > enemy.spd:
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
@@ -989,12 +993,16 @@ Press (5) to exit walking around\n")
             maxhp=(playername.party[int(choose)]).hp
             while (playername.party[int(choose)]).hp>0 and enemy.hp>0:
 
-                choice=input("Are you going to Attack (1) or Run (2) or Check Status(3):")
+                choice=input("Are you going to Attack (1) or Run (2) or Check Status on INSPERDEX(3):")
                 if choice=="2":
                     delay_print("You ran out of the battle...")
+                    delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
+                    hp_potion=input()
+                    if hp_potion=="1":
+                        (playername.party[int(choose)]).hp=maxhp
                     break
                 if choice=="3":
-                    print("ronaldo")
+                    print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).atributes,enemy.name,enemy.atributes))
                 elif (playername.party[int(choose)]).spd > enemy.spd:
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
@@ -1069,12 +1077,16 @@ Press (5) to exit walking around\n")
             maxhp=(playername.party[int(choose)]).hp
             while (playername.party[int(choose)]).hp>0 and enemy.hp>0:
 
-                choice=input("Are you going to Attack (1) or Run (2) or Check Status(3):")
+                choice=input("Are you going to Attack (1) or Run (2) or Check Status on INSPERDEX(3):")
                 if choice=="2":
                     delay_print("You ran out of the battle...")
+                    delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
+                    hp_potion=input()
+                    if hp_potion=="1":
+                        (playername.party[int(choose)]).hp=maxhp
                     break
                 if choice=="3":
-                    print("ronaldo")
+                    print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).atributes,enemy.name,enemy.atributes))
                 elif (playername.party[int(choose)]).spd > enemy.spd:
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
@@ -1150,12 +1162,16 @@ Press (5) to exit walking around\n")
             maxhp=(playername.party[int(choose)]).hp
             while (playername.party[int(choose)]).hp>0 and enemy.hp>0:
 
-                choice=input("Are you going to Attack (1) or Run (2) or Check Status(3):")
+                choice=input("Are you going to Attack (1) or Run (2) or Check Status on INSPERDEX(3):")
                 if choice=="2":
                     delay_print("You ran out of the battle...")
+                    delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
+                    hp_potion=input()
+                    if hp_potion=="1":
+                        (playername.party[int(choose)]).hp=maxhp
                     break
                 if choice=="3":
-                    print("ronaldo")
+                    print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).atributes,enemy.name,enemy.atributes))
                 elif (playername.party[int(choose)]).spd > enemy.spd:
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
@@ -1232,12 +1248,16 @@ Press (5) to exit walking around\n")
             maxhp=(playername.party[int(choose)]).hp
             while (playername.party[int(choose)]).hp>0 and enemy.hp>0:
 
-                choice=input("Are you going to Attack (1) or Run (2) or Check Status(3):")
+                choice=input("Are you going to Attack (1) or Run (2) or Check Status on INSPERDEX(3):")
                 if choice=="2":
                     delay_print("You ran out of the battle...")
+                    delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
+                    hp_potion=input()
+                    if hp_potion=="1":
+                        (playername.party[int(choose)]).hp=maxhp
                     break
                 if choice=="3":
-                    print("ronaldo")
+                    print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).atributes,enemy.name,enemy.atributes))
                 elif (playername.party[int(choose)]).spd > enemy.spd:
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
