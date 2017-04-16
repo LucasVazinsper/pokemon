@@ -332,6 +332,5 @@ def deffense(self,enemy): #dano recebido pelo pokemon
             print("It's super effective!")
             dmg=effectiveness[3]
 
-            return enemy.hp - self.attack(enemy)*dmg ##preciso melhorar a implementação, mas essa é a idea
+        return enemy.hp - self.attack(enemy)*dmg ##preciso melhorar a implementação, mas essa é a idea
                                                      #agr ja era fion.
-                                                     
