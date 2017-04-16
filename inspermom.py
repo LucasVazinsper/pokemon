@@ -398,7 +398,343 @@ class Pokemon:
     def attack(self,enemy): #dano do ataque do pokemon
         return ((((2*self.lvl/5)+2)*self.satk*(self.atk/enemy.deff)/50)+2)*(rd.randrange(85,101)/100)
 
-    #def lvlup(self):
+
+    def deffense(self,enemy): #dano recebido pelo pokemon
+            effectiveness=[0,0.5,1,2] #dano efetivo recebido pelo pokemon(de acordo com as vantagens/fraquezas)
+            dmg=effectiveness[2]
+            consolemessage=("It was effective")
+            if self.type=="normal"and enemy.type=="rock": #rock é resistente ao normal
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="normal" and enemy.type=="ghost": #ghost é imune ao normal
+                consolemessage=("But it failed!")
+                dmg=effectiveness[0]
+
+            if self.type=="fire" and enemy.type=="fire":
+                consolemessage=("It's not very effective")
+                dmg=effectiveness[1]
+
+            if self.type=="fire"and enemy.type=="water":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="fire"and enemy.type=="rock":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="fire"and enemy.type=="dragon":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="fire"and enemy.type=="grass":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="fire"and enemy.type=="ice":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="fire"and enemy.type=="bug":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="water"and enemy.type=="fire":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="water"and enemy.type=="ground":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="water"and enemy.type=="rock":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="water"and enemy.type=="water":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="water"and enemy.type=="grass":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="water"and enemy.type=="dragon":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="eletric"and enemy.type=="eletric":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="eletric"and enemy.type=="grass":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="eletric"and enemy.type=="dragon":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="eletric"and enemy.type=="water":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="eletric"and enemy.type=="flying":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="eletric"and enemy.type=="ground":
+                consolemessage=("But it failed!")
+                dmg=effectiveness[0]
+
+            if self.type=="grass"and enemy.type=="fire":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="grass"and enemy.type=="grass":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="grass"and enemy.type=="poison":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="grass"and enemy.type=="flying":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="grass"and enemy.type=="bug":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="grass"and enemy.type=="dragon":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="grass"and enemy.type=="water":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="grass"and enemy.type=="ground":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="grass"and enemy.type=="rock":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="ice"and enemy.type=="fire":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="ice"and enemy.type=="water":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+
+            if self.type=="ice"and enemy.type=="ice":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="ice"and enemy.type=="grass":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="ice"and enemy.type=="flying":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="ice"and enemy.type=="ground":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="ice"and enemy.type=="dragon":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="fighting"and enemy.type=="poison":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="fighting"and enemy.type=="flying":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="fighting"and enemy.type=="psychic":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="fighting"and enemy.type=="bug":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="fighting"and enemy.type=="normal":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="fighting"and enemy.type=="ice":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="fighting"and enemy.type=="rock":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="fighting"and enemy.type=="ghost":
+                consolemessage=("But it failed!")
+                dmg=effectiveness[0]
+
+            if self.type=="poison"and enemy.type=="poison":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="poison"and enemy.type=="ground":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="poison"and enemy.type=="rock":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="poison"and enemy.type=="ghost":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="poison"and enemy.type=="grass":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="grond"and enemy.type=="grass":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="grond"and enemy.type=="bug":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="grond"and enemy.type=="fire":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="ground"and enemy.type=="eletric":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="ground"and enemy.type=="poison":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="ground"and enemy.type=="rock":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="ground"and enemy.type=="flying":
+                consolemessage=("But it failed!")
+                dmg=effectiveness[0]
+
+            if self.type=="flying"and enemy.type=="eletric":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="flying"and enemy.type=="rock":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="flying"and enemy.type=="grass":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="flying"and enemy.type=="fighting":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="flying"and enemy.type=="bug":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="psychic"and enemy.type=="psychic":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="psychic"and enemy.type=="fighting":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="psychic"and enemy.type=="poison":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="bug"and enemy.type=="fire":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="bug"and enemy.type=="fighting":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="bug"and enemy.type=="poison":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="bug"and enemy.type=="flying":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="bug"and enemy.type=="ghost":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="bug"and enemy.type=="grass":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="bug"and enemy.type=="psychic":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="rock"and enemy.type=="fighting":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="rock"and enemy.type=="ground":
+                consolemessage=("It's not very effective...")
+                dmg=effectiveness[1]
+
+            if self.type=="rock"and enemy.type=="fire":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="rock"and enemy.type=="ice":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="rock"and enemy.type=="flying":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="rock"and enemy.type=="bug":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="ghost"and enemy.type=="psychic":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="ghost"and enemy.type=="ghost":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            if self.type=="ghost"and enemy.type=="normal":
+                consolemessage=("But it failed!")
+                dmg=effectiveness[0]
+
+            if self.type=="dragon"and enemy.type=="dragon":
+                consolemessage=("It's super effective!")
+                dmg=effectiveness[3]
+
+            return [enemy.hp - (self.attack(enemy))*dmg,consolemessage]
+            #,consolemessage ##preciso melhorar a implementação, mas essa é a idea
+                                                         #agr ja era fion.
 
 
 
@@ -422,6 +758,8 @@ for i in range(10):
 
 
 
+
+
 import colorama
 from colorama import Fore, Back, Style
 colorama.init()
@@ -436,11 +774,11 @@ delay_print("Welcome to the marvelous World of Inspermon")
 input()
 delay_print("You are at Proffesor Daniel's Inspermon Research lab\n")
 
-delay_print("\n-Daniel:Hello there! Welcome to the world of INSPERMON! My name is Daniel! People call me the INSPERMON Prof!\n")
+delay_print("\nHello there! Welcome to the world of INSPERMON! My name is Daniel! People call me the INSPERMON Prof!\n")
 input()
-delay_print("\n-Daniel:This world is inhabited by creatures called INSPERMON!\n")
+delay_print("\nThis world is inhabited by creatures called INSPERMON!\n")
 input()
-delay_print("\n-Daniel:For some people, INSPERMON are pets. Other use them for fights. Myself… I study INSPERMON as a profession.\n")
+delay_print("\nFor some people, INSPERMON are pets. Other use them for fights. Myself… I study INSPERMON as a profession.\n")
 input()
 delay_print("\nFirst, what is your name?")
 playername=input("\n")
@@ -476,7 +814,7 @@ elif firstpokemon=="3":
     playername=Player(playername,Squirtle)
     delay_print("Congratulations!!!\nSquirtle is your new Inspermon\n")
     delay_print(Squirtle.atributes)
-    playername.insperdex[Squirtle.dexn]="{}-{}:{}".format(Squirtle.dexn,Squirtle.name,Squirtle.type)
+    playername.insperdex[Squirtle.dexn]="{}-{}:{}".format(Squirtle.dexn,Squirtle.name,Bulbasaur.type)
 elif firstpokemon=="2":
     Charmander=Pokemon(pokemondata["charmander"],5)
     playername=Player(playername,Charmander)
@@ -524,24 +862,22 @@ Your very own INSPERMON legend is about to unfold!\nA world of dreams and advent
 while True:
     delay_print("You are now in the Insper's Labs\n\
 What do you want to do first??\n\
-Press (1) to Explore the Insper building\n\
+Press (1) for walking around in the LAB\n\
 Press (2) for saving the game\n\
 Press (3) for looking at your INSPERDEX\n\
-Press (4) to Challange the Elite 4\n\
-Press (5) to Go to sleep\n")
+Press (4) for sleeping\n")
     action=input()
-    if action=="5":
+    if action=="4":
         break
     if action=="3":
         dex(playername.insperdex)
     elif action=="1":
         delay_print("Where do you want to go?\n")
         delay_print("Press (0) for walking around in the Ground Floor\n\
-Press (1) for walking around in the First Floor.\n\
-Press (2) for walking around in the Second Floor.\n\
-Press (3) for walking around in the Third Floor.\n\
-Press (4) for walking around in the Fourth Floor.\n\
-Press (5) to back to the Lab.\n")
+Press (1) for walking around in the First Floor\n\
+Press (2) for walking around in the Second Floor\n\
+Press (3) for walking around in the Third Floor\n\
+Press (4) for walking around in the Fourth Floor\n")
         action=input()
         if action=="0":
             lvlfloor0=rd.randrange(1,6)
@@ -568,24 +904,32 @@ Press (5) to back to the Lab.\n")
                 elif (playername.party[int(choose)]).spd > enemy.spd:
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    enemy.hp-=(playername.party[int(choose)]).attack(enemy)
+                    enemy.hp=((playername.party[int(choose)]).deffense(enemy))[0]
+                    print(((playername.party[int(choose)]).deffense(enemy))[1])
                     if enemy.hp<=0:
                         delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
                         break
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    (playername.party[int(choose)]).hp-=enemy.attack(playername.party[0])
+                    (playername.party[int(choose)]).hp=(enemy.deffense(playername.party[int(choose)]))[0]
+                    print((enemy.deffense(playername.party[int(choose)]))[1])
+                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
+                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if (playername.party[int(choose)]).hp<=0:
                         delay_print("Your pokemon fainted...\nYou loose!!!\n")
                         break
                 elif (playername.party[int(choose)]).spd < enemy.spd:
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    (playername.party[int(choose)]).hp-=enemy.attack(playername.party[int(choose)])
+                    (playername.party[int(choose)]).hp=(enemy.deffense(playername.party[int(choose)]))[0]
+                    print((enemy.deffense(playername.party[int(choose)]))[1])
+                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
+                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if (playername.party[int(choose)]).hp<=0:
                         delay_print("Your pokemon fainted...\nYou loose!!!\n")
                         break
-                    enemy.hp-=(playername.party[int(choose)]).attack(enemy)
+                    enemy.hp=((playername.party[int(choose)]).deffense(enemy))[0]
+                    print(((playername.party[int(choose)]).deffense(enemy))[1])
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if enemy.hp<=0:
@@ -604,31 +948,96 @@ Press (5) to back to the Lab.\n")
             choose=input()
 
             while (playername.party[int(choose)]).hp>0 and enemy.hp>0:
-                choice=input("Are you going to Attack (1) or Run (2): ")
+                choice=input("Are you going to Attack (1) or Run (2) or Check Status(3):")
                 if choice=="2":
                     delay_print("You ran out of the battle...")
                     break
+                if choice=="3":
+                    print("ronaldo")
+
                 elif (playername.party[int(choose)]).spd > enemy.spd:
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    enemy.hp-=(playername.party[int(choose)]).attack(enemy)
+                    enemy.hp=((playername.party[int(choose)]).deffense(enemy))[0]
+                    print(((playername.party[int(choose)]).deffense(enemy))[1])
                     if enemy.hp<=0:
                         delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
                         break
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    (playername.party[int(choose)]).hp-=enemy.attack(playername.party[0])
+                    (playername.party[int(choose)]).hp=(enemy.deffense(playername.party[int(choose)]))[0]
+                    print((enemy.deffense(playername.party[int(choose)]))[1])
+                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
+                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if (playername.party[int(choose)]).hp<=0:
                         delay_print("Your pokemon fainted...\nYou loose!!!\n")
                         break
                 elif (playername.party[int(choose)]).spd < enemy.spd:
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    (playername.party[int(choose)]).hp-=enemy.attack(playername.party[int(choose)])
+                    (playername.party[int(choose)]).hp=(enemy.deffense(playername.party[int(choose)]))[0]
+                    print((enemy.deffense(playername.party[int(choose)]))[1])
+                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
+                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if (playername.party[int(choose)]).hp<=0:
                         delay_print("Your pokemon fainted...\nYou loose!!!\n")
                         break
-                    enemy.hp-=(playername.party[int(choose)]).attack(enemy)
+                    enemy.hp=((playername.party[int(choose)]).deffense(enemy))[0]
+                    print(((playername.party[int(choose)]).deffense(enemy))[1])
+                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
+                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
+                    if enemy.hp<=0:
+                        delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
+                        break
+
+
+        elif action=="2":
+            lvlfloor2=rd.randrange(20,31)
+            pokemon,atributes=rd.choice(list(pokemondata2.items()))
+            enemy=Pokemon(pokemondata2[pokemon],lvlfloor2)
+            message="A wild {} Level:{} appears...\n"
+            delay_print(message.format(pokemon.capitalize(),lvlfloor2))
+            playername.insperdex[enemy.dexn]="{}-{}:{}".format(enemy.dexn,enemy.name,enemy.type)
+            for i in range(len(playername.party)):
+                delay_print("{}({})".format(playername.party[i].name,i))
+            choose=input()
+            while (playername.party[int(choose)]).hp>0 and enemy.hp>0:
+                choice=input("Are you going to Attack (1) or Run (2) or Check Status(3):")
+                if choice=="2":
+                    delay_print("You ran out of the battle...")
+                    break
+                if choice=="3":
+                    print("ronaldo")
+
+                elif (playername.party[int(choose)]).spd > enemy.spd:
+                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
+                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
+                    enemy.hp=((playername.party[int(choose)]).deffense(enemy))[0]
+                    print(((playername.party[int(choose)]).deffense(enemy))[1])
+                    if enemy.hp<=0:
+                        delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
+                        break
+                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
+                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
+                    (playername.party[int(choose)]).hp=(enemy.deffense(playername.party[int(choose)]))[0]
+                    print((enemy.deffense(playername.party[int(choose)]))[1])
+                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
+                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
+                    if (playername.party[int(choose)]).hp<=0:
+                        delay_print("Your pokemon fainted...\nYou loose!!!\n")
+                        break
+                elif (playername.party[int(choose)]).spd < enemy.spd:
+                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
+                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
+                    (playername.party[int(choose)]).hp=(enemy.deffense(playername.party[int(choose)]))[0]
+                    print((enemy.deffense(playername.party[int(choose)]))[1])
+                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
+                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
+                    if (playername.party[int(choose)]).hp<=0:
+                        delay_print("Your pokemon fainted...\nYou loose!!!\n")
+                        break
+                    enemy.hp=((playername.party[int(choose)]).deffense(enemy))[0]
+                    print(((playername.party[int(choose)]).deffense(enemy))[1])
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if enemy.hp<=0:
@@ -636,7 +1045,7 @@ Press (5) to back to the Lab.\n")
                         break
 
         elif action=="3":
-            lvlfloor3=rd.randrange(20,41)
+            lvlfloor3=rd.randrange(30,41)
             pokemon,atributes=rd.choice(list(pokemondata2.items()))
             enemy=Pokemon(pokemondata2[pokemon],lvlfloor3)
             message="A wild {} Level:{} appears...\n"
@@ -646,36 +1055,48 @@ Press (5) to back to the Lab.\n")
                 delay_print("{}({})".format(playername.party[i].name,i))
             choose=input()
             while (playername.party[int(choose)]).hp>0 and enemy.hp>0:
-                choice=input("Are you going to Attack (1) or Run (2): ")
+                choice=input("Are you going to Attack (1) or Run (2) or Check Status(3):")
                 if choice=="2":
                     delay_print("You ran out of the battle...")
                     break
+                if choice=="3":
+                    print("ronaldo")
+
                 elif (playername.party[int(choose)]).spd > enemy.spd:
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    enemy.hp-=(playername.party[int(choose)]).attack(enemy)
+                    enemy.hp=((playername.party[int(choose)]).deffense(enemy))[0]
+                    print(((playername.party[int(choose)]).deffense(enemy))[1])
                     if enemy.hp<=0:
                         delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
                         break
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    (playername.party[int(choose)]).hp-=enemy.attack(playername.party[0])
+                    (playername.party[int(choose)]).hp=(enemy.deffense(playername.party[int(choose)]))[0]
+                    print((enemy.deffense(playername.party[int(choose)]))[1])
+                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
+                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if (playername.party[int(choose)]).hp<=0:
                         delay_print("Your pokemon fainted...\nYou loose!!!\n")
                         break
                 elif (playername.party[int(choose)]).spd < enemy.spd:
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    (playername.party[int(choose)]).hp-=enemy.attack(playername.party[int(choose)])
+                    (playername.party[int(choose)]).hp=(enemy.deffense(playername.party[int(choose)]))[0]
+                    print((enemy.deffense(playername.party[int(choose)]))[1])
+                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
+                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if (playername.party[int(choose)]).hp<=0:
                         delay_print("Your pokemon fainted...\nYou loose!!!\n")
                         break
-                    enemy.hp-=(playername.party[int(choose)]).attack(enemy)
+                    enemy.hp=((playername.party[int(choose)]).deffense(enemy))[0]
+                    print(((playername.party[int(choose)]).deffense(enemy))[1])
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if enemy.hp<=0:
                         delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
                         break
+
 
         elif action=="4":
             lvlfloor4=rd.randrange(40,51)
@@ -688,35 +1109,44 @@ Press (5) to back to the Lab.\n")
                 delay_print("{}({})".format(playername.party[i].name,i))
             choose=input()
             while (playername.party[int(choose)]).hp>0 and enemy.hp>0:
-                choice=input("Are you going to Attack (1) or Run (2): ")
+                choice=input("Are you going to Attack (1) or Run (2) or Check Status(3):")
                 if choice=="2":
                     delay_print("You ran out of the battle...")
                     break
+                if choice=="3":
+                    print("ronaldo")
+
                 elif (playername.party[int(choose)]).spd > enemy.spd:
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    enemy.hp-=(playername.party[int(choose)]).attack(enemy)
+                    enemy.hp=((playername.party[int(choose)]).deffense(enemy))[0]
+                    print(((playername.party[int(choose)]).deffense(enemy))[1])
                     if enemy.hp<=0:
                         delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
                         break
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    (playername.party[int(choose)]).hp-=enemy.attack(playername.party[0])
+                    (playername.party[int(choose)]).hp=(enemy.deffense(playername.party[int(choose)]))[0]
+                    print((enemy.deffense(playername.party[int(choose)]))[1])
+                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
+                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if (playername.party[int(choose)]).hp<=0:
                         delay_print("Your pokemon fainted...\nYou loose!!!\n")
                         break
                 elif (playername.party[int(choose)]).spd < enemy.spd:
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    (playername.party[int(choose)]).hp-=enemy.attack(playername.party[int(choose)])
+                    (playername.party[int(choose)]).hp=(enemy.deffense(playername.party[int(choose)]))[0]
+                    print((enemy.deffense(playername.party[int(choose)]))[1])
+                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
+                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if (playername.party[int(choose)]).hp<=0:
                         delay_print("Your pokemon fainted...\nYou loose!!!\n")
                         break
-                    enemy.hp-=(playername.party[int(choose)]).attack(enemy)
+                    enemy.hp=((playername.party[int(choose)]).deffense(enemy))[0]
+                    print(((playername.party[int(choose)]).deffense(enemy))[1])
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if enemy.hp<=0:
                         delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
                         break
-    elif action==4:
-        print("teste")
