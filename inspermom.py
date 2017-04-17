@@ -2,6 +2,16 @@ import random as rd
 #tipos de pokemon
 Tipos=["Normal","Fire","Water","Eletric","Grass","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Ghost","Rock","Dragon"]
 
+
+n=0
+lista_exp=[]
+for i in range(1,101):
+    n=n+1
+    exp=0.8*(n)**3
+    lista_exp.append(int(exp))
+
+
+
 #Todos os pokemons do jogo
 pokemondata={"bulbasaur":{"type":"grass",
                     "name":"Bulbasaur",
@@ -737,7 +747,16 @@ class Pokemon:
                                                          #agr ja era fion.
 
 
-
+    def lvlup(self): #metodo para o pokemon passar de level
+        new_level=0
+        for valor in lista_exp:
+            if self.exp >= valor:
+                new_level+=1
+            else:
+                break
+        if self.exp!=new_level:
+            self.exp=new_level
+            delay_print("Your {} leveled up".format(self.name))
 
 
 class Player():
