@@ -381,17 +381,17 @@ class Pokemon:
     #classe para pokemons
 
     def __init__(self,pokemon,lvl):
-        self.name=pokemon["name"]
-        self.dexn=pokemon["dexn"]
+        self.name=pokemon["name"] #nome do Inspermon
+        self.dexn=pokemon["dexn"] #numero da INSPERDEX
         self.type=pokemon["type"] #tipo do pokemon
         self.lvl=lvl #lvl do pokemon
         self.hp=(((2*pokemon["hp"]+rd.randrange(1,32)+(50/4))*lvl)/100)+lvl+10 #vida atual do pokemon
         self.atk=(((2*pokemon["atk"]+rd.randrange(1,32)+(50/4))*lvl)/100)+5 #ataque atual do pokemon
         self.deff=(((2*pokemon["deff"]+rd.randrange(1,32)+(50/4))*lvl)/100)+5 #defesa atual do pokemon
         self.spd=(((2*pokemon["spd"]+rd.randrange(1,32)+(50/4))*lvl)/100)+5 #velocidade atual do pokemon
-        self.satk=pokemon["satk"]
-        self.exp=0
-        self.atributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\n".format((self.type).capitalize(),self.lvl,int(self.hp),
+        self.satk=pokemon["satk"] #ataque especial do pokemon
+        self.exp=0 #experiencia do pokemon
+        self.attributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\n".format((self.type).capitalize(),self.lvl,int(self.hp),
                                                                                              (self.atk),int(self.deff),int(self.spd))
 
 
@@ -745,8 +745,8 @@ class Player():
 
     def __init__(self,name,pokemon):
         self.party=[pokemon]  #lista de todos os pokemons do player
-        self.name="{}".format(name)
-        self.insperdex=["???"]*50
+        self.name="{}".format(name) #nome do jogador
+        self.insperdex=["???"]*50 #numero da insperdex
 
 
     def dex(self,insperdex):
@@ -810,52 +810,52 @@ if firstpokemon=="1":
     Bulbasaur=Pokemon(pokemondata["bulbasaur"],5)
     playername=Player(playername,Bulbasaur)
     delay_print("Congratulations!!!\nBulbasaur is your new Inspermon\n")
-    delay_print(Bulbasaur.atributes)
+    delay_print(Bulbasaur.attributes)
     playername.insperdex[Bulbasaur.dexn]="{}-{}:{}".format(Bulbasaur.dexn,Bulbasaur.name,Bulbasaur.type)
 elif firstpokemon=="3":
     Squirtle=Pokemon(pokemondata["squirtle"],5)
     playername=Player(playername,Squirtle)
     delay_print("Congratulations!!!\nSquirtle is your new Inspermon\n")
-    delay_print(Squirtle.atributes)
+    delay_print(Squirtle.attributes)
     playername.insperdex[Squirtle.dexn]="{}-{}:{}".format(Squirtle.dexn,Squirtle.name,Squirtle.type)
 elif firstpokemon=="2":
     Charmander=Pokemon(pokemondata["charmander"],5)
     playername=Player(playername,Charmander)
     delay_print("Congratulations!!!\nCharmander is your new Inspermon\n")
-    delay_print(Charmander.atributes)
+    delay_print(Charmander.attributes)
     playername.insperdex[Charmander.dexn]="{}-{}:{}".format(Charmander.dexn,Charmander.name,Charmander.type)
 else:
     playername=Player(playername,0)
     playername.party=[]
     delay_print("I'm sorry {}, but you have to choose your first Inspermon...\n".format((playername.name).title()))
     delay_print(Fore.GREEN+"\nGrass"+Fore.BLACK+":(1)")
-    delay_print(Fore.BLUE+"\nWater"+Fore.BLACK+":(2)")
-    delay_print(Fore.RED+"\nFire"+Fore.BLACK+":(3)")
+    delay_print(Fore.RED+"\nFire"+Fore.BLACK+":(2)")
+    delay_print(Fore.BLUE+"\nWater"+Fore.BLACK+":(3)")
     firstpokemon2=input("\n")
     if firstpokemon2=="1":
         Bulbasaur=Pokemon(pokemondata["bulbasaur"],5)
         playername=Player(playername,Bulbasaur)
         delay_print("Congratulations!!!\nBulbasaur is your new Inspermon\n")
-        delay_print(Bulbasaur.atributes)
+        delay_print(Bulbasaur.attributes)
         playername.insperdex[Bulbasaur.dexn]="{}-{}:{}".format(Bulbasaur.dexn,Bulbasaur.name,Bulbasaur.type)
     elif firstpokemon2=="3":
-        Charmander=Pokemon(pokemondata["charmander"],5)
-        playername=Player(playername,Charmander)
-        delay_print("Congratulations!!!\nCharmander is your new Inspermon\n")
-        delay_print(Charmander.atributes)
-        playername.insperdex[Squirtle.dexn]="{}-{}:{}".format(Squirtle.dexn,Squirtle.name,Squirtle.type)
-
-    elif firstpokemon2=="2":
         Squirtle=Pokemon(pokemondata["squirtle"],5)
         playername=Player(playername,Squirtle)
         delay_print("Congratulations!!!\nSquirtle is your new Inspermon\n")
-        delay_print(Squirtle.atributes)
+        delay_print(Squirtle.attributes)
+        playername.insperdex[Squirtle.dexn]="{}-{}:{}".format(Squirtle.dexn,Squirtle.name,Squirtle.type)
+
+    elif firstpokemon2=="2":
+        Charmander=Pokemon(pokemondata["charmander"],5)
+        playername=Player(playername,Charmander)
+        delay_print("Congratulations!!!\nSquirtle is your new Inspermon\n")
+        delay_print(Charmander.attributes)
         playername.insperdex[Charmander.dexn]="{}-{}:{}".format(Charmander.dexn,Charmander.name,Charmander.type)
     else:
         Pikachu=Pokemon(pokemondata2["pikachu"],10)
         playername=Player(playername,Pikachu)
         delay_print("Okay...\nYou win\nCongratulations Pikachu is your new INSPERMON\n")
-        delay_print(Pikachu.atributes)
+        delay_print(Pikachu.attributes)
         playername.insperdex[Pikachu.dexn]="{}-{}:{}".format(Pikachu.dexn,Pikachu.name,Pikachu.type)
 
 
@@ -896,7 +896,7 @@ Press (5) to exit walking around\n")
             continue
         elif action=="0":
             lvlfloor0=rd.randrange(1,6)
-            pokemon,atributes=rd.choice(list(pokemondata.items()))
+            pokemon,attributes=rd.choice(list(pokemondata.items()))
             enemy=Pokemon(pokemondata[pokemon],lvlfloor0)
             message="A wild {} Level:{} appears...\n"
             delay_print(message.format(enemy.name,lvlfloor0))
@@ -919,7 +919,7 @@ Press (5) to exit walking around\n")
                         (playername.party[int(choose)]).hp=maxhp
                     break
                 if choice=="3":
-                    print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).atributes,enemy.name,enemy.atributes))
+                    print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).attributes,enemy.name,enemy.attributes))
                 elif (playername.party[int(choose)]).spd > enemy.spd:
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
@@ -978,7 +978,7 @@ Press (5) to exit walking around\n")
 
         elif action=="1":
             lvlfloor1=rd.randrange(5,20)
-            pokemon,atributes=rd.choice(list(pokemondata.items()))
+            pokemon,attributes=rd.choice(list(pokemondata.items()))
             enemy=Pokemon(pokemondata[pokemon],lvlfloor1)
             message="A wild {} Level:{} appears...\n"
             delay_print(message.format(enemy.name,lvlfloor1))
@@ -1002,7 +1002,7 @@ Press (5) to exit walking around\n")
                         (playername.party[int(choose)]).hp=maxhp
                     break
                 if choice=="3":
-                    print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).atributes,enemy.name,enemy.atributes))
+                    print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).attributes,enemy.name,enemy.attributes))
                 elif (playername.party[int(choose)]).spd > enemy.spd:
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
@@ -1062,7 +1062,7 @@ Press (5) to exit walking around\n")
 
         elif action=="2":
             lvlfloor2=rd.randrange(20,31)
-            pokemon,atributes=rd.choice(list(pokemondata2.items()))
+            pokemon,attributes=rd.choice(list(pokemondata2.items()))
             enemy=Pokemon(pokemondata2[pokemon],lvlfloor2)
             message="A wild {} Level:{} appears...\n"
             delay_print(message.format(enemy.name,lvlfloor2))
@@ -1086,7 +1086,7 @@ Press (5) to exit walking around\n")
                         (playername.party[int(choose)]).hp=maxhp
                     break
                 if choice=="3":
-                    print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).atributes,enemy.name,enemy.atributes))
+                    print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).attributes,enemy.name,enemy.attributes))
                 elif (playername.party[int(choose)]).spd > enemy.spd:
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
@@ -1147,7 +1147,7 @@ Press (5) to exit walking around\n")
 
         elif action=="3":
             lvlfloor3=rd.randrange(30,41)
-            pokemon,atributes=rd.choice(list(pokemondata2.items()))
+            pokemon,attributes=rd.choice(list(pokemondata2.items()))
             enemy=Pokemon(pokemondata2[pokemon],lvlfloor3)
             message="A wild {} Level:{} appears...\n"
             delay_print(message.format(enemy.name,lvlfloor3))
@@ -1171,7 +1171,7 @@ Press (5) to exit walking around\n")
                         (playername.party[int(choose)]).hp=maxhp
                     break
                 if choice=="3":
-                    print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).atributes,enemy.name,enemy.atributes))
+                    print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).attributes,enemy.name,enemy.attributes))
                 elif (playername.party[int(choose)]).spd > enemy.spd:
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
@@ -1233,7 +1233,7 @@ Press (5) to exit walking around\n")
 
         elif action=="4":
             lvlfloor4=rd.randrange(40,51)
-            pokemon,atributes=rd.choice(list(pokemondata3.items()))
+            pokemon,attributes=rd.choice(list(pokemondata3.items()))
             enemy=Pokemon(pokemondata3[pokemon],lvlfloor4)
             message="A wild {} Level:{} appears...\n"
             delay_print(message.format(enemy.name,lvlfloor4))
@@ -1257,7 +1257,7 @@ Press (5) to exit walking around\n")
                         (playername.party[int(choose)]).hp=maxhp
                     break
                 if choice=="3":
-                    print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).atributes,enemy.name,enemy.atributes))
+                    print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).attributes,enemy.name,enemy.attributes))
                 elif (playername.party[int(choose)]).spd > enemy.spd:
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
