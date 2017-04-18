@@ -4,11 +4,11 @@ Tipos=["Normal","Fire","Water","Eletric","Grass","Ice","Fighting","Poison","Grou
 
 
 n=0
-lista_exp=[]
+exp_list=[]
 for i in range(1,101):
     n=n+1
     exp=0.8*(n)**3
-    lista_exp.append(int(exp))
+    exp_list.append(int(exp))
 
 
 
@@ -20,6 +20,8 @@ pokemondata={"bulbasaur":{"type":"grass",
 					"atk":49,
 					"deff":49,
 					"spd":40,
+                    "xp":64,
+                    "lvlev":16,
 					"satk":40},
 	"charmander":{"type":"fire",
                     "name":"Charmander",
@@ -28,6 +30,8 @@ pokemondata={"bulbasaur":{"type":"grass",
 					"atk":52,
 					"deff":43,
 					"spd":65,
+                    "xp":62,
+                    "lvlev":16,
 					"satk":40},
 	"squirtle":{"type":"water",
                   "name":"Squirtle",
@@ -36,6 +40,8 @@ pokemondata={"bulbasaur":{"type":"grass",
                   "atk":50,
 				  "deff":65,
 				  "spd":43,
+                  "xp":63,
+                  "lvlev":16,
 				  "satk":40},
 	"caterpie":{"type":"bug",
                   "name":"Caterpie",
@@ -44,6 +50,8 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "atk":30,
 				  "deff":35,
 				  "spd":45,
+                  "xp":39,
+                  "lvlev":7,
 				  "satk":40},
 	"pidgey":{"type":"flying",
                   "name":"Pidgey",
@@ -52,6 +60,8 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "atk":45,
 				  "deff":40,
 				  "spd":56,
+                  "xp":50,
+                  "lvlev":18,
 				  "satk":40},
 	"pichu":{"type":"eletric",
                   "name":"Pichu",
@@ -60,6 +70,8 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "atk":40,
 				  "deff":15,
 				  "spd":60,
+                  "xp":41,
+                  "lvlev":10,
 				  "satk":40},
 	"abra":{"type":"psychic",
                   "name":"Abra",
@@ -68,6 +80,8 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "atk":105,
 				  "deff":55,
 				  "spd":90,
+                  "xp":62,
+                  "lvlev":16,
 				  "satk":40},
 	"machop":{"type":"fighting",
                   "name":"Machop",
@@ -76,6 +90,8 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "atk":80,
 				  "deff":50,
 				  "spd":35,
+                  "xp":61,
+                  "lvlev":28,
 				  "satk":40},
 	"gastly":{"type":"ghost",
                   "name":"Gastly",
@@ -84,6 +100,8 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "atk":100,
 				  "deff":35,
 				  "spd":80,
+                  "xp":62,
+                  "lvlev":25,
 				  "satk":40},
 	"grimer":{"type":"poison",
                   "name":"Grimer",
@@ -92,6 +110,8 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "atk":80,
 				  "deff":50,
 				  "spd":25,
+                  "xp":65,
+                  "lvlev":38,
 				  "satk":40},
 	"rhyhorn":{"type":"rock",
                   "name":"Rhyhorn",
@@ -100,6 +120,8 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "atk":85,
 				  "deff":95,
 				  "spd":25,
+                  "xp":69,
+                  "lvlev":42,
 				  "satk":50},
 	"dratini":{"type":"dragon",
                   "name":"Dratini",
@@ -108,6 +130,8 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "atk":64,
 				  "deff":50,
 				  "spd":50,
+                  "xp":60,
+                  "lvlev":42,
 				  "satk":40},
 	"bergmite":{"type":"ice",
                   "name":"Bergmite",
@@ -116,6 +140,8 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "atk":69,
 				  "deff":85,
 				  "spd":28,
+                  "xp":61,
+                  "lvlev":37,
 				  "satk":55},
 	"sandile":{"type":"ground",
                   "name":"Sandile",
@@ -124,6 +150,8 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "atk":72,
 				  "deff":35,
 				  "spd":65,
+                  "xp":58,
+                  "lvlev":29,
 				  "satk":40},
 	"meowth":{"type":"normal",
                   "name":"Meowth",
@@ -132,7 +160,10 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "atk":45,
 				  "deff":40,
 				  "spd":90,
+                  "xp":58,
+                  "lvlev":28,
 				  "satk":40}}
+
 
 
 
@@ -143,6 +174,8 @@ pokemondata2={"ivysaur":{"type":"grass",
 					"atk":80,
 					"deff":80,
 					"spd":60,
+                    "xp":142,
+                    "lvlev":35,
 					"satk":70},
 	"charmeleon":{"type":"fire",
                     "name":"Charmeleon",
@@ -151,6 +184,8 @@ pokemondata2={"ivysaur":{"type":"grass",
 					"atk":80,
 					"deff":65,
 					"spd":80,
+                    "xp":142,
+                    "lvlev":36,
 					"satk":70},
 	"wartortle":{"type":"water",
                   "name":"Wartortle",
@@ -159,6 +194,8 @@ pokemondata2={"ivysaur":{"type":"grass",
                   "atk":65,
 				  "deff":80,
 				  "spd":58,
+                  "xp":142,
+                  "lvlev":36,
 				  "satk":70},
 	"metapode":{"type":"bug",
                   "name":"Metapode",
@@ -167,6 +204,8 @@ pokemondata2={"ivysaur":{"type":"grass",
 				  "atk":25,
 				  "deff":55,
 				  "spd":30,
+                  "xp":72,
+                  "lvlev":11,
 				  "satk":70},
 	"pidgeotto":{"type":"flying",
                   "name":"Pidgeotto",
@@ -175,6 +214,8 @@ pokemondata2={"ivysaur":{"type":"grass",
 				  "atk":60,
 				  "deff":55,
 				  "spd":71,
+                  "xp":122,
+                  "lvlev":36,
 				  "satk":70},
 	"pikachu":{"type":"eletric",
                 "name":"Pikachu",
@@ -183,14 +224,18 @@ pokemondata2={"ivysaur":{"type":"grass",
 				  "atk":50,
 				  "deff":50,
 				  "spd":90,
+                  "xp":122,
+                  "lvlev":30,
 				  "satk":70},
-	"kadabra":{"Type":"psychic",
+	"kadabra":{"type":"psychic",
                   "name":"Kadabra",
 				  "dexn":19,
 				  "hp":40,
 				  "atk":120,
 				  "deff":70,
 				  "spd":105,
+                  "xp":140,
+                  "lvlev":40,
 				  "satk":40},
 	"machoke":{"type":"fighting",
                   "name":"Machoke",
@@ -199,6 +244,8 @@ pokemondata2={"ivysaur":{"type":"grass",
 				  "atk":100,
 				  "deff":70,
 				  "spd":45,
+                  "xp":142,
+                  "lvlev":40,
 				  "satk":40},
 	"haunter":{"type":"ghost",
                   "name":"Haunter",
@@ -207,6 +254,8 @@ pokemondata2={"ivysaur":{"type":"grass",
 				  "atk":115,
 				  "deff":55,
 				  "spd":95,
+                  "xp":142,
+                  "lvlev":40,
 				  "satk":70},
 	"muk":{"type":"poison",
                   "name":"Muk",
@@ -215,6 +264,8 @@ pokemondata2={"ivysaur":{"type":"grass",
 				  "atk":80,
 				  "deff":50,
 				  "spd":25,
+                  "xp":175,
+                  "lvlev":0,
 				  "satk":40},
 	"rhyhorn":{"type":"rock",
                   "name":"Rhyhorn",
@@ -223,6 +274,8 @@ pokemondata2={"ivysaur":{"type":"grass",
 				  "atk":85,
 				  "deff":95,
 				  "spd":25,
+                  "xp":69,
+                  "lvlev":42,
 				  "satk":50},
 	"dragonair":{"type":"dragon",
                   "name":"Dragonair",
@@ -231,15 +284,9 @@ pokemondata2={"ivysaur":{"type":"grass",
 				  "atk":84,
 				  "deff":70,
 				  "spd":70,
+                  "xp":147,
+                  "lvlev":55,
 				  "satk":70},
-	"bergmite":{"type":"ice",
-                  "name":"Bergmite",
-				  "dexn":34,
-				  "hp":55,
-				  "atk":69,
-				  "deff":85,
-				  "spd":28,
-				  "satk":55},
 	"krokorok":{"type":"ground",
                   "name":"Krokorok",
 				  "dexn":37,
@@ -247,6 +294,8 @@ pokemondata2={"ivysaur":{"type":"grass",
 				  "atk":82,
 				  "deff":45,
 				  "spd":74,
+                  "xp":123,
+                  "lvlev":40,
 				  "satk":70},
 	"persian":{"type":"normal",
                   "name":"Persian",
@@ -255,7 +304,10 @@ pokemondata2={"ivysaur":{"type":"grass",
 				  "atk":70,
 				  "deff":65,
 				  "spd":115,
+                  "xp":154,
+                  "lvlev":0,
 				  "satk":80}}
+
 
 pokemondata3={"venusaur":{"type":"grass",
                     "name":"Venusaur",
@@ -264,6 +316,8 @@ pokemondata3={"venusaur":{"type":"grass",
 					"atk":122,
 					"deff":123,
 					"spd":80,
+                    "xp":281,
+                    "lvlev":0,
 					"satk":90},
 	"charizard":{"type":"fire",
                     "name":"Charizard",
@@ -272,6 +326,8 @@ pokemondata3={"venusaur":{"type":"grass",
 					"atk":109,
 					"deff":85,
 					"spd":100,
+                    "xp":240,
+                    "lvlev":0,
 					"satk":90},
 	"blastoise":{"type":"water",
                   "name":"Blastoise",
@@ -280,6 +336,8 @@ pokemondata3={"venusaur":{"type":"grass",
                   "atk":85,
 				  "deff":105,
 				  "spd":78,
+                  "xp":239,
+                  "lvlev":0,
 				  "satk":90},
 	"butterfree":{"type":"bug",
                   "name":"Butterfree",
@@ -288,6 +346,8 @@ pokemondata3={"venusaur":{"type":"grass",
 				  "atk":90,
 				  "deff":80,
 				  "spd":70,
+                  "xp":178,
+                  "lvlev":0,
 				  "satk":90},
 	"pidgeot":{"type":"flying",
                   "name":"Pidgeot",
@@ -296,6 +356,8 @@ pokemondata3={"venusaur":{"type":"grass",
 				  "atk":80,
 				  "deff":75,
 				  "spd":101,
+                  "xp":216,
+                  "lvlev":0,
 				  "satk":90},
 	"raichu":{"type":"eletric",
                   "name":"Raichu",
@@ -304,14 +366,18 @@ pokemondata3={"venusaur":{"type":"grass",
 				  "atk":95,
 				  "deff":85,
 				  "spd":110,
+                  "xp":218,
+                  "lvlev":0,
 				  "satk":90},
-	"alakazam":{"type":"psychic",
+	"alakazam":{"Type":"psychic",
                   "name":"Alakazam",
                   "dexn":20,
                   "hp":55,
 				  "atk":135,
 				  "deff":70,
 				  "spd":120,
+                  "xp":225,
+                  "lvlev":0,
 				  "satk":90},
 	"machamp":{"type":"fighting",
                   "name":"Machamp",
@@ -320,6 +386,8 @@ pokemondata3={"venusaur":{"type":"grass",
 				  "atk":130,
 				  "deff":85,
 				  "spd":55,
+                  "xp":227,
+                  "lvlev":0,
 				  "satk":90},
 	"gengar":{"type":"ghost",
                   "name":"Gengar",
@@ -328,6 +396,8 @@ pokemondata3={"venusaur":{"type":"grass",
 				  "atk":130,
 				  "deff":75,
 				  "spd":110,
+                  "xp":225,
+                  "lvlev":0,
 				  "satk":110},
 	"muk":{"type":"poison",
                   "name":"Muk",
@@ -336,6 +406,8 @@ pokemondata3={"venusaur":{"type":"grass",
 				  "atk":105,
 				  "deff":100,
 				  "spd":50,
+                  "xp":175,
+                  "lvlev":0,
 				  "satk":90},
 	"rhydon":{"type":"rock",
                   "name":"Rhydon",
@@ -344,6 +416,8 @@ pokemondata3={"venusaur":{"type":"grass",
 				  "atk":130,
 				  "deff":120,
 				  "spd":40,
+                  "xp":170,
+                  "lvlev":0,
 				  "satk":90},
 	"dragonite":{"type":"dragon",
                   "name":"Dragonite",
@@ -352,6 +426,8 @@ pokemondata3={"venusaur":{"type":"grass",
 				  "atk":134,
 				  "deff":100,
 				  "spd":80,
+                  "xp":270,
+                  "lvlev":0,
 				  "satk":90},
 	"avalugg":{"type":"ice",
                   "name":"Avalugg",
@@ -360,6 +436,8 @@ pokemondata3={"venusaur":{"type":"grass",
 				  "atk":117,
 				  "deff":184,
 				  "spd":28,
+                  "xp":180,
+                  "lvlev":0,
 				  "satk":90},
 	"krookodile":{"type":"ground",
                   "name":"Krookodile",
@@ -368,6 +446,8 @@ pokemondata3={"venusaur":{"type":"grass",
 				  "atk":117,
 				  "deff":80,
 				  "spd":92,
+                  "xp":234,
+                  "lvlev":0,
 				  "satk":90},
 	"persian":{"type":"normal",
                   "name":"Persian",
@@ -376,6 +456,8 @@ pokemondata3={"venusaur":{"type":"grass",
 				  "atk":70,
 				  "deff":65,
 				  "spd":115,
+                  "xp":154,
+                  "lvlev":0,
 				  "satk":80},
     "snorlax":{"type":"normal",
                   "name":"Snorlax",
@@ -384,25 +466,37 @@ pokemondata3={"venusaur":{"type":"grass",
               	  "atk":110,
               	  "deff":65,
               	  "spd":30,
+                  "xp":189,
+                  "lvlev":0,
               	  "satk":90}}
+
 
 
 class Pokemon:
     #classe para pokemons
 
     def __init__(self,pokemon,lvl):
+        #self.evolution=pokemon["next"] #nome da evolução
+        self.all=pokemon #todos os atributos basicos do pokemon
+        self.ivhp=rd.randrange(1,32) #invisible value para a vida do pokemon (deixa todos os pokemons diferentes entre si)
+        self.ivatk=rd.randrange(1,32) #invisible value para a ataque do pokemon (deixa todos os pokemons diferentes entre si)
+        self.ivdeff=rd.randrange(1,32) #invisible value para a defesa do pokemon (deixa todos os pokemons diferentes entre si)
+        self.ivspd=rd.randrange(1,32) #invisible value para a velocidade do pokemon (deixa todos os pokemons diferentes entre si)
+        self.lvlevolution=pokemon["lvlev"] #level que cada pokemon evolui
+        self.basexp=pokemon["xp"] #experiencia base que cada pokemon fornece qnd é fainted "morto"
         self.name=pokemon["name"] #nome do Inspermon
         self.dexn=pokemon["dexn"] #numero da INSPERDEX
         self.type=pokemon["type"] #tipo do pokemon
         self.lvl=lvl #lvl do pokemon
-        self.hp=(((2*pokemon["hp"]+rd.randrange(1,32)+(50/4))*lvl)/100)+lvl+10 #vida atual do pokemon
-        self.atk=(((2*pokemon["atk"]+rd.randrange(1,32)+(50/4))*lvl)/100)+5 #ataque atual do pokemon
-        self.deff=(((2*pokemon["deff"]+rd.randrange(1,32)+(50/4))*lvl)/100)+5 #defesa atual do pokemon
-        self.spd=(((2*pokemon["spd"]+rd.randrange(1,32)+(50/4))*lvl)/100)+5 #velocidade atual do pokemon
+        self.hp=(((2*pokemon["hp"]+self.ivhp+(50/4))*lvl)/100)+lvl+10 #vida atual do pokemon
+        self.atk=(((2*pokemon["atk"]+self.ivatk+(50/4))*lvl)/100)+5 #ataque atual do pokemon
+        self.deff=(((2*pokemon["deff"]+self.ivdeff+(50/4))*lvl)/100)+5 #defesa atual do pokemon
+        self.spd=(((2*pokemon["spd"]+self.ivspd+(50/4))*lvl)/100)+5 #velocidade atual do pokemon
+        self.maxhp=(((2*pokemon["hp"]+self.ivhp+(50/4))*lvl)/100)+lvl+10 #vida máxima do pokemon
         self.satk=pokemon["satk"] #ataque especial do pokemon
-        self.exp=0 #experiencia do pokemon
-        self.attributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\n".format((self.type).capitalize(),self.lvl,int(self.hp),
-                                                                                             (self.atk),int(self.deff),int(self.spd))
+        self.exp=(4*(lvl**3))/5 #experiencia do pokemon
+        self.attributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\nExperience:{}\n".format((self.type).capitalize(),self.lvl,int(self.maxhp),
+                                                                                             (self.atk),int(self.deff),int(self.spd),int(self.exp))
 
 
     def attack(self,enemy): #dano do ataque do pokemon
@@ -747,16 +841,56 @@ class Pokemon:
                                                          #agr ja era fion.
 
 
-    def lvlup(self): #metodo para o pokemon passar de level
+    def lvlup(self,exp_list): #metodo para o pokemon passar de level
+    #lvlup(self,exp_list,evolution):
         new_level=0
-        for valor in lista_exp:
+        for valor in exp_list:
             if self.exp >= valor:
                 new_level+=1
             else:
+                missing_exp=valor-self.exp
+                delay_print("Your {} need {} more exp to the next Level...\n".format(self.name,str(int((valor-self.exp)))))
                 break
-        if self.exp!=new_level:
-            self.exp=new_level
-            delay_print("Your {} leveled up".format(self.name))
+        if self.lvl!=new_level:
+            self.lvl=new_level
+            delay_print("Your {} leveled up to LVL:{}\n".format(self.name,self.lvl))
+            self.hp=(((2*self.all["hp"]+self.ivhp+(50/4))*self.lvl)/100)+self.lvl+10 #vida atual do pokemon
+            self.atk=(((2*self.all["atk"]+self.ivatk+(50/4))*self.lvl)/100)+5 #ataque atual do pokemon
+            self.deff=(((2*self.all["deff"]+self.ivdeff+(50/4))*self.lvl)/100)+5 #defesa atual do pokemon
+            self.spd=(((2*self.all["spd"]+self.ivspd+(50/4))*self.lvl)/100)+5 #velocidade atual do pokemon
+            self.maxhp=(((2*self.all["hp"]+self.ivhp+(50/4))*self.lvl)/100)+self.lvl+10 #vida máxima do pokemon
+            self.attributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\nExperience:{}\n".format((self.type).capitalize(),self.lvl,int(self.maxhp),
+                                                                                                 (self.atk),int(self.deff),int(self.spd),int(self.exp))
+            #self.evolving(self,evolution)
+
+
+
+    def expgain(self,enemy):
+        self.exp+=(enemy.basexp*enemy.lvl)/7
+        self.attributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\nExperience:{}\n".format((self.type).capitalize(),self.lvl,int(self.maxhp),
+                                                                                             (self.atk),int(self.deff),int(self.spd),int(self.exp))
+        return self.exp
+
+    # def evolving(self,evolution):
+    #     if self.lvl>=self.evolution:
+    #         self.all=evolution #todos os atributos basicos do pokemon
+    #         self.evolution=evolution["lvlev"] #level que cada pokemon evolui
+    #         self.basexp=evolution["xp"] #experiencia base que cada pokemon fornece qnd é fainted "morto"
+    #         self.name=evolution["name"] #nome do Inspermon
+    #         self.dexn=evolution["dexn"] #numero da INSPERDEX
+    #         self.type=evolution["type"] #tipo do pokemon
+    #         self.hp=(((2*evolution["hp"]+self.ivhp+(50/4))*self.lvl)/100)+self.lvl+10 #vida atual do pokemon
+    #         self.atk=(((2*evolution["atk"]+self.ivatk+(50/4))*self.lvl)/100)+5 #ataque atual do pokemon
+    #         self.deff=(((2*evolution["deff"]+self.ivdeff+(50/4))*self.lvl)/100)+5 #defesa atual do pokemon
+    #         self.spd=(((2*evolution["spd"]+self.ivspd+(50/4))*self.lvl)/100)+5 #velocidade atual do pokemon
+    #         self.maxhp=(((2*evolution["hp"]+self.ivhp+(50/4))*self.lvl)/100)+self.lvl+10 #vida máxima do pokemon
+    #         self.satk=evolution["satk"] #ataque especial do pokemon
+    #         self.attributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\nExperience:{}\n".format((self.type).capitalize(),self.lvl,int(self.maxhp),
+    #                                                                                              int(self.atk),int(self.deff),int(self.spd),int(self.exp))
+    #         return delay_print("What?....\nYour {} is evolving!!!!".format(self.all[]))
+
+
+
 
 
 class Player():
@@ -896,7 +1030,9 @@ Press (4) for sleeping\n")
     if action=="4":
         break
     if action=="3":
+        print("/////////////////////////////////////////////////////////////")
         playername.dex(playername.insperdex)
+        print("/////////////////////////////////////////////////////////////")
     elif action=="1":
         delay_print("Where do you want to go?\n")
         delay_print("Press (0) for walking around in the Ground Floor\n\
@@ -913,6 +1049,11 @@ Press (5) to exit walking around\n")
         action=input()
         if action=="5":
             continue
+
+        def pokemongenerator():
+            pokemon,attributes=rd.choice(list(pokemondata.items()))
+            enemy=Pokemon(pokemondata[pokemon],lvlfloor0)
+
         elif action=="0":
             lvlfloor0=rd.randrange(1,6)
             pokemon,attributes=rd.choice(list(pokemondata.items()))
@@ -935,7 +1076,8 @@ Press (5) to exit walking around\n")
                     delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
                     hp_potion=input()
                     if hp_potion=="1":
-                        (playername.party[int(choose)]).hp=maxhp
+                        (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
+                        delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
                     break
                 if choice=="3":
                     print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).attributes,enemy.name,enemy.attributes))
@@ -947,10 +1089,13 @@ Press (5) to exit walking around\n")
                     print(((playername.party[int(choose)]).damage(enemy))[1])
                     if enemy.hp<=0:
                         delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
+                        (playername.party[int(choose)]).expgain(enemy)
+                        (playername.party[int(choose)]).lvlup(exp_list)
                         delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
                         hp_potion=input()
                         if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=maxhp
+                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
+                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
                         break
 
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
@@ -965,7 +1110,8 @@ Press (5) to exit walking around\n")
                         delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
                         hp_potion=input()
                         if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=maxhp
+                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
+                            delay_print("Your {} is healed!!!")
                         break
                 elif (playername.party[int(choose)]).spd < enemy.spd:
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
@@ -980,7 +1126,8 @@ Press (5) to exit walking around\n")
                         delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
                         hp_potion=input()
                         if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=maxhp
+                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
+                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
                         break
                     delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
                     enemy.hp=((playername.party[int(choose)]).damage(enemy))[0]
@@ -989,10 +1136,13 @@ Press (5) to exit walking around\n")
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if enemy.hp<=0:
                         delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
+                        (playername.party[int(choose)]).expgain(enemy)
+                        (playername.party[int(choose)]).lvlup(exp_list)
                         delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
                         hp_potion=input()
                         if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=maxhp
+                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
+                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
                         break
 
         elif action=="1":
@@ -1018,7 +1168,8 @@ Press (5) to exit walking around\n")
                     delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
                     hp_potion=input()
                     if hp_potion=="1":
-                        (playername.party[int(choose)]).hp=maxhp
+                        (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
+                        delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
                     break
                 if choice=="3":
                     print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).attributes,enemy.name,enemy.attributes))
@@ -1030,10 +1181,13 @@ Press (5) to exit walking around\n")
                     print(((playername.party[int(choose)]).damage(enemy))[1])
                     if enemy.hp<=0:
                         delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
+                        (playername.party[int(choose)]).expgain(enemy)
+                        (playername.party[int(choose)]).lvlup(exp_list)
                         delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
                         hp_potion=input()
                         if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=maxhp
+                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
+                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
                         break
 
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
@@ -1048,7 +1202,8 @@ Press (5) to exit walking around\n")
                         delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
                         hp_potion=input()
                         if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=maxhp
+                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
+                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
                         break
                 elif (playername.party[int(choose)]).spd < enemy.spd:
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
@@ -1063,7 +1218,8 @@ Press (5) to exit walking around\n")
                         delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
                         hp_potion=input()
                         if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=maxhp
+                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
+                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
                         break
                     delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
                     enemy.hp=((playername.party[int(choose)]).damage(enemy))[0]
@@ -1072,10 +1228,13 @@ Press (5) to exit walking around\n")
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if enemy.hp<=0:
                         delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
+                        (playername.party[int(choose)]).expgain(enemy)
+                        (playername.party[int(choose)]).lvlup(exp_list)
                         delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
                         hp_potion=input()
                         if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=maxhp
+                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
+                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
                         break
 
 
@@ -1102,7 +1261,8 @@ Press (5) to exit walking around\n")
                     delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
                     hp_potion=input()
                     if hp_potion=="1":
-                        (playername.party[int(choose)]).hp=maxhp
+                        (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
+                        delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
                     break
                 if choice=="3":
                     print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).attributes,enemy.name,enemy.attributes))
@@ -1114,10 +1274,13 @@ Press (5) to exit walking around\n")
                     print(((playername.party[int(choose)]).damage(enemy))[1])
                     if enemy.hp<=0:
                         delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
+                        (playername.party[int(choose)]).expgain(enemy)
+                        (playername.party[int(choose)]).lvlup(exp_list)
                         delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
                         hp_potion=input()
                         if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=maxhp
+                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
+                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
                         break
 
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
@@ -1132,7 +1295,8 @@ Press (5) to exit walking around\n")
                         delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
                         hp_potion=input()
                         if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=maxhp
+                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
+                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
                         break
                 elif (playername.party[int(choose)]).spd < enemy.spd:
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
@@ -1147,7 +1311,8 @@ Press (5) to exit walking around\n")
                         delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
                         hp_potion=input()
                         if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=maxhp
+                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
+                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
                         break
                     delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
                     enemy.hp=((playername.party[int(choose)]).damage(enemy))[0]
@@ -1156,10 +1321,13 @@ Press (5) to exit walking around\n")
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if enemy.hp<=0:
                         delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
+                        (playername.party[int(choose)]).expgain(enemy)
+                        (playername.party[int(choose)]).lvlup(exp_list)
                         delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
                         hp_potion=input()
                         if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=maxhp
+                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
+                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
                         break
 
 
@@ -1187,7 +1355,8 @@ Press (5) to exit walking around\n")
                     delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
                     hp_potion=input()
                     if hp_potion=="1":
-                        (playername.party[int(choose)]).hp=maxhp
+                        (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
+                        delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
                     break
                 if choice=="3":
                     print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).attributes,enemy.name,enemy.attributes))
@@ -1199,10 +1368,13 @@ Press (5) to exit walking around\n")
                     print(((playername.party[int(choose)]).damage(enemy))[1])
                     if enemy.hp<=0:
                         delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
+                        (playername.party[int(choose)]).expgain(enemy)
+                        (playername.party[int(choose)]).lvlup(exp_list)
                         delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
                         hp_potion=input()
                         if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=maxhp
+                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
+                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
                         break
 
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
@@ -1217,7 +1389,8 @@ Press (5) to exit walking around\n")
                         delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
                         hp_potion=input()
                         if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=maxhp
+                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
+                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
                         break
                 elif (playername.party[int(choose)]).spd < enemy.spd:
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
@@ -1232,7 +1405,8 @@ Press (5) to exit walking around\n")
                         delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
                         hp_potion=input()
                         if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=maxhp
+                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
+                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
                         break
                     delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
                     enemy.hp=((playername.party[int(choose)]).damage(enemy))[0]
@@ -1241,10 +1415,13 @@ Press (5) to exit walking around\n")
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if enemy.hp<=0:
                         delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
+                        (playername.party[int(choose)]).expgain(enemy)
+                        (playername.party[int(choose)]).lvlup(exp_list)
                         delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
                         hp_potion=input()
                         if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=maxhp
+                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
+                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
                         break
 
 
@@ -1273,7 +1450,8 @@ Press (5) to exit walking around\n")
                     delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
                     hp_potion=input()
                     if hp_potion=="1":
-                        (playername.party[int(choose)]).hp=maxhp
+                        (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
+                        delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
                     break
                 if choice=="3":
                     print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).attributes,enemy.name,enemy.attributes))
@@ -1285,10 +1463,13 @@ Press (5) to exit walking around\n")
                     print(((playername.party[int(choose)]).damage(enemy))[1])
                     if enemy.hp<=0:
                         delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
+                        (playername.party[int(choose)]).expgain(enemy)
+                        (playername.party[int(choose)]).lvlup(exp_list)
                         delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
                         hp_potion=input()
                         if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=maxhp
+                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
+                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
                         break
 
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
@@ -1303,7 +1484,8 @@ Press (5) to exit walking around\n")
                         delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
                         hp_potion=input()
                         if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=maxhp
+                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
+                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
                         break
                 elif (playername.party[int(choose)]).spd < enemy.spd:
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
@@ -1318,7 +1500,8 @@ Press (5) to exit walking around\n")
                         delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
                         hp_potion=input()
                         if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=maxhp
+                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
+                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
                         break
                     delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
                     enemy.hp=((playername.party[int(choose)]).damage(enemy))[0]
@@ -1327,8 +1510,11 @@ Press (5) to exit walking around\n")
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if enemy.hp<=0:
                         delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
+                        (playername.party[int(choose)]).expgain(enemy)
+                        (playername.party[int(choose)]).lvlup(exp_list)
                         delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
                         hp_potion=input()
                         if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=maxhp
+                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
+                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
                         break
