@@ -409,7 +409,7 @@ class Pokemon:
         return ((((2*self.lvl/5)+2)*self.satk*(self.atk/enemy.deff)/50)+2)*(rd.randrange(85,101)/100)
 
 
-    def deffense(self,enemy): #dano recebido pelo pokemon
+    def damage(self,enemy): #dano do ataque do pokemon com vantagens/fraquezas
             effectiveness=[0,0.5,1,2] #dano efetivo recebido pelo pokemon(de acordo com as vantagens/fraquezas)
             dmg=effectiveness[2]
             consolemessage=("It was effective")
@@ -943,8 +943,8 @@ Press (5) to exit walking around\n")
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    enemy.hp=((playername.party[int(choose)]).deffense(enemy))[0]
-                    print(((playername.party[int(choose)]).deffense(enemy))[1])
+                    enemy.hp=((playername.party[int(choose)]).damage(enemy))[0]
+                    print(((playername.party[int(choose)]).damage(enemy))[1])
                     if enemy.hp<=0:
                         delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
                         delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
@@ -956,8 +956,8 @@ Press (5) to exit walking around\n")
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (playername.party[int(choose)]).hp=(enemy.deffense(playername.party[int(choose)]))[0]
-                    print((enemy.deffense(playername.party[int(choose)]))[1])
+                    (playername.party[int(choose)]).hp=(enemy.damage(playername.party[int(choose)]))[0]
+                    print((enemy.damage(playername.party[int(choose)]))[1])
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if (playername.party[int(choose)]).hp<=0:
@@ -971,8 +971,8 @@ Press (5) to exit walking around\n")
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (playername.party[int(choose)]).hp=(enemy.deffense(playername.party[int(choose)]))[0]
-                    print((enemy.deffense(playername.party[int(choose)]))[1])
+                    (playername.party[int(choose)]).hp=(enemy.damage(playername.party[int(choose)]))[0]
+                    print((enemy.damage(playername.party[int(choose)]))[1])
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if (playername.party[int(choose)]).hp<=0:
@@ -983,8 +983,8 @@ Press (5) to exit walking around\n")
                             (playername.party[int(choose)]).hp=maxhp
                         break
                     delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    enemy.hp=((playername.party[int(choose)]).deffense(enemy))[0]
-                    print(((playername.party[int(choose)]).deffense(enemy))[1])
+                    enemy.hp=((playername.party[int(choose)]).damage(enemy))[0]
+                    print(((playername.party[int(choose)]).damage(enemy))[1])
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if enemy.hp<=0:
@@ -1026,8 +1026,8 @@ Press (5) to exit walking around\n")
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    enemy.hp=((playername.party[int(choose)]).deffense(enemy))[0]
-                    print(((playername.party[int(choose)]).deffense(enemy))[1])
+                    enemy.hp=((playername.party[int(choose)]).damage(enemy))[0]
+                    print(((playername.party[int(choose)]).damage(enemy))[1])
                     if enemy.hp<=0:
                         delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
                         delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
@@ -1039,8 +1039,8 @@ Press (5) to exit walking around\n")
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (playername.party[int(choose)]).hp=(enemy.deffense(playername.party[int(choose)]))[0]
-                    print((enemy.deffense(playername.party[int(choose)]))[1])
+                    (playername.party[int(choose)]).hp=(enemy.damage(playername.party[int(choose)]))[0]
+                    print((enemy.damage(playername.party[int(choose)]))[1])
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if (playername.party[int(choose)]).hp<=0:
@@ -1054,8 +1054,8 @@ Press (5) to exit walking around\n")
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (playername.party[int(choose)]).hp=(enemy.deffense(playername.party[int(choose)]))[0]
-                    print((enemy.deffense(playername.party[int(choose)]))[1])
+                    (playername.party[int(choose)]).hp=(enemy.damage(playername.party[int(choose)]))[0]
+                    print((enemy.damage(playername.party[int(choose)]))[1])
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if (playername.party[int(choose)]).hp<=0:
@@ -1066,8 +1066,8 @@ Press (5) to exit walking around\n")
                             (playername.party[int(choose)]).hp=maxhp
                         break
                     delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    enemy.hp=((playername.party[int(choose)]).deffense(enemy))[0]
-                    print(((playername.party[int(choose)]).deffense(enemy))[1])
+                    enemy.hp=((playername.party[int(choose)]).damage(enemy))[0]
+                    print(((playername.party[int(choose)]).damage(enemy))[1])
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if enemy.hp<=0:
@@ -1110,8 +1110,8 @@ Press (5) to exit walking around\n")
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    enemy.hp=((playername.party[int(choose)]).deffense(enemy))[0]
-                    print(((playername.party[int(choose)]).deffense(enemy))[1])
+                    enemy.hp=((playername.party[int(choose)]).damage(enemy))[0]
+                    print(((playername.party[int(choose)]).damage(enemy))[1])
                     if enemy.hp<=0:
                         delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
                         delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
@@ -1123,8 +1123,8 @@ Press (5) to exit walking around\n")
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (playername.party[int(choose)]).hp=(enemy.deffense(playername.party[int(choose)]))[0]
-                    print((enemy.deffense(playername.party[int(choose)]))[1])
+                    (playername.party[int(choose)]).hp=(enemy.damage(playername.party[int(choose)]))[0]
+                    print((enemy.damage(playername.party[int(choose)]))[1])
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if (playername.party[int(choose)]).hp<=0:
@@ -1138,8 +1138,8 @@ Press (5) to exit walking around\n")
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (playername.party[int(choose)]).hp=(enemy.deffense(playername.party[int(choose)]))[0]
-                    print((enemy.deffense(playername.party[int(choose)]))[1])
+                    (playername.party[int(choose)]).hp=(enemy.damage(playername.party[int(choose)]))[0]
+                    print((enemy.damage(playername.party[int(choose)]))[1])
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if (playername.party[int(choose)]).hp<=0:
@@ -1150,8 +1150,8 @@ Press (5) to exit walking around\n")
                             (playername.party[int(choose)]).hp=maxhp
                         break
                     delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    enemy.hp=((playername.party[int(choose)]).deffense(enemy))[0]
-                    print(((playername.party[int(choose)]).deffense(enemy))[1])
+                    enemy.hp=((playername.party[int(choose)]).damage(enemy))[0]
+                    print(((playername.party[int(choose)]).damage(enemy))[1])
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if enemy.hp<=0:
@@ -1195,8 +1195,8 @@ Press (5) to exit walking around\n")
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    enemy.hp=((playername.party[int(choose)]).deffense(enemy))[0]
-                    print(((playername.party[int(choose)]).deffense(enemy))[1])
+                    enemy.hp=((playername.party[int(choose)]).damage(enemy))[0]
+                    print(((playername.party[int(choose)]).damage(enemy))[1])
                     if enemy.hp<=0:
                         delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
                         delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
@@ -1208,8 +1208,8 @@ Press (5) to exit walking around\n")
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (playername.party[int(choose)]).hp=(enemy.deffense(playername.party[int(choose)]))[0]
-                    print((enemy.deffense(playername.party[int(choose)]))[1])
+                    (playername.party[int(choose)]).hp=(enemy.damage(playername.party[int(choose)]))[0]
+                    print((enemy.damage(playername.party[int(choose)]))[1])
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if (playername.party[int(choose)]).hp<=0:
@@ -1223,8 +1223,8 @@ Press (5) to exit walking around\n")
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (playername.party[int(choose)]).hp=(enemy.deffense(playername.party[int(choose)]))[0]
-                    print((enemy.deffense(playername.party[int(choose)]))[1])
+                    (playername.party[int(choose)]).hp=(enemy.damage(playername.party[int(choose)]))[0]
+                    print((enemy.damage(playername.party[int(choose)]))[1])
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if (playername.party[int(choose)]).hp<=0:
@@ -1235,8 +1235,8 @@ Press (5) to exit walking around\n")
                             (playername.party[int(choose)]).hp=maxhp
                         break
                     delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    enemy.hp=((playername.party[int(choose)]).deffense(enemy))[0]
-                    print(((playername.party[int(choose)]).deffense(enemy))[1])
+                    enemy.hp=((playername.party[int(choose)]).damage(enemy))[0]
+                    print(((playername.party[int(choose)]).damage(enemy))[1])
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if enemy.hp<=0:
@@ -1281,8 +1281,8 @@ Press (5) to exit walking around\n")
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    enemy.hp=((playername.party[int(choose)]).deffense(enemy))[0]
-                    print(((playername.party[int(choose)]).deffense(enemy))[1])
+                    enemy.hp=((playername.party[int(choose)]).damage(enemy))[0]
+                    print(((playername.party[int(choose)]).damage(enemy))[1])
                     if enemy.hp<=0:
                         delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
                         delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
@@ -1294,8 +1294,8 @@ Press (5) to exit walking around\n")
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (playername.party[int(choose)]).hp=(enemy.deffense(playername.party[int(choose)]))[0]
-                    print((enemy.deffense(playername.party[int(choose)]))[1])
+                    (playername.party[int(choose)]).hp=(enemy.damage(playername.party[int(choose)]))[0]
+                    print((enemy.damage(playername.party[int(choose)]))[1])
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if (playername.party[int(choose)]).hp<=0:
@@ -1309,8 +1309,8 @@ Press (5) to exit walking around\n")
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (playername.party[int(choose)]).hp=(enemy.deffense(playername.party[int(choose)]))[0]
-                    print((enemy.deffense(playername.party[int(choose)]))[1])
+                    (playername.party[int(choose)]).hp=(enemy.damage(playername.party[int(choose)]))[0]
+                    print((enemy.damage(playername.party[int(choose)]))[1])
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if (playername.party[int(choose)]).hp<=0:
@@ -1321,8 +1321,8 @@ Press (5) to exit walking around\n")
                             (playername.party[int(choose)]).hp=maxhp
                         break
                     delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    enemy.hp=((playername.party[int(choose)]).deffense(enemy))[0]
-                    print(((playername.party[int(choose)]).deffense(enemy))[1])
+                    enemy.hp=((playername.party[int(choose)]).damage(enemy))[0]
+                    print(((playername.party[int(choose)]).damage(enemy))[1])
                     delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
                                                                           int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
                     if enemy.hp<=0:
