@@ -426,7 +426,7 @@ class Pokemon:
 
 
     def expgain(self,enemy):
-        self.exp+=((enemy.basexp*enemy.lvl)/7)*10  #experiencia ganha multiplicada para passar de level mais rapido
+        self.exp+=((enemy.basexp*enemy.lvl)/7)*100  #experiencia ganha multiplicada para passar de level mais rapido
         self.attributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\nExperience:{}\n".format((self.type).capitalize(),self.lvl,int(self.maxhp),
                                                                                              (self.atk),int(self.deff),int(self.spd),int(self.exp))
         return self.exp
@@ -434,6 +434,7 @@ class Pokemon:
     def evolving(self,evolution):
         #método de evolução para os pokemons
         if self.lvl>=self.lvlevolution:
+            oldname=self.name
             self.floor=evolution["floor"] #andar no qual cada pokemon pode aparecer
             self.evolution=evolution["evolution"] #nome da evolução
             self.lvlevolution=evolution["lvlev"] #level que cada pokemon evolui
@@ -451,7 +452,8 @@ class Pokemon:
             self.attributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\nExperience:{}\n".format((self.type).capitalize(),self.lvl,int(self.maxhp),
                                                                                                  int(self.atk),int(self.deff),int(self.spd),int(self.exp))
             playername.dexregister(self)
-            return delay_print("What?....\nYour {} is evolving!!!!".format(self.name))
+            return delay_print("What?....\nYour Inspermon is evolving!!!!\nCongratulations! Your {} evolved into {}\n".format(oldname,self.name))
+
 
 
 
@@ -622,16 +624,16 @@ delay_print("Welcome to the marvelous World of Inspermon")
 input()
 delay_print("You are at Proffesor Daniel's Inspermon Research lab\n")
 
-delay_print("\nHello there! Welcome to the world of INSPERMON! My name is Daniel! People call me the INSPERMON Prof!\n")
+delay_print("\n-Daniel:Hello there! Welcome to the world of INSPERMON! My name is Daniel! People call me the INSPERMON Prof!\n")
 input()
-delay_print("\nThis world is inhabited by creatures called INSPERMON!\n")
+delay_print("\n-Daniel:This world is inhabited by creatures called INSPERMON!\n")
 input()
-delay_print("\nFor some people, INSPERMON are pets. Other use them for fights. Myself… I study INSPERMON as a profession.\n")
+delay_print("\n-Daniel:For some people, INSPERMON are pets. Other use them for fights. Myself… I study INSPERMON as a profession.\n")
 input()
-delay_print("\nFirst, what is your name?\n")
+delay_print("\n-Daniel:First, what is your name?\n")
 playername=input("\n")
 playername+=" Ketchum"
-delay_print("Right! So your name is {}!".format(playername.title()))
+delay_print("-Daniel:Right! So your name is {}!".format(playername.title()))
 delay_print("Are you a boy or a girl?\nboy:(1)\ngirl:(2)")
 boyorgirl=input("\n")
 
@@ -639,11 +641,11 @@ while boyorgirl!="1" and boyorgirl!="2":
     print("Type a valid command")
     boyorgirl=input("\n")
 
-delay_print("Well done {}.Let's get it started!\n".format(playername.title()))
+delay_print("-Daniel:Well done {}.Let's get it started!\n".format(playername.title()))
 input()
-delay_print("First you have to get your new partner\n")
+delay_print("-Daniel:First you have to get your new partner\n")
 input()
-delay_print("What do you prefer?")
+delay_print("-Daniel:What do you prefer?")
 delay_print(Fore.GREEN+"\nGrass"+Fore.BLACK+":(1)")
 delay_print(Fore.RED+"\nFire"+Fore.BLACK+":(2)")
 delay_print(Fore.BLUE+"\nWater"+Fore.BLACK+":(3)")
@@ -699,19 +701,20 @@ else:
     else:
         Pikachu=Pokemon(pokemondata["pikachu"],10)
         playername=Player(playername,Pikachu)
-        delay_print("Okay...\nYou win\nCongratulations Pikachu is your new INSPERMON\n")
+        delay_print("\nPIKA PIKA!!!\nOkay...\nYou win\nCongratulations Pikachu is your new INSPERMON\n")
         delay_print(Pikachu.attributes)
         playername.dexregister(Pikachu)
 
 
 
-delay_print("\nTo see information of your new INSPERMON, you can always use the INSPERDEX\n\
+delay_print("\n-Daniel:To see information of your new INSPERMON, you can always use the INSPERDEX.It also can be used in battle for acquiring knowledge of yours enemies strength.\n\
 Your very own INSPERMON legend is about to unfold!\nA world of dreams and adventures with INSPERMON awaits! Let's go!\n")
+
 while True:
     delay_print("You are now in the Insper's Labs\n\
 What do you want to do first??\n\
 ----------------------------------------------\n\
-Press (1) for walking around in the LAB\n\
+Press (1) to explore the Insper Building\n\
 ----------------------------------------------\n\
 Press (2) for saving the game\n\
 ----------------------------------------------\n\
@@ -720,6 +723,7 @@ Press (3) for looking at your INSPERDEX\n\
 Press (4) for sleeping\n")
     action=input()
     if action=="4":
+        delay_print("Good night.")
         break
     if action=="3":
         print("/////////////////////////////////////////////////////////////")
