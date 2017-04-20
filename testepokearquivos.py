@@ -426,7 +426,7 @@ class Pokemon:
 
 
     def expgain(self,enemy):
-        self.exp+=((enemy.basexp*enemy.lvl)/7)*100  #experiencia ganha multiplicada para passar de level mais rapido
+        self.exp+=((enemy.basexp*enemy.lvl)/7)*1  #experiencia ganha multiplicada para passar de level mais rapido
         self.attributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\nExperience:{}\n".format((self.type).capitalize(),self.lvl,int(self.maxhp),
                                                                                              (self.atk),int(self.deff),int(self.spd),int(self.exp))
         return self.exp
@@ -463,9 +463,10 @@ class Player():
     #classe para o usuário
 
     def __init__(self,name,pokemon):
-        self.party=[pokemon]  #lista de todos os pokemons do player
+        self.party=[pokemon]  #lista com os pokemons do time do player (maximo de 6 pokemons)
         self.name="{}".format(name) #nome do jogador
         self.insperdex=["???"]*50 #numero da insperdex
+        self.box=[] #lista com todos os pokemons do player
 
 
     def dex(self,insperdex):
@@ -479,12 +480,28 @@ class Player():
         return
 
     def savegame(self):
+        # metodo para salvar o jogo
         import pickle
         pickle_out=open("dados.pickle","wb")
         pickle.dump(self,pickle_out)
         pickle_out.close()
 
 
+    def capture(self,pokemon):
+        #metodo para capturar o pokemon
+        chance=(100-(100*((pokemon.hp)/pokemon.maxhp)))
+        lucky=rd.randrange(0,101)
+        if lucky<=chance:
+            if len(self.party)>=6:
+                pokemon.hp=pokemon.maxhp
+                (self.box).append(pokemon)
+                delay_print("Your party is full, the new inspermon was moved to your box\n")
+            else:
+                pokemon.hp=pokemon.maxhp
+                (self.party).append(pokemon)
+            return delay_print("Congratulations!!!\nThe Wild {} was caught!!!\n".format(pokemon.name))
+        else:
+            delay_print("I'm sorry, the inspermon broke off\n")
 
 
 import colorama
@@ -557,7 +574,11 @@ def choosepokemon(player,enemy):
 
 def batalha(playerpokemon):
     while playerpokemon[0].hp>0 and playerpokemon[1].hp>0:  ## onde playerpokemon[0] é o pokemon do player e o playerpokemon[1] é o inimigo
-        choice=input("Are you going to Attack (1), Run (2) or Check Status on INSPERDEX(3):\n")
+        choice=input("Are you going to Attack (1), Run (2), Check Status on INSPERDEX(3) or try to catch it (4):\n")
+        if choice=="4":
+            playername.capture(playerpokemon[1])
+            restorelife(playerpokemon[0])
+            break
         if choice=="2":
             delay_print("You ran out of the battle...\n")
             restorelife(playerpokemon[0])
@@ -628,6 +649,7 @@ def batalha(playerpokemon):
 delay_print("New Game:(1)\n  Load  :(2)")
 game=input()
 while game not in ["1","2"]:
+    game=input()
     print("Type a valid command")
 
 if game=="1":
