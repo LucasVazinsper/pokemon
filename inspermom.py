@@ -1,6 +1,4 @@
 import random as rd
-#tipos de pokemon
-Tipos=["Normal","Fire","Water","Eletric","Grass","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Ghost","Rock","Dragon"]
 
 ########################################
 n=0                # lista de experiencia para cada level, onde n = level
@@ -926,6 +924,7 @@ class Pokemon:
 
             critical=rd.randrange(0,101)
             if critical <=10:
+                #10% de chance de um atraque ser critico
                 consolemessage+=("\nA critical hit!!!\n")
                 enemy.hp-=((self.attack(enemy)*2))*dmg
             else:
@@ -1012,14 +1011,6 @@ class Player():
         #metodo para registrar a insperdex
         self.insperdex[inspermon.dexn]="{}-{}:{}".format(inspermon.dexn,inspermon.name,(inspermon.type).capitalize())
         return
-
-
-
-numeros=[]
-for i in range(10):
-    numeros.append("{}".format(i))
-
-
 
 
 
