@@ -1,28 +1,21 @@
 import random as rd
-#tipos de pokemon
-Tipos=["Normal","Fire","Water","Eletric","Grass","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Ghost","Rock","Dragon"]
 
-
-n=0
+########################################
+n=0                # lista de experiencia para cada level, onde n = level
 exp_list=[]
 for i in range(1,101):
     n=n+1
     exp=0.8*(n)**3
     exp_list.append(int(exp))
 
-
+#########################################
 
 #Todos os pokemons do jogo
 import pickle
-pickle_in=open("pokemondata.pickle","rb")
-pickle_in2=open("pokemondata2.pickle","rb")
-pickle_in3=open("pokemondata3.pickle","rb")
+
+pickle_in=open("pokemondata.pickle","rb") #Carrega o dicionario com as informacoes de cada pokemon
 
 pokemondata=pickle.load(pickle_in)
-
-pokemondata2=pickle.load(pickle_in2)
-
-pokemondata3=pickle.load(pickle_in3)
 
 
 
@@ -30,23 +23,25 @@ class Pokemon:
     #classe para pokemons
 
     def __init__(self,pokemon,lvl):
+        self.floor=pokemon["floor"] #andar no qual cada pokemon pode aparecer
+        self.evolution=pokemon["evolution"] #nome da evolução
         self.all=pokemon #todos os atributos basicos do pokemon
-        self.ivhp=rd.randrange(1,32) #invisible value para a vida do pokemon (deixa todos os pokemons diferentes entre si)
-        self.ivatk=rd.randrange(1,32) #invisible value para a ataque do pokemon (deixa todos os pokemons diferentes entre si)
-        self.ivdeff=rd.randrange(1,32) #invisible value para a defesa do pokemon (deixa todos os pokemons diferentes entre si)
-        self.ivspd=rd.randrange(1,32) #invisible value para a velocidade do pokemon (deixa todos os pokemons diferentes entre si)
-        self.evolution=pokemon["lvlev"] #level que cada pokemon evolui
+        self.ivhp=rd.randrange(1,32) #individual value para a vida do pokemon (deixa todos os pokemons diferentes entre si)
+        self.ivatk=rd.randrange(1,32) #individual value para a ataque do pokemon (deixa todos os pokemons diferentes entre si)
+        self.ivdeff=rd.randrange(1,32) #individual  value para a defesa do pokemon (deixa todos os pokemons diferentes entre si)
+        self.ivspd=rd.randrange(1,32) #individual  value para a velocidade do pokemon (deixa todos os pokemons diferentes entre si)
+        self.lvlevolution=pokemon["lvlev"] #level que cada pokemon evolui
         self.basexp=pokemon["xp"] #experiencia base que cada pokemon fornece qnd é fainted "morto"
         self.name=pokemon["name"] #nome do Inspermon
         self.dexn=pokemon["dexn"] #numero da INSPERDEX
         self.type=pokemon["type"] #tipo do pokemon
         self.lvl=lvl #lvl do pokemon
-        self.hp=(((2*pokemon["hp"]+self.ivhp+(50/4))*lvl)/100)+lvl+10 #vida atual do pokemon
-        self.atk=(((2*pokemon["atk"]+self.ivatk+(50/4))*lvl)/100)+5 #ataque atual do pokemon
-        self.deff=(((2*pokemon["deff"]+self.ivdeff+(50/4))*lvl)/100)+5 #defesa atual do pokemon
-        self.spd=(((2*pokemon["spd"]+self.ivspd+(50/4))*lvl)/100)+5 #velocidade atual do pokemon
+        self.hp=(((2*pokemon["hp"]+self.ivhp+(50/4))*lvl)/100)+lvl+10 #equacao que gera a vida apartir da vida base
+        self.atk=(((2*pokemon["atk"]+self.ivatk+(50/4))*lvl)/100)+5 #equacao que gera a vida apartir do ataque base
+        self.deff=(((2*pokemon["deff"]+self.ivdeff+(50/4))*lvl)/100)+5 #equacao que gera a vida apartir da defesa base
+        self.spd=(((2*pokemon["spd"]+self.ivspd+(50/4))*lvl)/100)+5 #equacao que gera a velocidade apartir da velocidade base
         self.maxhp=(((2*pokemon["hp"]+self.ivhp+(50/4))*lvl)/100)+lvl+10 #vida máxima do pokemon
-        self.satk=pokemon["satk"] #ataque especial do pokemon
+        self.satk=pokemon["satk"] #poder do golpe que sera usado na equacao de dano
         self.exp=(4*(lvl**3))/5 #experiencia do pokemon
         self.attributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\nExperience:{}\n".format((self.type).capitalize(),self.lvl,int(self.maxhp),
                                                                                              (self.atk),int(self.deff),int(self.spd),int(self.exp))
@@ -59,7 +54,8 @@ class Pokemon:
     def damage(self,enemy): #dano do ataque do pokemon com vantagens/fraquezas
             effectiveness=[0,0.5,1,2] #dano efetivo recebido pelo pokemon(de acordo com as vantagens/fraquezas)
             dmg=effectiveness[2]
-            consolemessage=("It was effective")
+            consolemessage=("It was effective\n")
+
             if self.type=="normal"and enemy.type=="rock": #rock é resistente ao normal
                 consolemessage=("It's not very effective...")
                 dmg=effectiveness[1]
@@ -389,12 +385,24 @@ class Pokemon:
                 consolemessage=("It's super effective!!!")
                 dmg=effectiveness[3]
 
-            return [enemy.hp - (self.attack(enemy))*dmg,consolemessage]
+
+            critical=rd.randrange(0,101)
+            if critical <=10:
+                #10% de chance de um atraque ser critico
+                consolemessage+=("\nA critical hit!!!\n")
+                enemy.hp-=((self.attack(enemy)*2))*dmg
+            else:
+                enemy.hp-=(self.attack(enemy))*dmg
+
+            return delay_print("{}\n".format(consolemessage))
             #,consolemessage ##preciso melhorar a implementação, mas essa é a idea
                                                          #agr ja era fion.
 
 
+
+
     def lvlup(self,exp_list): #metodo para o pokemon passar de level
+        #lvlup(self,exp_list,evolution):
         new_level=0
         for valor in exp_list:
             if self.exp >= valor:
@@ -413,14 +421,42 @@ class Pokemon:
             self.maxhp=(((2*self.all["hp"]+self.ivhp+(50/4))*self.lvl)/100)+self.lvl+10 #vida máxima do pokemon
             self.attributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\nExperience:{}\n".format((self.type).capitalize(),self.lvl,int(self.maxhp),
                                                                                                  (self.atk),int(self.deff),int(self.spd),int(self.exp))
+            self.evolving(pokemondata[self.evolution])
 
 
 
     def expgain(self,enemy):
-        self.exp+=(enemy.basexp*enemy.lvl)/7
+        self.exp+=((enemy.basexp*enemy.lvl)/7)*100  #experiencia ganha multiplicada para passar de level mais rapido
         self.attributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\nExperience:{}\n".format((self.type).capitalize(),self.lvl,int(self.maxhp),
                                                                                              (self.atk),int(self.deff),int(self.spd),int(self.exp))
         return self.exp
+
+    def evolving(self,evolution):
+        #método de evolução para os pokemons
+        if self.lvl>=self.lvlevolution:
+            oldname=self.name
+            self.floor=evolution["floor"] #andar no qual cada pokemon pode aparecer
+            self.evolution=evolution["evolution"] #nome da evolução
+            self.lvlevolution=evolution["lvlev"] #level que cada pokemon evolui
+            self.all=evolution #todos os atributos basicos do pokemon
+            self.basexp=evolution["xp"] #experiencia base que cada pokemon fornece qnd é fainted "morto"
+            self.name=evolution["name"] #nome do Inspermon
+            self.dexn=evolution["dexn"] #numero da INSPERDEX
+            self.type=evolution["type"] #tipo do pokemon
+            self.hp=(((2*evolution["hp"]+self.ivhp+(50/4))*self.lvl)/100)+self.lvl+10 #vida atual do pokemon
+            self.atk=(((2*evolution["atk"]+self.ivatk+(50/4))*self.lvl)/100)+5 #ataque atual do pokemon
+            self.deff=(((2*evolution["deff"]+self.ivdeff+(50/4))*self.lvl)/100)+5 #defesa atual do pokemon
+            self.spd=(((2*evolution["spd"]+self.ivspd+(50/4))*self.lvl)/100)+5 #velocidade atual do pokemon
+            self.maxhp=(((2*evolution["hp"]+self.ivhp+(50/4))*self.lvl)/100)+self.lvl+10 #vida máxima do pokemon
+            self.satk=evolution["satk"] #ataque especial do pokemon
+            self.attributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\nExperience:{}\n".format((self.type).capitalize(),self.lvl,int(self.maxhp),
+                                                                                                 int(self.atk),int(self.deff),int(self.spd),int(self.exp))
+            playername.dexregister(self)
+            return delay_print("What?....\nYour Inspermon is evolving!!!!\nCongratulations! Your {} evolved into {}\n".format(oldname,self.name))
+
+
+
+
 
 
 class Player():
@@ -433,15 +469,20 @@ class Player():
 
 
     def dex(self,insperdex):
+        #metodo para a insperdex
         for i in insperdex:
             print(i)
 
-numeros=[]
-for i in range(10):
-    numeros.append("{}".format(i))
+    def dexregister(self,inspermon):
+        #metodo para registrar a insperdex
+        self.insperdex[inspermon.dexn]="{}-{}:{}".format(inspermon.dexn,inspermon.name,(inspermon.type).capitalize())
+        return
 
-
-
+    def savegame(self):
+        import pickle
+        pickle_out=open("dados.pickle","wb")
+        pickle.dump(self,pickle_out)
+        pickle_out.close()
 
 
 
@@ -456,100 +497,246 @@ def delay_print(s):
         sys.stdout.write( '%s' % c )
         sys.stdout.flush()
         time.sleep(0.001)
-delay_print("Welcome to the marvelous World of Inspermon")
-input()
-delay_print("You are at Proffesor Daniel's Inspermon Research lab\n")
 
-delay_print("\nHello there! Welcome to the world of INSPERMON! My name is Daniel! People call me the INSPERMON Prof!\n")
-input()
-delay_print("\nThis world is inhabited by creatures called INSPERMON!\n")
-input()
-delay_print("\nFor some people, INSPERMON are pets. Other use them for fights. Myself… I study INSPERMON as a profession.\n")
-input()
-delay_print("\nFirst, what is your name?")
-playername=input("\n")
-playername+=" Ketchum"
-delay_print("Right! So your name is {}!".format(playername.title()))
-delay_print("Are you a boy or a girl?\nboy:(1)\ngirl:(2)")
-boyorgirl=input("\n")
 
-while boyorgirl!="1" and boyorgirl!="2":
+
+
+def restorelife(playerpokemon):
+    delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
+    hp_potion=input()
+    if hp_potion=="1":
+        playerpokemon.hp=playerpokemon.maxhp
+        return delay_print("Your {} is healed!!!".format((playerpokemon.name)))
+
+
+def floorpokemons(floor,pokemondatabase):
+    pokemondict={}
+    for i in pokemondatabase.keys():
+        if (floor) in pokemondatabase[i]["floor"]:
+            pokemondict[i]=(pokemondatabase[i])
+
+    return pokemondict
+
+
+
+def pokemongenerator(floor):
+    if floor=="0":
+        lvlfloor=rd.randrange(1,6)
+    elif floor=="1":
+        lvlfloor=rd.randrange(5,20)
+    elif floor=="2":
+        lvlfloor=rd.randrange(20,31)
+    elif floor=="3":
+        lvlfloor=rd.randrange(30,41)
+    elif floor=="4":
+        lvlfloor=rd.randrange(40,51)
+
+    pokemon,attributes=rd.choice(list((floorpokemons(floor,pokemondata)).items()))
+    enemy=Pokemon(pokemondata[pokemon],lvlfloor)
+    return enemy
+
+
+def choosepokemon(player,enemy):
+    pokemongenerator(action)
+    delay_print("A wild {} Level:{} appears...\n".format(enemy.name,enemy.lvl))
+    playername.dexregister(enemy)
+    delay_print("The untamed {} was registered in your INSPERDEX\n".format(enemy.name))
+    delay_print("A battle is about to begin...\n")
+    delay_print("What pokemon do you want to use to battle?\n")
+    numeros=[]
+    for i in range(len(player.party)):
+        delay_print("For {} press ({}).\n".format(player.party[i].name,i))
+        numeros.append("{}".format(i))
+    choose=input()
+    while choose not in numeros:
+        print("Type a valid command\n")
+        choose=input()
+    return player.party[int(choose)],enemy
+
+
+
+def batalha(playerpokemon):
+    while playerpokemon[0].hp>0 and playerpokemon[1].hp>0:  ## onde playerpokemon[0] é o pokemon do player e o playerpokemon[1] é o inimigo
+        choice=input("Are you going to Attack (1), Run (2) or Check Status on INSPERDEX(3):\n")
+        if choice=="2":
+            delay_print("You ran out of the battle...\n")
+            restorelife(playerpokemon[0])
+            break
+        elif choice=="3":
+            print("Your {}\n{}\nWild {}\n{}\n".format((playerpokemon[0]).name,(playerpokemon[0]).attributes,playerpokemon[1].name,playerpokemon[1].attributes))
+        elif choice=="1" and (playerpokemon[0]).spd >= playerpokemon[1].spd:
+            delay_print("-------------------------------------------------------------------------\n\
+|Your {}'s Life:{} |                      |Wild {} Life:{}|\n\
+-------------------------------------------------------------------------\n".format((playerpokemon[0]).name,
+            int((playerpokemon[0]).hp),playerpokemon[1].name,int(playerpokemon[1].hp)))
+
+            delay_print("Your {} Attacked...\n".format((playerpokemon[0]).name))
+            ((playerpokemon[0]).damage(playerpokemon[1]))
+
+            if playerpokemon[1].hp<1:
+                delay_print("The enemy {} fainted...\nYou won!!!\n".format(playerpokemon[1].name))
+                (playerpokemon[0]).expgain(playerpokemon[1])
+                (playerpokemon[0]).lvlup(exp_list)
+                restorelife(playerpokemon[0])
+                break
+            delay_print("-------------------------------------------------------------------------\n\
+|Your {}'s Life:{} |                      |Wild {} Life:{}|\n\
+-------------------------------------------------------------------------\n".format((playerpokemon[0]).name,
+            int((playerpokemon[0]).hp),playerpokemon[1].name,int(playerpokemon[1].hp)))
+            delay_print("Wild {} Attacked...\n".format(playerpokemon[1].name))
+            (playerpokemon[1].damage(playerpokemon[0]))
+
+            delay_print("-------------------------------------------------------------------------\n\
+|Your {}'s Life:{} |                      |Wild {} Life:{}|\n\
+-------------------------------------------------------------------------\n".format((playerpokemon[0]).name,
+            int((playerpokemon[0]).hp),playerpokemon[1].name,int(playerpokemon[1].hp)))
+            if (playerpokemon[0]).hp<1:
+                delay_print("Your pokemon fainted...\nYou loose!!!\n")
+                restorelife(playerpokemon[0])
+                break
+
+        elif choice=="1" and (playerpokemon[0]).spd < playerpokemon[1].spd:
+            delay_print("-------------------------------------------------------------------------\n\
+|Your {}'s Life:{} |                      |Wild {} Life:{}|\n\
+-------------------------------------------------------------------------\n".format((playerpokemon[0]).name,
+            int((playerpokemon[0]).hp),playerpokemon[1].name,int(playerpokemon[1].hp)))
+            delay_print("Wild {} Attacked...\n".format(playerpokemon[1].name))
+            (playerpokemon[1].damage(playerpokemon[0]))
+
+            delay_print("-------------------------------------------------------------------------\n\
+|Your {}'s Life:{} |                      |Wild {} Life:{}|\n\
+-------------------------------------------------------------------------\n".format((playerpokemon[0]).name,
+            int((playerpokemon[0]).hp),playerpokemon[1].name,int(playerpokemon[1].hp)))
+            if (playerpokemon[0]).hp<1:
+                delay_print("Your pokemon fainted...\nYou loose!!!\n")
+                restorelife(playerpokemon[0])
+                break
+            delay_print("Your {} Attacked...\n".format((playerpokemon[0]).name))
+            ((playerpokemon[0]).damage(playerpokemon[1]))
+
+            delay_print("-------------------------------------------------------------------------\n\
+|Your {}'s Life:{} |                      |Wild {} Life:{}|\n\
+-------------------------------------------------------------------------\n".format((playerpokemon[0]).name,
+            int((playerpokemon[0]).hp),playerpokemon[1].name,int(playerpokemon[1].hp)))
+            if playerpokemon[1].hp<1:
+                delay_print("The enemy {} fainted...\nYou won!!!\n".format(playerpokemon[1].name))
+                (playerpokemon[0]).expgain(playerpokemon[1])
+                (playerpokemon[0]).lvlup(exp_list)
+                restorelife(playerpokemon[0])
+                break
+
+delay_print("New Game:(1)\n  Load  :(2)")
+game=input()
+while game not in ["1","2"]:
     print("Type a valid command")
+
+if game=="1":
+    delay_print("Welcome to the marvelous World of Inspermon")
+    input()
+    delay_print("You are at Proffesor Daniel's Inspermon Research lab\n")
+
+    delay_print("\n-Daniel:Hello there! Welcome to the world of INSPERMON! My name is Daniel! People call me the INSPERMON Prof!\n")
+    input()
+    delay_print("\n-Daniel:This world is inhabited by creatures called INSPERMON!\n")
+    input()
+    delay_print("\n-Daniel:For some people, INSPERMON are pets. Other use them for fights. Myself… I study INSPERMON as a profession.\n")
+    input()
+    delay_print("\n-Daniel:First, what is your name?\n")
+    playername=input("\n")
+    playername+=" Ketchum"
+    delay_print("-Daniel:Right! So your name is {}!".format(playername.title()))
+    delay_print("Are you a boy or a girl?\nboy:(1)\ngirl:(2)")
     boyorgirl=input("\n")
 
-delay_print("Well done {}.Let's get it started!".format(playername.title()))
-input()
-delay_print("First you have to get your new partner")
-input()
-delay_print("What do you prefer?")
-delay_print(Fore.GREEN+"\nGrass"+Fore.BLACK+":(1)")
-delay_print(Fore.RED+"\nFire"+Fore.BLACK+":(2)")
-delay_print(Fore.BLUE+"\nWater"+Fore.BLACK+":(3)")
-firstpokemon=input("\n")
+    while boyorgirl!="1" and boyorgirl!="2":
+        print("Type a valid command")
+        boyorgirl=input("\n")
 
-pokedexfull=list(pokemondata.items())
-
-if firstpokemon=="1":
-    Bulbasaur=Pokemon(pokemondata["bulbasaur"],5)
-    playername=Player(playername,Bulbasaur)
-    delay_print("Congratulations!!!\nBulbasaur is your new Inspermon\n")
-    delay_print(Bulbasaur.attributes)
-    playername.insperdex[Bulbasaur.dexn]="{}-{}:{}".format(Bulbasaur.dexn,Bulbasaur.name,Bulbasaur.type)
-elif firstpokemon=="3":
-    Squirtle=Pokemon(pokemondata["squirtle"],5)
-    playername=Player(playername,Squirtle)
-    delay_print("Congratulations!!!\nSquirtle is your new Inspermon\n")
-    delay_print(Squirtle.attributes)
-    playername.insperdex[Squirtle.dexn]="{}-{}:{}".format(Squirtle.dexn,Squirtle.name,Squirtle.type)
-elif firstpokemon=="2":
-    Charmander=Pokemon(pokemondata["charmander"],5)
-    playername=Player(playername,Charmander)
-    delay_print("Congratulations!!!\nCharmander is your new Inspermon\n")
-    delay_print(Charmander.attributes)
-    playername.insperdex[Charmander.dexn]="{}-{}:{}".format(Charmander.dexn,Charmander.name,Charmander.type)
-else:
-    playername=Player(playername,0)
-    playername.party=[]
-    delay_print("I'm sorry {}, but you have to choose your first Inspermon...\n".format((playername.name).title()))
+    delay_print("-Daniel:Well done {}.Let's get it started!\n".format(playername.title()))
+    input()
+    delay_print("-Daniel:First you have to get your new partner\n")
+    input()
+    delay_print("-Daniel:What do you prefer?")
     delay_print(Fore.GREEN+"\nGrass"+Fore.BLACK+":(1)")
     delay_print(Fore.RED+"\nFire"+Fore.BLACK+":(2)")
     delay_print(Fore.BLUE+"\nWater"+Fore.BLACK+":(3)")
-    firstpokemon2=input("\n")
-    if firstpokemon2=="1":
+    firstpokemon=input("\n")
+
+    pokedexfull=list(pokemondata.items())
+
+    if firstpokemon=="1":
         Bulbasaur=Pokemon(pokemondata["bulbasaur"],5)
         playername=Player(playername,Bulbasaur)
         delay_print("Congratulations!!!\nBulbasaur is your new Inspermon\n")
         delay_print(Bulbasaur.attributes)
-        playername.insperdex[Bulbasaur.dexn]="{}-{}:{}".format(Bulbasaur.dexn,Bulbasaur.name,Bulbasaur.type)
-    elif firstpokemon2=="3":
+        playername.dexregister(Bulbasaur)
+    elif firstpokemon=="3":
         Squirtle=Pokemon(pokemondata["squirtle"],5)
         playername=Player(playername,Squirtle)
         delay_print("Congratulations!!!\nSquirtle is your new Inspermon\n")
         delay_print(Squirtle.attributes)
-        playername.insperdex[Squirtle.dexn]="{}-{}:{}".format(Squirtle.dexn,Squirtle.name,Squirtle.type)
-
-    elif firstpokemon2=="2":
+        playername.dexregister(Squirtle)
+    elif firstpokemon=="2":
         Charmander=Pokemon(pokemondata["charmander"],5)
         playername=Player(playername,Charmander)
-        delay_print("Congratulations!!!\nSquirtle is your new Inspermon\n")
+        delay_print("Congratulations!!!\nCharmander is your new Inspermon\n")
         delay_print(Charmander.attributes)
-        playername.insperdex[Charmander.dexn]="{}-{}:{}".format(Charmander.dexn,Charmander.name,Charmander.type)
+        playername.dexregister(Charmander)
     else:
-        Pikachu=Pokemon(pokemondata2["pikachu"],10)
-        playername=Player(playername,Pikachu)
-        delay_print("Okay...\nYou win\nCongratulations Pikachu is your new INSPERMON\n")
-        delay_print(Pikachu.attributes)
-        playername.insperdex[Pikachu.dexn]="{}-{}:{}".format(Pikachu.dexn,Pikachu.name,Pikachu.type)
+        playername=Player(playername,0)
+        playername.party=[]
+        delay_print("I'm sorry {}, but you have to choose your first Inspermon...\n".format((playername.name).title()))
+        delay_print(Fore.GREEN+"\nGrass"+Fore.BLACK+":(1)")
+        delay_print(Fore.RED+"\nFire"+Fore.BLACK+":(2)")
+        delay_print(Fore.BLUE+"\nWater"+Fore.BLACK+":(3)")
+        firstpokemon2=input("\n")
+        if firstpokemon2=="1":
+            Bulbasaur=Pokemon(pokemondata["bulbasaur"],5)
+            playername=Player(playername,Bulbasaur)
+            delay_print("Congratulations!!!\nBulbasaur is your new Inspermon\n")
+            delay_print(Bulbasaur.attributes)
+            playername.dexregister(Bulbasaur)
+        elif firstpokemon2=="3":
+            Squirtle=Pokemon(pokemondata["squirtle"],5)
+            playername=Player(playername,Squirtle)
+            delay_print("Congratulations!!!\nSquirtle is your new Inspermon\n")
+            delay_print(Squirtle.attributes)
+            playername.dexregister(Squirtle)
+
+        elif firstpokemon2=="2":
+            Charmander=Pokemon(pokemondata["charmander"],5)
+            playername=Player(playername,Charmander)
+            delay_print("Congratulations!!!\nCharmander is your new Inspermon\n")
+            delay_print(Charmander.attributes)
+            playername.dexregister(Charmander)
+        else:
+            Pikachu=Pokemon(pokemondata["pikachu"],10)
+            playername=Player(playername,Pikachu)
+            delay_print("\nPIKA PIKA!!!\nOkay...\nYou win\nCongratulations Pikachu is your new INSPERMON\n")
+            delay_print(Pikachu.attributes)
+            playername.dexregister(Pikachu)
+
+    delay_print("\n-Daniel:To see information of your new INSPERMON, you can always use the INSPERDEX.It also can be used in battle for acquiring knowledge of yours enemies strength.\n\
+    Your very own INSPERMON legend is about to unfold!\nA world of dreams and adventures with INSPERMON awaits! Let's go!\n")
+
+if game=="2":
+    pickle_in=open("dados.pickle","rb")
+    playername=pickle.load(pickle_in)
+    delay_print("Your game has been loaded...\nWelcome Back!!!\n")
 
 
 
-delay_print("\nTo see information of your new INSPERMON, you can always use the INSPERDEX\n\
-Your very own INSPERMON legend is about to unfold!\nA world of dreams and adventures with INSPERMON awaits! Let's go!\n")
+
+
+
+
+
+
 while True:
     delay_print("You are now in the Insper's Labs\n\
 What do you want to do first??\n\
 ----------------------------------------------\n\
-Press (1) for walking around in the LAB\n\
+Press (1) to explore the Insper Building\n\
 ----------------------------------------------\n\
 Press (2) for saving the game\n\
 ----------------------------------------------\n\
@@ -558,7 +745,12 @@ Press (3) for looking at your INSPERDEX\n\
 Press (4) for sleeping\n")
     action=input()
     if action=="4":
+        delay_print("Good night.")
         break
+    if action=="2":
+        playername.savegame()
+
+
     if action=="3":
         print("/////////////////////////////////////////////////////////////")
         playername.dex(playername.insperdex)
@@ -579,467 +771,12 @@ Press (5) to exit walking around\n")
         action=input()
         if action=="5":
             continue
-        elif action=="0":
-            lvlfloor0=rd.randrange(1,6)
-            pokemon,attributes=rd.choice(list(pokemondata.items()))
-            enemy=Pokemon(pokemondata[pokemon],lvlfloor0)
-            message="A wild {} Level:{} appears...\n"
-            delay_print(message.format(enemy.name,lvlfloor0))
-            playername.insperdex[enemy.dexn]="{}-{}:{}".format(enemy.dexn,enemy.name,enemy.type)
-            delay_print("What pokemon do you want to use to battle?\n")
-            for i in range(len(playername.party)):
-                delay_print("{}({})".format(playername.party[i].name,i))
-            choose=input()
-            while choose not in numeros:
-                print("Type a valid command")
-                choose=input()
-            maxhp=(playername.party[int(choose)]).hp
-            while (playername.party[int(choose)]).hp>=0 and enemy.hp>=0:
-                choice=input("Are you going to Attack (1) or Run (2) or Check Status on INSPERDEX(3):")
-                if choice=="2":
-                    delay_print("You ran out of the battle...")
-                    delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
-                    hp_potion=input()
-                    if hp_potion=="1":
-                        (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
-                        delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
-                    break
-                if choice=="3":
-                    print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).attributes,enemy.name,enemy.attributes))
-                elif (playername.party[int(choose)]).spd > enemy.spd:
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    enemy.hp=((playername.party[int(choose)]).damage(enemy))[0]
-                    print(((playername.party[int(choose)]).damage(enemy))[1])
-                    if enemy.hp<=0:
-                        delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
-                        (playername.party[int(choose)]).expgain(enemy)
-                        (playername.party[int(choose)]).lvlup(exp_list)
-                        delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
-                        hp_potion=input()
-                        if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
-                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
-                        break
-
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (playername.party[int(choose)]).hp=(enemy.damage(playername.party[int(choose)]))[0]
-                    print((enemy.damage(playername.party[int(choose)]))[1])
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if (playername.party[int(choose)]).hp<=0:
-                        delay_print("Your pokemon fainted...\nYou loose!!!\n")
-                        delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
-                        hp_potion=input()
-                        if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
-                            delay_print("Your {} is healed!!!")
-                        break
-                elif (playername.party[int(choose)]).spd < enemy.spd:
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (playername.party[int(choose)]).hp=(enemy.damage(playername.party[int(choose)]))[0]
-                    print((enemy.damage(playername.party[int(choose)]))[1])
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if (playername.party[int(choose)]).hp<=0:
-                        delay_print("Your pokemon fainted...\nYou loose!!!\n")
-                        delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
-                        hp_potion=input()
-                        if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
-                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
-                        break
-                    delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    enemy.hp=((playername.party[int(choose)]).damage(enemy))[0]
-                    print(((playername.party[int(choose)]).damage(enemy))[1])
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if enemy.hp<=0:
-                        delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
-                        (playername.party[int(choose)]).expgain(enemy)
-                        (playername.party[int(choose)]).lvlup(exp_list)
-                        delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
-                        hp_potion=input()
-                        if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
-                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
-                        break
-
-        elif action=="1":
-            lvlfloor1=rd.randrange(5,20)
-            pokemon,attributes=rd.choice(list(pokemondata.items()))
-            enemy=Pokemon(pokemondata[pokemon],lvlfloor1)
-            message="A wild {} Level:{} appears...\n"
-            delay_print(message.format(enemy.name,lvlfloor1))
-            playername.insperdex[enemy.dexn]="{}-{}:{}".format(enemy.dexn,enemy.name,enemy.type)
-            delay_print("What pokemon do you want to use to battle?\n")
-            for i in range(len(playername.party)):
-                delay_print("{}({})".format(playername.party[i].name,i))
-            choose=input()
-            while choose not in numeros:
-                print("Type a valid command")
-                choose=input()
-            maxhp=(playername.party[int(choose)]).hp
-            while (playername.party[int(choose)]).hp>0 and enemy.hp>0:
-
-                choice=input("Are you going to Attack (1) or Run (2) or Check Status on INSPERDEX(3):")
-                if choice=="2":
-                    delay_print("You ran out of the battle...")
-                    delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
-                    hp_potion=input()
-                    if hp_potion=="1":
-                        (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
-                        delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
-                    break
-                if choice=="3":
-                    print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).attributes,enemy.name,enemy.attributes))
-                elif (playername.party[int(choose)]).spd > enemy.spd:
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    enemy.hp=((playername.party[int(choose)]).damage(enemy))[0]
-                    print(((playername.party[int(choose)]).damage(enemy))[1])
-                    if enemy.hp<=0:
-                        delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
-                        (playername.party[int(choose)]).exp+=(playername.party[int(choose)]).expgain(enemy)
-                        (playername.party[int(choose)]).lvlup(exp_list)
-                        delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
-                        hp_potion=input()
-                        if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
-                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
-                        break
-
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (playername.party[int(choose)]).hp=(enemy.damage(playername.party[int(choose)]))[0]
-                    print((enemy.damage(playername.party[int(choose)]))[1])
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if (playername.party[int(choose)]).hp<=0:
-                        delay_print("Your pokemon fainted...\nYou loose!!!\n")
-                        delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
-                        hp_potion=input()
-                        if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
-                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
-                        break
-                elif (playername.party[int(choose)]).spd < enemy.spd:
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (playername.party[int(choose)]).hp=(enemy.damage(playername.party[int(choose)]))[0]
-                    print((enemy.damage(playername.party[int(choose)]))[1])
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if (playername.party[int(choose)]).hp<=0:
-                        delay_print("Your pokemon fainted...\nYou loose!!!\n")
-                        delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
-                        hp_potion=input()
-                        if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
-                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
-                        break
-                    delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    enemy.hp=((playername.party[int(choose)]).damage(enemy))[0]
-                    print(((playername.party[int(choose)]).damage(enemy))[1])
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if enemy.hp<=0:
-                        delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
-                        (playername.party[int(choose)]).exp+=(playername.party[int(choose)]).expgain(enemy)
-                        (playername.party[int(choose)]).lvlup(exp_list)
-                        delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
-                        hp_potion=input()
-                        if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
-                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
-                        break
-
-
-        elif action=="2":
-            lvlfloor2=rd.randrange(20,31)
-            pokemon,attributes=rd.choice(list(pokemondata2.items()))
-            enemy=Pokemon(pokemondata2[pokemon],lvlfloor2)
-            message="A wild {} Level:{} appears...\n"
-            delay_print(message.format(enemy.name,lvlfloor2))
-            playername.insperdex[enemy.dexn]="{}-{}:{}".format(enemy.dexn,enemy.name,enemy.type)
-            delay_print("What pokemon do you want to use to battle?\n")
-            for i in range(len(playername.party)):
-                delay_print("{}({})".format(playername.party[i].name,i))
-            choose=input()
-            while choose not in numeros:
-                print("Type a valid command")
-                choose=input()
-            maxhp=(playername.party[int(choose)]).hp
-            while (playername.party[int(choose)]).hp>0 and enemy.hp>0:
-
-                choice=input("Are you going to Attack (1) or Run (2) or Check Status on INSPERDEX(3):")
-                if choice=="2":
-                    delay_print("You ran out of the battle...")
-                    delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
-                    hp_potion=input()
-                    if hp_potion=="1":
-                        (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
-                        delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
-                    break
-                if choice=="3":
-                    print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).attributes,enemy.name,enemy.attributes))
-                elif (playername.party[int(choose)]).spd > enemy.spd:
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    enemy.hp=((playername.party[int(choose)]).damage(enemy))[0]
-                    print(((playername.party[int(choose)]).damage(enemy))[1])
-                    if enemy.hp<=0:
-                        delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
-                        (playername.party[int(choose)]).exp+=(playername.party[int(choose)]).expgain(enemy)
-                        (playername.party[int(choose)]).lvlup(exp_list)
-                        delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
-                        hp_potion=input()
-                        if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
-                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
-                        break
-
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (playername.party[int(choose)]).hp=(enemy.damage(playername.party[int(choose)]))[0]
-                    print((enemy.damage(playername.party[int(choose)]))[1])
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if (playername.party[int(choose)]).hp<=0:
-                        delay_print("Your pokemon fainted...\nYou loose!!!\n")
-                        delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
-                        hp_potion=input()
-                        if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
-                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
-                        break
-                elif (playername.party[int(choose)]).spd < enemy.spd:
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (playername.party[int(choose)]).hp=(enemy.damage(playername.party[int(choose)]))[0]
-                    print((enemy.damage(playername.party[int(choose)]))[1])
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if (playername.party[int(choose)]).hp<=0:
-                        delay_print("Your pokemon fainted...\nYou loose!!!\n")
-                        delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
-                        hp_potion=input()
-                        if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
-                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
-                        break
-                    delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    enemy.hp=((playername.party[int(choose)]).damage(enemy))[0]
-                    print(((playername.party[int(choose)]).damage(enemy))[1])
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if enemy.hp<=0:
-                        delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
-                        (playername.party[int(choose)]).exp+=(playername.party[int(choose)]).expgain(enemy)
-                        (playername.party[int(choose)]).lvlup(exp_list)
-                        delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
-                        hp_potion=input()
-                        if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
-                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
-                        break
 
 
 
-        elif action=="3":
-            lvlfloor3=rd.randrange(30,41)
-            pokemon,attributes=rd.choice(list(pokemondata2.items()))
-            enemy=Pokemon(pokemondata2[pokemon],lvlfloor3)
-            message="A wild {} Level:{} appears...\n"
-            delay_print(message.format(enemy.name,lvlfloor3))
-            playername.insperdex[enemy.dexn]="{}-{}:{}".format(enemy.dexn,enemy.name,enemy.type)
-            delay_print("What pokemon do you want to use to battle?\n")
-            for i in range(len(playername.party)):
-                delay_print("{}({})".format(playername.party[i].name,i))
-            choose=input()
-            while choose not in numeros:
-                print("Type a valid command")
-                choose=input()
-            maxhp=(playername.party[int(choose)]).hp
-            while (playername.party[int(choose)]).hp>0 and enemy.hp>0:
-
-                choice=input("Are you going to Attack (1) or Run (2) or Check Status on INSPERDEX(3):")
-                if choice=="2":
-                    delay_print("You ran out of the battle...")
-                    delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
-                    hp_potion=input()
-                    if hp_potion=="1":
-                        (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
-                        delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
-                    break
-                if choice=="3":
-                    print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).attributes,enemy.name,enemy.attributes))
-                elif (playername.party[int(choose)]).spd > enemy.spd:
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    enemy.hp=((playername.party[int(choose)]).damage(enemy))[0]
-                    print(((playername.party[int(choose)]).damage(enemy))[1])
-                    if enemy.hp<=0:
-                        delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
-                        (playername.party[int(choose)]).exp+=(playername.party[int(choose)]).expgain(enemy)
-                        (playername.party[int(choose)]).lvlup(exp_list)
-                        delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
-                        hp_potion=input()
-                        if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
-                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
-                        break
-
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (playername.party[int(choose)]).hp=(enemy.damage(playername.party[int(choose)]))[0]
-                    print((enemy.damage(playername.party[int(choose)]))[1])
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if (playername.party[int(choose)]).hp<=0:
-                        delay_print("Your pokemon fainted...\nYou loose!!!\n")
-                        delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
-                        hp_potion=input()
-                        if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
-                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
-                        break
-                elif (playername.party[int(choose)]).spd < enemy.spd:
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (playername.party[int(choose)]).hp=(enemy.damage(playername.party[int(choose)]))[0]
-                    print((enemy.damage(playername.party[int(choose)]))[1])
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if (playername.party[int(choose)]).hp<=0:
-                        delay_print("Your pokemon fainted...\nYou loose!!!\n")
-                        delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
-                        hp_potion=input()
-                        if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
-                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
-                        break
-                    delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    enemy.hp=((playername.party[int(choose)]).damage(enemy))[0]
-                    print(((playername.party[int(choose)]).damage(enemy))[1])
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if enemy.hp<=0:
-                        delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
-                        (playername.party[int(choose)]).exp+=(playername.party[int(choose)]).expgain(enemy)
-                        (playername.party[int(choose)]).lvlup(exp_list)
-                        delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
-                        hp_potion=input()
-                        if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
-                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
-                        break
-
-
-
-
-        elif action=="4":
-            lvlfloor4=rd.randrange(40,51)
-            pokemon,attributes=rd.choice(list(pokemondata3.items()))
-            enemy=Pokemon(pokemondata3[pokemon],lvlfloor4)
-            message="A wild {} Level:{} appears...\n"
-            delay_print(message.format(enemy.name,lvlfloor4))
-            playername.insperdex[enemy.dexn]="{}-{}:{}".format(enemy.dexn,enemy.name,enemy.type)
-            delay_print("What pokemon do you want to use to battle?\n")
-            for i in range(len(playername.party)):
-                delay_print("{}({})".format(playername.party[i].name,i))
-            choose=input()
-            while choose not in numeros:
-                print("Type a valid command")
-                choose=input()
-            maxhp=(playername.party[int(choose)]).hp
-            while (playername.party[int(choose)]).hp>0 and enemy.hp>0:
-
-                choice=input("Are you going to Attack (1) or Run (2) or Check Status on INSPERDEX(3):")
-                if choice=="2":
-                    delay_print("You ran out of the battle...")
-                    delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
-                    hp_potion=input()
-                    if hp_potion=="1":
-                        (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
-                        delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
-                    break
-                if choice=="3":
-                    print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).attributes,enemy.name,enemy.attributes))
-                elif (playername.party[int(choose)]).spd > enemy.spd:
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    enemy.hp=((playername.party[int(choose)]).damage(enemy))[0]
-                    print(((playername.party[int(choose)]).damage(enemy))[1])
-                    if enemy.hp<=0:
-                        delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
-                        (playername.party[int(choose)]).exp+=(playername.party[int(choose)]).expgain(enemy)
-                        (playername.party[int(choose)]).lvlup(exp_list)
-                        delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
-                        hp_potion=input()
-                        if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
-                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
-                        break
-
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (playername.party[int(choose)]).hp=(enemy.damage(playername.party[int(choose)]))[0]
-                    print((enemy.damage(playername.party[int(choose)]))[1])
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if (playername.party[int(choose)]).hp<=0:
-                        delay_print("Your pokemon fainted...\nYou loose!!!\n")
-                        delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
-                        hp_potion=input()
-                        if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
-                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
-                        break
-                elif (playername.party[int(choose)]).spd < enemy.spd:
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (playername.party[int(choose)]).hp=(enemy.damage(playername.party[int(choose)]))[0]
-                    print((enemy.damage(playername.party[int(choose)]))[1])
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if (playername.party[int(choose)]).hp<=0:
-                        delay_print("Your pokemon fainted...\nYou loose!!!\n")
-                        delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
-                        hp_potion=input()
-                        if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
-                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
-                        break
-                    delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    enemy.hp=((playername.party[int(choose)]).damage(enemy))[0]
-                    print(((playername.party[int(choose)]).damage(enemy))[1])
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if enemy.hp<=0:
-                        delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
-                        (playername.party[int(choose)]).exp+=(playername.party[int(choose)]).expgain(enemy)
-                        (playername.party[int(choose)]).lvlup(exp_list)
-                        delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
-                        hp_potion=input()
-                        if hp_potion=="1":
-                            (playername.party[int(choose)]).hp=(playername.party[int(choose)]).maxhp
-                            delay_print("Your {} is healed!!!".format((playername.party[int(choose)]).name))
-                        break
+        else:
+            while action not in ["0","1","2","3","4","5"]:
+                delay_print("Type a valid command: \n")
+                action=input()
+            floorpokemons(action,pokemondata)
+            batalha(((choosepokemon(playername,(pokemongenerator(action))))))
