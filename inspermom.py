@@ -426,7 +426,7 @@ class Pokemon:
 
 
     def expgain(self,enemy):
-        self.exp+=((enemy.basexp*enemy.lvl)/7)*100  #experiencia ganha multiplicada para passar de level mais rapido
+        self.exp+=((enemy.basexp*enemy.lvl)/7)*1  #experiencia ganha multiplicada para passar de level mais rapido
         self.attributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\nExperience:{}\n".format((self.type).capitalize(),self.lvl,int(self.maxhp),
                                                                                              (self.atk),int(self.deff),int(self.spd),int(self.exp))
         return self.exp
@@ -463,9 +463,10 @@ class Player():
     #classe para o usuário
 
     def __init__(self,name,pokemon):
-        self.party=[pokemon]  #lista de todos os pokemons do player
+        self.party=[pokemon]  #lista com os pokemons do time do player (maximo de 6 pokemons)
         self.name="{}".format(name) #nome do jogador
         self.insperdex=["???"]*50 #numero da insperdex
+        self.box=[] #lista com todos os pokemons do player
 
 
     def dex(self,insperdex):
@@ -478,8 +479,29 @@ class Player():
         self.insperdex[inspermon.dexn]="{}-{}:{}".format(inspermon.dexn,inspermon.name,(inspermon.type).capitalize())
         return
 
+    def savegame(self):
+        # metodo para salvar o jogo
+        import pickle
+        pickle_out=open("dados.pickle","wb")
+        pickle.dump(self,pickle_out)
+        pickle_out.close()
 
 
+    def capture(self,pokemon):
+        #metodo para capturar o pokemon
+        chance=(100-(100*((pokemon.hp)/pokemon.maxhp)))
+        lucky=rd.randrange(0,101)
+        if lucky<=chance:
+            if len(self.party)>=6:
+                pokemon.hp=pokemon.maxhp
+                (self.box).append(pokemon)
+                delay_print("Your party is full, the new inspermon was moved to your box\n")
+            else:
+                pokemon.hp=pokemon.maxhp
+                (self.party).append(pokemon)
+            return delay_print("Congratulations!!!\nThe Wild {} was caught!!!\n".format(pokemon.name))
+        else:
+            delay_print("I'm sorry, the inspermon broke off\n")
 
 
 import colorama
@@ -552,7 +574,11 @@ def choosepokemon(player,enemy):
 
 def batalha(playerpokemon):
     while playerpokemon[0].hp>0 and playerpokemon[1].hp>0:  ## onde playerpokemon[0] é o pokemon do player e o playerpokemon[1] é o inimigo
-        choice=input("Are you going to Attack (1), Run (2) or Check Status on INSPERDEX(3):\n")
+        choice=input("Are you going to Attack (1), Run (2), Check Status on INSPERDEX(3) or try to catch it (4):\n")
+        if choice=="4":
+            playername.capture(playerpokemon[1])
+            restorelife(playerpokemon[0])
+            break
         if choice=="2":
             delay_print("You ran out of the battle...\n")
             restorelife(playerpokemon[0])
@@ -620,95 +646,113 @@ def batalha(playerpokemon):
                 restorelife(playerpokemon[0])
                 break
 
-delay_print("Welcome to the marvelous World of Inspermon")
-input()
-delay_print("You are at Proffesor Daniel's Inspermon Research lab\n")
-
-delay_print("\n-[Daniel]: Hello there! Welcome to the world of INSPERMON! My name is Daniel! People call me the INSPERMON Prof!\n")
-input()
-delay_print("\n-[Daniel]: This world is inhabited by creatures called INSPERMON!\n")
-input()
-delay_print("\n-[Daniel]: For some people, INSPERMON are pets. Other use them for fights. Myself… I study INSPERMON as a profession.\n")
-input()
-delay_print("\n-[Daniel]: First, what is your name?\n")
-playername=input("\n")
-playername+=" Ketchum"
-delay_print("-[Daniel]: Right! So your name is {}!".format(playername.title()))
-delay_print("Are you a boy or a girl?\nBoy:(1)\nGirl:(2)")
-boyorgirl=input("\n")
-
-while boyorgirl!="1" and boyorgirl!="2":
+delay_print("New Game:(1)\n  Load  :(2)")
+game=input()
+while game not in ["1","2"]:
+    game=input()
     print("Type a valid command")
+
+if game=="1":
+    delay_print("Welcome to the marvelous World of Inspermon")
+    input()
+    delay_print("You are at Proffesor Daniel's Inspermon Research lab\n")
+
+    delay_print("\n-Daniel:Hello there! Welcome to the world of INSPERMON! My name is Daniel! People call me the INSPERMON Prof!\n")
+    input()
+    delay_print("\n-Daniel:This world is inhabited by creatures called INSPERMON!\n")
+    input()
+    delay_print("\n-Daniel:For some people, INSPERMON are pets. Other use them for fights. Myself… I study INSPERMON as a profession.\n")
+    input()
+    delay_print("\n-Daniel:First, what is your name?\n")
+    playername=input("\n")
+    playername+=" Ketchum"
+    delay_print("-Daniel:Right! So your name is {}!".format(playername.title()))
+    delay_print("Are you a boy or a girl?\nboy:(1)\ngirl:(2)")
     boyorgirl=input("\n")
 
-delay_print("-[Daniel]: Well done {}.Let's get it started!\n".format(playername.title()))
-input()
-delay_print("-[Daniel]: First you have to get your new partner\n")
-input()
-delay_print("-[Daniel]: What do you prefer?")
-delay_print(Fore.GREEN+"\nGrass"+Fore.BLACK+":(1)")
-delay_print(Fore.RED+"\nFire"+Fore.BLACK+":(2)")
-delay_print(Fore.BLUE+"\nWater"+Fore.BLACK+":(3)")
-firstpokemon=input("\n")
+    while boyorgirl!="1" and boyorgirl!="2":
+        print("Type a valid command")
+        boyorgirl=input("\n")
 
-pokedexfull=list(pokemondata.items())
-
-if firstpokemon=="1":
-    Bulbasaur=Pokemon(pokemondata["bulbasaur"],5)
-    playername=Player(playername,Bulbasaur)
-    delay_print("Congratulations!!!\nBulbasaur is your new Inspermon\n")
-    delay_print(Bulbasaur.attributes)
-    playername.dexregister(Bulbasaur)
-elif firstpokemon=="3":
-    Squirtle=Pokemon(pokemondata["squirtle"],5)
-    playername=Player(playername,Squirtle)
-    delay_print("Congratulations!!!\nSquirtle is your new Inspermon\n")
-    delay_print(Squirtle.attributes)
-    playername.dexregister(Squirtle)
-elif firstpokemon=="2":
-    Charmander=Pokemon(pokemondata["charmander"],5)
-    playername=Player(playername,Charmander)
-    delay_print("Congratulations!!!\nCharmander is your new Inspermon\n")
-    delay_print(Charmander.attributes)
-    playername.dexregister(Charmander)
-else:
-    playername=Player(playername,0)
-    playername.party=[]
-    delay_print("I'm sorry {}, but you have to choose your first Inspermon...\n".format((playername.name).title()))
+    delay_print("-Daniel:Well done {}.Let's get it started!\n".format(playername.title()))
+    input()
+    delay_print("-Daniel:First you have to get your new partner\n")
+    input()
+    delay_print("-Daniel:What do you prefer?")
     delay_print(Fore.GREEN+"\nGrass"+Fore.BLACK+":(1)")
     delay_print(Fore.RED+"\nFire"+Fore.BLACK+":(2)")
     delay_print(Fore.BLUE+"\nWater"+Fore.BLACK+":(3)")
-    firstpokemon2=input("\n")
-    if firstpokemon2=="1":
+    firstpokemon=input("\n")
+
+    pokedexfull=list(pokemondata.items())
+
+    if firstpokemon=="1":
         Bulbasaur=Pokemon(pokemondata["bulbasaur"],5)
         playername=Player(playername,Bulbasaur)
         delay_print("Congratulations!!!\nBulbasaur is your new Inspermon\n")
         delay_print(Bulbasaur.attributes)
         playername.dexregister(Bulbasaur)
-    elif firstpokemon2=="3":
+    elif firstpokemon=="3":
         Squirtle=Pokemon(pokemondata["squirtle"],5)
         playername=Player(playername,Squirtle)
         delay_print("Congratulations!!!\nSquirtle is your new Inspermon\n")
         delay_print(Squirtle.attributes)
         playername.dexregister(Squirtle)
-
-    elif firstpokemon2=="2":
+    elif firstpokemon=="2":
         Charmander=Pokemon(pokemondata["charmander"],5)
         playername=Player(playername,Charmander)
         delay_print("Congratulations!!!\nCharmander is your new Inspermon\n")
         delay_print(Charmander.attributes)
         playername.dexregister(Charmander)
     else:
-        Pikachu=Pokemon(pokemondata["pikachu"],10)
-        playername=Player(playername,Pikachu)
-        delay_print("\nPIKA PIKA!!!\nOkay...\nYou win\nCongratulations Pikachu is your new INSPERMON\n")
-        delay_print(Pikachu.attributes)
-        playername.dexregister(Pikachu)
+        playername=Player(playername,0)
+        playername.party=[]
+        delay_print("I'm sorry {}, but you have to choose your first Inspermon...\n".format((playername.name).title()))
+        delay_print(Fore.GREEN+"\nGrass"+Fore.BLACK+":(1)")
+        delay_print(Fore.RED+"\nFire"+Fore.BLACK+":(2)")
+        delay_print(Fore.BLUE+"\nWater"+Fore.BLACK+":(3)")
+        firstpokemon2=input("\n")
+        if firstpokemon2=="1":
+            Bulbasaur=Pokemon(pokemondata["bulbasaur"],5)
+            playername=Player(playername,Bulbasaur)
+            delay_print("Congratulations!!!\nBulbasaur is your new Inspermon\n")
+            delay_print(Bulbasaur.attributes)
+            playername.dexregister(Bulbasaur)
+        elif firstpokemon2=="3":
+            Squirtle=Pokemon(pokemondata["squirtle"],5)
+            playername=Player(playername,Squirtle)
+            delay_print("Congratulations!!!\nSquirtle is your new Inspermon\n")
+            delay_print(Squirtle.attributes)
+            playername.dexregister(Squirtle)
+
+        elif firstpokemon2=="2":
+            Charmander=Pokemon(pokemondata["charmander"],5)
+            playername=Player(playername,Charmander)
+            delay_print("Congratulations!!!\nCharmander is your new Inspermon\n")
+            delay_print(Charmander.attributes)
+            playername.dexregister(Charmander)
+        else:
+            Pikachu=Pokemon(pokemondata["pikachu"],10)
+            playername=Player(playername,Pikachu)
+            delay_print("\nPIKA PIKA!!!\nOkay...\nYou win\nCongratulations Pikachu is your new INSPERMON\n")
+            delay_print(Pikachu.attributes)
+            playername.dexregister(Pikachu)
+
+    delay_print("\n-Daniel:To see information of your new INSPERMON, you can always use the INSPERDEX.It also can be used in battle for acquiring knowledge of yours enemies strength.\n\
+    Your very own INSPERMON legend is about to unfold!\nA world of dreams and adventures with INSPERMON awaits! Let's go!\n")
+
+if game=="2":
+    pickle_in=open("dados.pickle","rb")
+    playername=pickle.load(pickle_in)
+    delay_print("Your game has been loaded...\nWelcome Back!!!\n")
 
 
 
-delay_print("\n-[Daniel]: To see information of your new INSPERMON, you can always use the INSPERDEX.It also can be used in battle for acquiring knowledge of yours enemies strength.\n\
-Your very own INSPERMON legend is about to unfold!\nA world of dreams and adventures with INSPERMON awaits! Let's go!\n")
+
+
+
+
+
 
 while True:
     delay_print("You are now in the Insper's Labs\n\
@@ -725,6 +769,10 @@ Press (4) for sleeping\n")
     if action=="4":
         delay_print("Good night.")
         break
+    if action=="2":
+        playername.savegame()
+
+
     if action=="3":
         print("/////////////////////////////////////////////////////////////")
         playername.dex(playername.insperdex)
