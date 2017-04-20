@@ -624,28 +624,28 @@ delay_print("Welcome to the marvelous World of Inspermon")
 input()
 delay_print("You are at Proffesor Daniel's Inspermon Research lab\n")
 
-delay_print("\n-Daniel:Hello there! Welcome to the world of INSPERMON! My name is Daniel! People call me the INSPERMON Prof!\n")
+delay_print("\n-[Daniel]: Hello there! Welcome to the world of INSPERMON! My name is Daniel! People call me the INSPERMON Prof!\n")
 input()
-delay_print("\n-Daniel:This world is inhabited by creatures called INSPERMON!\n")
+delay_print("\n-[Daniel]: This world is inhabited by creatures called INSPERMON!\n")
 input()
-delay_print("\n-Daniel:For some people, INSPERMON are pets. Other use them for fights. Myself… I study INSPERMON as a profession.\n")
+delay_print("\n-[Daniel]: For some people, INSPERMON are pets. Other use them for fights. Myself… I study INSPERMON as a profession.\n")
 input()
-delay_print("\n-Daniel:First, what is your name?\n")
+delay_print("\n-[Daniel]: First, what is your name?\n")
 playername=input("\n")
 playername+=" Ketchum"
-delay_print("-Daniel:Right! So your name is {}!".format(playername.title()))
-delay_print("Are you a boy or a girl?\nboy:(1)\ngirl:(2)")
+delay_print("-[Daniel]: Right! So your name is {}!".format(playername.title()))
+delay_print("Are you a boy or a girl?\nBoy:(1)\nGirl:(2)")
 boyorgirl=input("\n")
 
 while boyorgirl!="1" and boyorgirl!="2":
     print("Type a valid command")
     boyorgirl=input("\n")
 
-delay_print("-Daniel:Well done {}.Let's get it started!\n".format(playername.title()))
+delay_print("-[Daniel]: Well done {}.Let's get it started!\n".format(playername.title()))
 input()
-delay_print("-Daniel:First you have to get your new partner\n")
+delay_print("-[Daniel]: First you have to get your new partner\n")
 input()
-delay_print("-Daniel:What do you prefer?")
+delay_print("-[Daniel]: What do you prefer?")
 delay_print(Fore.GREEN+"\nGrass"+Fore.BLACK+":(1)")
 delay_print(Fore.RED+"\nFire"+Fore.BLACK+":(2)")
 delay_print(Fore.BLUE+"\nWater"+Fore.BLACK+":(3)")
@@ -707,7 +707,7 @@ else:
 
 
 
-delay_print("\n-Daniel:To see information of your new INSPERMON, you can always use the INSPERDEX.It also can be used in battle for acquiring knowledge of yours enemies strength.\n\
+delay_print("\n-[Daniel]: To see information of your new INSPERMON, you can always use the INSPERDEX.It also can be used in battle for acquiring knowledge of yours enemies strength.\n\
 Your very own INSPERMON legend is about to unfold!\nA world of dreams and adventures with INSPERMON awaits! Let's go!\n")
 
 while True:
