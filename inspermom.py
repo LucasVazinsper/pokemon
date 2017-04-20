@@ -2,15 +2,15 @@ import random as rd
 #tipos de pokemon
 Tipos=["Normal","Fire","Water","Eletric","Grass","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Ghost","Rock","Dragon"]
 
-
-n=0
+########################################
+n=0                # lista de experiencia para cada level, onde n = level
 exp_list=[]
 for i in range(1,101):
     n=n+1
     exp=0.8*(n)**3
     exp_list.append(int(exp))
 
-
+#########################################
 
 #Todos os pokemons do jogo
 pokemondata={"bulbasaur":{"type":"grass",
@@ -21,8 +21,8 @@ pokemondata={"bulbasaur":{"type":"grass",
 					"deff":49,
 					"spd":40,
                     "xp":64,
-                    "lvlev":7,
-                    "floor":[0,1],
+                    "lvlev":16,
+                    "floor":["0","1"],
                     "evolution":"ivysaur",
 					"satk":40},
 	"charmander":{"type":"fire",
@@ -33,9 +33,9 @@ pokemondata={"bulbasaur":{"type":"grass",
 					"deff":43,
 					"spd":65,
                     "xp":62,
-                    "lvlev":7,
-                    "floor":[0,1],
-                    "evolution":"charmander",
+                    "lvlev":16,
+                    "floor":["0","1"],
+                    "evolution":"charmeleon",
 					"satk":40},
 	"squirtle":{"type":"water",
                   "name":"Squirtle",
@@ -46,7 +46,7 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "spd":43,
                   "xp":63,
                   "lvlev":16,
-                  "floor":[0,1],
+                  "floor":["0","1"],
                   "evolution":"wartortle",
 				  "satk":40},
 	"caterpie":{"type":"bug",
@@ -58,7 +58,7 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "spd":45,
                   "xp":39,
                   "lvlev":7,
-                  "floor":[0,1],
+                  "floor":["0","1"],
                   "evolution":"metapode",
 				  "satk":40},
 	"pidgey":{"type":"flying",
@@ -70,7 +70,7 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "spd":56,
                   "xp":50,
                   "lvlev":18,
-                  "floor":[0,1],
+                  "floor":["0","1"],
                   "evolution":"pidgeotto",
 				  "satk":40},
 	"pichu":{"type":"eletric",
@@ -82,7 +82,7 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "spd":60,
                   "xp":41,
                   "lvlev":10,
-                  "floor":[0,1],
+                  "floor":["0","1"],
                   "evolution":"pikachu",
 				  "satk":40},
 	"abra":{"type":"psychic",
@@ -94,7 +94,7 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "spd":90,
                   "xp":62,
                   "lvlev":16,
-                  "floor":[0,1],
+                  "floor":["0","1"],
                   "evolution":"kadabra",
 				  "satk":40},
 	"machop":{"type":"fighting",
@@ -106,7 +106,7 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "spd":35,
                   "xp":61,
                   "lvlev":28,
-                  "floor":[0,1],
+                  "floor":["0","1"],
                   "evolution":"machoke",
 				  "satk":40},
 	"gastly":{"type":"ghost",
@@ -118,7 +118,7 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "spd":80,
                   "xp":62,
                   "lvlev":25,
-                  "floor":[0,1],
+                  "floor":["0","1"],
                   "evolution":"haunter",
 				  "satk":40},
 	"grimer":{"type":"poison",
@@ -130,7 +130,7 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "spd":25,
                   "xp":65,
                   "lvlev":38,
-                  "floor":[0,1],
+                  "floor":["0","1"],
                   "evolution":"muk",
 				  "satk":40},
 	"rhyhorn":{"type":"rock",
@@ -142,7 +142,7 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "spd":25,
                   "xp":69,
                   "lvlev":42,
-                  "floor":[0,1],
+                  "floor":["0","1"],
                   "evolution":"rhydon",
 				  "satk":50},
 	"dratini":{"type":"dragon",
@@ -154,7 +154,7 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "spd":50,
                   "xp":60,
                   "lvlev":42,
-                  "floor":[0,1],
+                  "floor":["0","1"],
                   "evolution":"dragonair",
 				  "satk":40},
 	"bergmite":{"type":"ice",
@@ -166,7 +166,7 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "spd":28,
                   "xp":61,
                   "lvlev":37,
-                  "floor":[0,1],
+                  "floor":["0","1"],
                   "evolution":"avalugg",
 				  "satk":55},
 	"sandile":{"type":"ground",
@@ -178,7 +178,7 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "spd":65,
                   "xp":58,
                   "lvlev":29,
-                  "floor":[0,1],
+                  "floor":["0","1"],
                   "evolution":"krokorok",
 				  "satk":40},
 	"meowth":{"type":"normal",
@@ -190,381 +190,369 @@ pokemondata={"bulbasaur":{"type":"grass",
 				  "spd":90,
                   "xp":58,
                   "lvlev":28,
-                  "floor":[0,1],
+                  "floor":["0","1"],
                   "evolution":"persian",
-				  "satk":40}}
-
-
-
-
-
-
-
-
-pokemondata2={"ivysaur":{"type":"grass",
-                    "name":"Ivysaur",
-					"dexn":1,
-					"hp":60,
-					"atk":80,
-					"deff":80,
-					"spd":60,
-                    "xp":142,
-                    "lvlev":35,
-                    "floor":[2,3],
-                    "evolution":"venusaur",
-					"satk":70},
-	"charmeleon":{"type":"fire",
-                    "name":"Charmeleon",
-				    "dexn":4,
-					"hp":58,
-					"atk":80,
-					"deff":65,
-					"spd":80,
-                    "xp":142,
-                    "lvlev":36,
-                    "floor":[2,3],
-                    "evolution":"charizard",
-					"satk":70},
-	"wartortle":{"type":"water",
-                  "name":"Wartortle",
-				  "dexn":7,
-				  "hp":59,
-                  "atk":65,
-				  "deff":80,
-				  "spd":58,
-                  "xp":142,
-                  "lvlev":36,
-                  "floor":[2,3],
-                  "evolution":"blastoise",
-				  "satk":70},
-	"metapode":{"type":"bug",
-                  "name":"Metapode",
-				  "dexn":10,
-				  "hp":50,
-				  "atk":25,
-				  "deff":55,
-				  "spd":30,
-                  "xp":72,
-                  "lvlev":11,
-                  "floor":[2,3],
-                  "evolution":"butterfree",
-				  "satk":70},
-	"pidgeotto":{"type":"flying",
-                  "name":"Pidgeotto",
-				  "dexn":13,
-				  "hp":63,
-				  "atk":60,
-				  "deff":55,
-				  "spd":71,
-                  "xp":122,
-                  "lvlev":36,
-                  "floor":[2,3],
-                  "evolution":"pidgeot",
-				  "satk":70},
-	"pikachu":{"type":"eletric",
-                "name":"Pikachu",
-				  "dexn":16,
-				  "hp":35,
-				  "atk":50,
-				  "deff":50,
-				  "spd":90,
-                  "xp":122,
-                  "lvlev":30,
-                  "floor":[2,3],
-                  "evolution":"raichu",
-				  "satk":70},
-	"kadabra":{"Type":"psychic",
-                  "name":"Kadabra",
-				  "dexn":19,
-				  "hp":40,
-				  "atk":120,
-				  "deff":70,
-				  "spd":105,
-                  "xp":140,
-                  "lvlev":40,
-                  "floor":[2,3],
-                  "evolution":"alakazam",
 				  "satk":40},
-	"machoke":{"type":"fighting",
-                  "name":"Machoke",
-				  "dexn":22,
-				  "hp":80,
-				  "atk":100,
-				  "deff":70,
-				  "spd":45,
-                  "xp":142,
-                  "lvlev":40,
-                  "floor":[2,3],
-                  "evolution":"machamp",
-				  "satk":40},
-	"haunter":{"type":"ghost",
-                  "name":"Haunter",
-				  "dexn":25,
-				  "hp":45,
-				  "atk":115,
-				  "deff":55,
-				  "spd":95,
-                  "xp":142,
-                  "lvlev":40,
-                  "floor":[2,3],
-                  "evolution":"gengar",
-				  "satk":70},
-	"muk":{"type":"poison",
-                  "name":"Muk",
-				  "dexn":28,
-				  "hp":80,
-				  "atk":80,
-				  "deff":50,
-				  "spd":25,
-                  "xp":175,
-                  "lvlev":101,
-                  "floor":[2,3],
-                  "evolution":"abra",
-				  "satk":40},
-	"rhyhorn":{"type":"rock",
-                  "name":"Rhyhorn",
-				  "dexn":29,
-				  "hp":80,
-				  "atk":85,
-				  "deff":95,
-				  "spd":25,
-                  "xp":69,
-                  "lvlev":42,
-                  "floor":[2,3],
-                  "evolution":"rhydon",
-				  "satk":50},
-	"dragonair":{"type":"dragon",
-                  "name":"Dragonair",
-				  "dexn":32,
-				  "hp":61,
-				  "atk":84,
-				  "deff":70,
-				  "spd":70,
-                  "xp":147,
-                  "lvlev":55,
-                  "floor":[2,3],
-                  "evolution":"dragonite",
-				  "satk":70},
-	"krokorok":{"type":"ground",
-                  "name":"Krokorok",
-				  "dexn":37,
-				  "hp":60,
-				  "atk":82,
-				  "deff":45,
-				  "spd":74,
-                  "xp":123,
-                  "lvlev":40,
-                  "floor":[2,3],
-                  "evolution":"krookodile",
-				  "satk":70},
-	"persian":{"type":"normal",
-                  "name":"Persian",
-				  "dexn":40,
-				  "hp":65,
-				  "atk":70,
-				  "deff":65,
-				  "spd":115,
-                  "xp":154,
-                  "lvlev":101,
-                  "floor":[2,3],
-                  "evolution":"abra",
-				  "satk":80}}
-
-
-
-
-pokemondata3={"venusaur":{"type":"grass",
-                    "name":"Venusaur",
-                    "dexn":2,
-					"hp":80,
-					"atk":122,
-					"deff":123,
-					"spd":80,
-                    "xp":281,
-                    "lvlev":101,
-                    "floor":[3,4],
-                    "evolution":"abra",
-					"satk":90},
-	"charizard":{"type":"fire",
-                    "name":"Charizard",
-                    "dexn":5,
-                    "hp":78,
-					"atk":109,
-					"deff":85,
-					"spd":100,
-                    "xp":240,
-                    "lvlev":101,
-                    "floor":[3,4],
-                    "evolution":"abra",
-					"satk":90},
-	"blastoise":{"type":"water",
-                  "name":"Blastoise",
-                  "dexn":8,
-                  "hp":79,
-                  "atk":85,
-				  "deff":105,
-				  "spd":78,
-                  "xp":239,
-                  "lvlev":101,
-                  "floor":[3,4],
-                  "evolution":"abra",
-				  "satk":90},
-	"butterfree":{"type":"bug",
-                  "name":"Butterfree",
-                  "dexn":11,
-                  "hp":60,
-				  "atk":90,
-				  "deff":80,
-				  "spd":70,
-                  "xp":178,
-                  "lvlev":101,
-                  "floor":[3,4],
-                  "evolution":"abra",
-				  "satk":90},
-	"pidgeot":{"type":"flying",
-                  "name":"Pidgeot",
-                  "dexn":14,
-                  "hp":83,
-				  "atk":80,
-				  "deff":75,
-				  "spd":101,
-                  "xp":216,
-                  "lvlev":101,
-                  "floor":[3,4],
-                  "evolution":"abra",
-				  "satk":90},
-	"raichu":{"type":"eletric",
-                  "name":"Raichu",
-                  "dexn":17,
-                  "hp":60,
-				  "atk":95,
-				  "deff":85,
-				  "spd":110,
-                  "xp":218,
-                  "lvlev":101,
-                  "floor":[3,4],
-                  "evolution":"abra",
-				  "satk":90},
-	"alakazam":{"Type":"psychic",
-                  "name":"Alakazam",
-                  "dexn":20,
-                  "hp":55,
-				  "atk":135,
-				  "deff":70,
-				  "spd":120,
-                  "xp":225,
-                  "lvlev":101,
-                  "floor":[3,4],
-                  "evolution":"abra",
-				  "satk":90},
-	"machamp":{"type":"fighting",
-                  "name":"Machamp",
-                  "dexn":23,
-                  "hp":90,
-				  "atk":130,
-				  "deff":85,
-				  "spd":55,
-                  "xp":227,
-                  "lvlev":101,
-                  "floor":[3,4],
-                  "evolution":"abra",
-				  "satk":90},
-	"gengar":{"type":"ghost",
-                  "name":"Gengar",
-                  "dexn":26,
-                  "hp":60,
-				  "atk":130,
-				  "deff":75,
-				  "spd":110,
-                  "xp":225,
-                  "lvlev":101,
-                  "floor":[3,4],
-                  "evolution":"abra",
-				  "satk":110},
-	"muk":{"type":"poison",
-                  "name":"Muk",
-                  "dexn":28,
-                  "hp":105,
-				  "atk":105,
-				  "deff":100,
-				  "spd":50,
-                  "xp":175,
-                  "lvlev":101,
-                  "floor":[3,4],
-                  "evolution":"abra",
-				  "satk":90},
-	"rhydon":{"type":"rock",
-                  "name":"Rhydon",
-                  "dexn":30,
-                  "hp":105,
-				  "atk":130,
-				  "deff":120,
-				  "spd":40,
-                  "xp":170,
-                  "lvlev":101,
-                  "floor":[3,4],
-                  "evolution":"abra",
-				  "satk":90},
-	"dragonite":{"type":"dragon",
-                  "name":"Dragonite",
-                  "dexn":33,
-                  "hp":91,
-				  "atk":134,
-				  "deff":100,
-				  "spd":80,
-                  "xp":270,
-                  "lvlev":101,
-                  "floor":[3,4],
-                  "evolution":"abra",
-				  "satk":90},
-	"avalugg":{"type":"ice",
-                  "name":"Avalugg",
-                  "dexn":35,
-                  "hp":95,
-				  "atk":117,
-				  "deff":184,
-				  "spd":28,
-                  "xp":180,
-                  "lvlev":101,
-                  "floor":[3,4],
-                  "evolution":"abra",
-				  "satk":90},
-	"krookodile":{"type":"ground",
-                  "name":"Krookodile",
-                  "dexn":38,
-                  "hp":95,
-				  "atk":117,
-				  "deff":80,
-				  "spd":92,
-                  "xp":234,
-                  "lvlev":101,
-                  "floor":[3,4],
-                  "evolution":"abra",
-				  "satk":90},
-	"persian":{"type":"normal",
-                  "name":"Persian",
-                  "dexn":40,
-                  "hp":65,
-				  "atk":70,
-				  "deff":65,
-				  "spd":115,
-                  "xp":154,
-                  "lvlev":101,
-                  "floor":[3,4],
-                  "evolution":"abra",
-				  "satk":80},
-    "snorlax":{"type":"normal",
-                  "name":"Snorlax",
-                  "dexn":41,
-                  "hp":160,
-              	  "atk":110,
-              	  "deff":65,
-              	  "spd":30,
-                  "xp":189,
-                  "lvlev":101,
-                  "floor":[3,4],
-                  "evolution":"abra",
-              	  "satk":90}}
+	"ivysaur":{"type":"grass",
+	                    "name":"Ivysaur",
+						"dexn":1,
+						"hp":60,
+						"atk":80,
+						"deff":80,
+						"spd":60,
+	                    "xp":142,
+	                    "lvlev":35,
+	                    "floor":["2","3"],
+	                    "evolution":"venusaur",
+						"satk":70},
+		"charmeleon":{"type":"fire",
+	                    "name":"Charmeleon",
+					    "dexn":4,
+						"hp":58,
+						"atk":80,
+						"deff":65,
+						"spd":80,
+	                    "xp":142,
+	                    "lvlev":36,
+	                    "floor":["2","3"],
+	                    "evolution":"charizard",
+						"satk":70},
+		"wartortle":{"type":"water",
+	                  "name":"Wartortle",
+					  "dexn":7,
+					  "hp":59,
+	                  "atk":65,
+					  "deff":80,
+					  "spd":58,
+	                  "xp":142,
+	                  "lvlev":36,
+	                  "floor":["2","3"],
+	                  "evolution":"blastoise",
+					  "satk":70},
+		"metapode":{"type":"bug",
+	                  "name":"Metapode",
+					  "dexn":10,
+					  "hp":50,
+					  "atk":25,
+					  "deff":55,
+					  "spd":30,
+	                  "xp":72,
+	                  "lvlev":11,
+	                  "floor":["2","3"],
+	                  "evolution":"butterfree",
+					  "satk":70},
+		"pidgeotto":{"type":"flying",
+	                  "name":"Pidgeotto",
+					  "dexn":13,
+					  "hp":63,
+					  "atk":60,
+					  "deff":55,
+					  "spd":71,
+	                  "xp":122,
+	                  "lvlev":36,
+	                  "floor":["2","3"],
+	                  "evolution":"pidgeot",
+					  "satk":70},
+		"pikachu":{"type":"eletric",
+	                "name":"Pikachu",
+					  "dexn":16,
+					  "hp":35,
+					  "atk":50,
+					  "deff":50,
+					  "spd":90,
+	                  "xp":122,
+	                  "lvlev":30,
+	                  "floor":["2","3"],
+	                  "evolution":"raichu",
+					  "satk":70},
+		"kadabra":{"type":"psychic",
+	                  "name":"Kadabra",
+					  "dexn":19,
+					  "hp":40,
+					  "atk":120,
+					  "deff":70,
+					  "spd":105,
+	                  "xp":140,
+	                  "lvlev":40,
+	                  "floor":["2","3"],
+	                  "evolution":"alakazam",
+					  "satk":40},
+		"machoke":{"type":"fighting",
+	                  "name":"Machoke",
+					  "dexn":22,
+					  "hp":80,
+					  "atk":100,
+					  "deff":70,
+					  "spd":45,
+	                  "xp":142,
+	                  "lvlev":40,
+	                  "floor":["2","3"],
+	                  "evolution":"machamp",
+					  "satk":40},
+		"haunter":{"type":"ghost",
+	                  "name":"Haunter",
+					  "dexn":25,
+					  "hp":45,
+					  "atk":115,
+					  "deff":55,
+					  "spd":95,
+	                  "xp":142,
+	                  "lvlev":40,
+	                  "floor":["2","3"],
+	                  "evolution":"gengar",
+					  "satk":70},
+		"muk":{"type":"poison",
+	                  "name":"Muk",
+					  "dexn":28,
+					  "hp":80,
+					  "atk":80,
+					  "deff":50,
+					  "spd":25,
+	                  "xp":175,
+	                  "lvlev":101,
+	                  "floor":["2","3"],
+	                  "evolution":"abra",
+					  "satk":40},
+		"rhyhorn":{"type":"rock",
+	                  "name":"Rhyhorn",
+					  "dexn":29,
+					  "hp":80,
+					  "atk":85,
+					  "deff":95,
+					  "spd":25,
+	                  "xp":69,
+	                  "lvlev":42,
+	                  "floor":["2","3"],
+	                  "evolution":"rhydon",
+					  "satk":50},
+		"dragonair":{"type":"dragon",
+	                  "name":"Dragonair",
+					  "dexn":32,
+					  "hp":61,
+					  "atk":84,
+					  "deff":70,
+					  "spd":70,
+	                  "xp":147,
+	                  "lvlev":55,
+	                  "floor":["2","3"],
+	                  "evolution":"dragonite",
+					  "satk":70},
+		"krokorok":{"type":"ground",
+	                  "name":"Krokorok",
+					  "dexn":37,
+					  "hp":60,
+					  "atk":82,
+					  "deff":45,
+					  "spd":74,
+	                  "xp":123,
+	                  "lvlev":40,
+	                  "floor":["2","3"],
+	                  "evolution":"krookodile",
+					  "satk":70},
+		"persian":{"type":"normal",
+	                  "name":"Persian",
+					  "dexn":40,
+					  "hp":65,
+					  "atk":70,
+					  "deff":65,
+					  "spd":115,
+	                  "xp":154,
+	                  "lvlev":101,
+	                  "floor":["2","3"],
+	                  "evolution":"abra",
+					  "satk":80},
+		"venusaur":{"type":"grass",
+		                    "name":"Venusaur",
+		                    "dexn":2,
+							"hp":80,
+							"atk":122,
+							"deff":123,
+							"spd":80,
+		                    "xp":281,
+		                    "lvlev":101,
+		                    "floor":["3","4"],
+		                    "evolution":"abra",
+							"satk":90},
+			"charizard":{"type":"fire",
+		                    "name":"Charizard",
+		                    "dexn":5,
+		                    "hp":78,
+							"atk":109,
+							"deff":85,
+							"spd":100,
+		                    "xp":240,
+		                    "lvlev":101,
+		                    "floor":["3","4"],
+		                    "evolution":"abra",
+							"satk":90},
+			"blastoise":{"type":"water",
+		                  "name":"Blastoise",
+		                  "dexn":8,
+		                  "hp":79,
+		                  "atk":85,
+						  "deff":105,
+						  "spd":78,
+		                  "xp":239,
+		                  "lvlev":101,
+		                  "floor":["3","4"],
+		                  "evolution":"abra",
+						  "satk":90},
+			"butterfree":{"type":"bug",
+		                  "name":"Butterfree",
+		                  "dexn":11,
+		                  "hp":60,
+						  "atk":90,
+						  "deff":80,
+						  "spd":70,
+		                  "xp":178,
+		                  "lvlev":101,
+		                  "floor":["3","4"],
+		                  "evolution":"abra",
+						  "satk":90},
+			"pidgeot":{"type":"flying",
+		                  "name":"Pidgeot",
+		                  "dexn":14,
+		                  "hp":83,
+						  "atk":80,
+						  "deff":75,
+						  "spd":101,
+		                  "xp":216,
+		                  "lvlev":101,
+		                  "floor":["3","4"],
+		                  "evolution":"abra",
+						  "satk":90},
+			"raichu":{"type":"eletric",
+		                  "name":"Raichu",
+		                  "dexn":17,
+		                  "hp":60,
+						  "atk":95,
+						  "deff":85,
+						  "spd":110,
+		                  "xp":218,
+		                  "lvlev":101,
+		                  "floor":["3","4"],
+		                  "evolution":"abra",
+						  "satk":90},
+			"alakazam":{"Type":"psychic",
+		                  "name":"Alakazam",
+		                  "dexn":20,
+		                  "hp":55,
+						  "atk":135,
+						  "deff":70,
+						  "spd":120,
+		                  "xp":225,
+		                  "lvlev":101,
+		                  "floor":["3","4"],
+		                  "evolution":"abra",
+						  "satk":90},
+			"machamp":{"type":"fighting",
+		                  "name":"Machamp",
+		                  "dexn":23,
+		                  "hp":90,
+						  "atk":130,
+						  "deff":85,
+						  "spd":55,
+		                  "xp":227,
+		                  "lvlev":101,
+		                  "floor":["3","4"],
+		                  "evolution":"abra",
+						  "satk":90},
+			"gengar":{"type":"ghost",
+		                  "name":"Gengar",
+		                  "dexn":26,
+		                  "hp":60,
+						  "atk":130,
+						  "deff":75,
+						  "spd":110,
+		                  "xp":225,
+		                  "lvlev":101,
+		                  "floor":["3","4"],
+		                  "evolution":"abra",
+						  "satk":110},
+			"muk":{"type":"poison",
+		                  "name":"Muk",
+		                  "dexn":28,
+		                  "hp":105,
+						  "atk":105,
+						  "deff":100,
+						  "spd":50,
+		                  "xp":175,
+		                  "lvlev":101,
+		                  "floor":["3","4"],
+		                  "evolution":"abra",
+						  "satk":90},
+			"rhydon":{"type":"rock",
+		                  "name":"Rhydon",
+		                  "dexn":30,
+		                  "hp":105,
+						  "atk":130,
+						  "deff":120,
+						  "spd":40,
+		                  "xp":170,
+		                  "lvlev":101,
+		                  "floor":["3","4"],
+		                  "evolution":"abra",
+						  "satk":90},
+			"dragonite":{"type":"dragon",
+		                  "name":"Dragonite",
+		                  "dexn":33,
+		                  "hp":91,
+						  "atk":134,
+						  "deff":100,
+						  "spd":80,
+		                  "xp":270,
+		                  "lvlev":101,
+		                  "floor":["3","4"],
+		                  "evolution":"abra",
+						  "satk":90},
+			"avalugg":{"type":"ice",
+		                  "name":"Avalugg",
+		                  "dexn":35,
+		                  "hp":95,
+						  "atk":117,
+						  "deff":184,
+						  "spd":28,
+		                  "xp":180,
+		                  "lvlev":101,
+		                  "floor":["3","4"],
+		                  "evolution":"abra",
+						  "satk":90},
+			"krookodile":{"type":"ground",
+		                  "name":"Krookodile",
+		                  "dexn":38,
+		                  "hp":95,
+						  "atk":117,
+						  "deff":80,
+						  "spd":92,
+		                  "xp":234,
+		                  "lvlev":101,
+		                  "floor":["3","4"],
+		                  "evolution":"abra",
+						  "satk":90},
+			"persian":{"type":"normal",
+		                  "name":"Persian",
+		                  "dexn":40,
+		                  "hp":65,
+						  "atk":70,
+						  "deff":65,
+						  "spd":115,
+		                  "xp":154,
+		                  "lvlev":101,
+		                  "floor":["3","4"],
+		                  "evolution":"abra",
+						  "satk":80},
+		    "snorlax":{"type":"normal",
+		                  "name":"Snorlax",
+		                  "dexn":41,
+		                  "hp":160,
+		              	  "atk":110,
+		              	  "deff":65,
+		              	  "spd":30,
+		                  "xp":189,
+		                  "lvlev":101,
+		                  "floor":["3","4"],
+		                  "evolution":"abra",
+		              	  "satk":90}}
 
 
 
@@ -573,7 +561,7 @@ class Pokemon:
     #classe para pokemons
 
     def __init__(self,pokemon,lvl):
-        self.floor=pokemon["floor"] #andar no qual o pokemon pode aparecer
+        self.floor=pokemon["floor"] #andar no qual cada pokemon pode aparecer
         self.evolution=pokemon["evolution"] #nome da evolução
         self.all=pokemon #todos os atributos basicos do pokemon
         self.ivhp=rd.randrange(1,32) #invisible value para a vida do pokemon (deixa todos os pokemons diferentes entre si)
@@ -604,7 +592,8 @@ class Pokemon:
     def damage(self,enemy): #dano do ataque do pokemon com vantagens/fraquezas
             effectiveness=[0,0.5,1,2] #dano efetivo recebido pelo pokemon(de acordo com as vantagens/fraquezas)
             dmg=effectiveness[2]
-            consolemessage=("It was effective")
+            consolemessage=("It was effective\n")
+
             if self.type=="normal"and enemy.type=="rock": #rock é resistente ao normal
                 consolemessage=("It's not very effective...")
                 dmg=effectiveness[1]
@@ -933,10 +922,20 @@ class Pokemon:
             if self.type=="dragon"and enemy.type=="dragon":
                 consolemessage=("It's super effective!!!")
                 dmg=effectiveness[3]
-            enemy.hp-=(self.attack(enemy))*dmg
+
+
+            critical=rd.randrange(0,101)
+            if critical <=10:
+                consolemessage+=("\nA critical hit!!!\n")
+                enemy.hp-=((self.attack(enemy)*2))*dmg
+            else:
+                enemy.hp-=(self.attack(enemy))*dmg
+
             return delay_print("{}\n".format(consolemessage))
             #,consolemessage ##preciso melhorar a implementação, mas essa é a idea
                                                          #agr ja era fion.
+
+
 
 
     def lvlup(self,exp_list): #metodo para o pokemon passar de level
@@ -959,33 +958,37 @@ class Pokemon:
             self.maxhp=(((2*self.all["hp"]+self.ivhp+(50/4))*self.lvl)/100)+self.lvl+10 #vida máxima do pokemon
             self.attributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\nExperience:{}\n".format((self.type).capitalize(),self.lvl,int(self.maxhp),
                                                                                                  (self.atk),int(self.deff),int(self.spd),int(self.exp))
-            #self.evolving(self,evolution)
+            self.evolving(pokemondata[self.evolution])
 
 
 
     def expgain(self,enemy):
-        self.exp+=(enemy.basexp*enemy.lvl)/7
+        self.exp+=((enemy.basexp*enemy.lvl)/7)*10  #experiencia ganha multiplicada para passar de level mais rapido
         self.attributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\nExperience:{}\n".format((self.type).capitalize(),self.lvl,int(self.maxhp),
                                                                                              (self.atk),int(self.deff),int(self.spd),int(self.exp))
         return self.exp
 
-    # def evolving(self,evolution):
-    #     if self.lvl>=self.evolution:
-    #         self.all=evolution #todos os atributos basicos do pokemon
-    #         self.evolution=evolution["lvlev"] #level que cada pokemon evolui
-    #         self.basexp=evolution["xp"] #experiencia base que cada pokemon fornece qnd é fainted "morto"
-    #         self.name=evolution["name"] #nome do Inspermon
-    #         self.dexn=evolution["dexn"] #numero da INSPERDEX
-    #         self.type=evolution["type"] #tipo do pokemon
-    #         self.hp=(((2*evolution["hp"]+self.ivhp+(50/4))*self.lvl)/100)+self.lvl+10 #vida atual do pokemon
-    #         self.atk=(((2*evolution["atk"]+self.ivatk+(50/4))*self.lvl)/100)+5 #ataque atual do pokemon
-    #         self.deff=(((2*evolution["deff"]+self.ivdeff+(50/4))*self.lvl)/100)+5 #defesa atual do pokemon
-    #         self.spd=(((2*evolution["spd"]+self.ivspd+(50/4))*self.lvl)/100)+5 #velocidade atual do pokemon
-    #         self.maxhp=(((2*evolution["hp"]+self.ivhp+(50/4))*self.lvl)/100)+self.lvl+10 #vida máxima do pokemon
-    #         self.satk=evolution["satk"] #ataque especial do pokemon
-    #         self.attributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\nExperience:{}\n".format((self.type).capitalize(),self.lvl,int(self.maxhp),
-    #                                                                                              int(self.atk),int(self.deff),int(self.spd),int(self.exp))
-    #         return delay_print("What?....\nYour {} is evolving!!!!".format(self.all[]))
+    def evolving(self,evolution):
+        #método de evolução para os pokemons
+        if self.lvl>=self.lvlevolution:
+            self.floor=evolution["floor"] #andar no qual cada pokemon pode aparecer
+            self.evolution=evolution["evolution"] #nome da evolução
+            self.lvlevolution=evolution["lvlev"] #level que cada pokemon evolui
+            self.all=evolution #todos os atributos basicos do pokemon
+            self.basexp=evolution["xp"] #experiencia base que cada pokemon fornece qnd é fainted "morto"
+            self.name=evolution["name"] #nome do Inspermon
+            self.dexn=evolution["dexn"] #numero da INSPERDEX
+            self.type=evolution["type"] #tipo do pokemon
+            self.hp=(((2*evolution["hp"]+self.ivhp+(50/4))*self.lvl)/100)+self.lvl+10 #vida atual do pokemon
+            self.atk=(((2*evolution["atk"]+self.ivatk+(50/4))*self.lvl)/100)+5 #ataque atual do pokemon
+            self.deff=(((2*evolution["deff"]+self.ivdeff+(50/4))*self.lvl)/100)+5 #defesa atual do pokemon
+            self.spd=(((2*evolution["spd"]+self.ivspd+(50/4))*self.lvl)/100)+5 #velocidade atual do pokemon
+            self.maxhp=(((2*evolution["hp"]+self.ivhp+(50/4))*self.lvl)/100)+self.lvl+10 #vida máxima do pokemon
+            self.satk=evolution["satk"] #ataque especial do pokemon
+            self.attributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\nExperience:{}\n".format((self.type).capitalize(),self.lvl,int(self.maxhp),
+                                                                                                 int(self.atk),int(self.deff),int(self.spd),int(self.exp))
+            playername.dexregister(self)
+            return delay_print("What?....\nYour {} is evolving!!!!".format(self.name))
 
 
 
@@ -1001,8 +1004,16 @@ class Player():
 
 
     def dex(self,insperdex):
+        #metodo para a insperdex
         for i in insperdex:
             print(i)
+
+    def dexregister(self,inspermon):
+        #metodo para registrar a insperdex
+        self.insperdex[inspermon.dexn]="{}-{}:{}".format(inspermon.dexn,inspermon.name,(inspermon.type).capitalize())
+        return
+
+
 
 numeros=[]
 for i in range(10):
@@ -1025,12 +1036,132 @@ def delay_print(s):
         sys.stdout.flush()
         time.sleep(0.001)
 
+
+
+
 def restorelife(playerpokemon):
     delay_print("Press (1) if you want to use a Health Potion on your Inspermom: ")
     hp_potion=input()
     if hp_potion=="1":
         playerpokemon.hp=playerpokemon.maxhp
         return delay_print("Your {} is healed!!!".format((playerpokemon.name)))
+
+
+def floorpokemons(floor,pokemondatabase):
+    pokemondict={}
+    for i in pokemondatabase.keys():
+        if (floor) in pokemondatabase[i]["floor"]:
+            pokemondict[i]=(pokemondatabase[i])
+
+    return pokemondict
+
+
+
+def pokemongenerator(floor):
+    if floor=="0":
+        lvlfloor=rd.randrange(1,6)
+    elif floor=="1":
+        lvlfloor=rd.randrange(5,20)
+    elif floor=="2":
+        lvlfloor=rd.randrange(20,31)
+    elif floor=="3":
+        lvlfloor=rd.randrange(30,41)
+    elif floor=="4":
+        lvlfloor=rd.randrange(40,51)
+
+    pokemon,attributes=rd.choice(list((floorpokemons(floor,pokemondata)).items()))
+    enemy=Pokemon(pokemondata[pokemon],lvlfloor)
+    return enemy
+
+
+def choosepokemon(player,enemy):
+    pokemongenerator(action)
+    delay_print("A wild {} Level:{} appears...\n".format(enemy.name,enemy.lvl))
+    playername.dexregister(enemy)
+    delay_print("The untamed {} was registered in your INSPERDEX\n".format(enemy.name))
+    delay_print("A battle is about to begin...\n")
+    delay_print("What pokemon do you want to use to battle?\n")
+    numeros=[]
+    for i in range(len(player.party)):
+        delay_print("For {} press ({}).\n".format(player.party[i].name,i))
+        numeros.append("{}".format(i))
+    choose=input()
+    while choose not in numeros:
+        print("Type a valid command\n")
+        choose=input()
+    return player.party[int(choose)],enemy
+
+
+
+def batalha(playerpokemon):
+    while playerpokemon[0].hp>0 and playerpokemon[1].hp>0:  ## onde playerpokemon[0] é o pokemon do player e o playerpokemon[1] é o inimigo
+        choice=input("Are you going to Attack (1), Run (2) or Check Status on INSPERDEX(3):\n")
+        if choice=="2":
+            delay_print("You ran out of the battle...\n")
+            restorelife(playerpokemon[0])
+            break
+        elif choice=="3":
+            print("Your {}\n{}\nWild {}\n{}\n".format((playerpokemon[0]).name,(playerpokemon[0]).attributes,playerpokemon[1].name,playerpokemon[1].attributes))
+        elif choice=="1" and (playerpokemon[0]).spd >= playerpokemon[1].spd:
+            delay_print("-------------------------------------------------------------------------\n\
+|Your {}'s Life:{} |                      |Wild {} Life:{}|\n\
+-------------------------------------------------------------------------\n".format((playerpokemon[0]).name,
+            int((playerpokemon[0]).hp),playerpokemon[1].name,int(playerpokemon[1].hp)))
+
+            delay_print("Your {} Attacked...\n".format((playerpokemon[0]).name))
+            ((playerpokemon[0]).damage(playerpokemon[1]))
+
+            if playerpokemon[1].hp<1:
+                delay_print("The enemy {} fainted...\nYou won!!!\n".format(playerpokemon[1].name))
+                (playerpokemon[0]).expgain(playerpokemon[1])
+                (playerpokemon[0]).lvlup(exp_list)
+                restorelife(playerpokemon[0])
+                break
+            delay_print("-------------------------------------------------------------------------\n\
+|Your {}'s Life:{} |                      |Wild {} Life:{}|\n\
+-------------------------------------------------------------------------\n".format((playerpokemon[0]).name,
+            int((playerpokemon[0]).hp),playerpokemon[1].name,int(playerpokemon[1].hp)))
+            delay_print("Wild {} Attacked...\n".format(playerpokemon[1].name))
+            (playerpokemon[1].damage(playerpokemon[0]))
+
+            delay_print("-------------------------------------------------------------------------\n\
+|Your {}'s Life:{} |                      |Wild {} Life:{}|\n\
+-------------------------------------------------------------------------\n".format((playerpokemon[0]).name,
+            int((playerpokemon[0]).hp),playerpokemon[1].name,int(playerpokemon[1].hp)))
+            if (playerpokemon[0]).hp<1:
+                delay_print("Your pokemon fainted...\nYou loose!!!\n")
+                restorelife(playerpokemon[0])
+                break
+
+        elif choice=="1" and (playerpokemon[0]).spd < playerpokemon[1].spd:
+            delay_print("-------------------------------------------------------------------------\n\
+|Your {}'s Life:{} |                      |Wild {} Life:{}|\n\
+-------------------------------------------------------------------------\n".format((playerpokemon[0]).name,
+            int((playerpokemon[0]).hp),playerpokemon[1].name,int(playerpokemon[1].hp)))
+            delay_print("Wild {} Attacked...\n".format(playerpokemon[1].name))
+            (playerpokemon[1].damage(playerpokemon[0]))
+
+            delay_print("-------------------------------------------------------------------------\n\
+|Your {}'s Life:{} |                      |Wild {} Life:{}|\n\
+-------------------------------------------------------------------------\n".format((playerpokemon[0]).name,
+            int((playerpokemon[0]).hp),playerpokemon[1].name,int(playerpokemon[1].hp)))
+            if (playerpokemon[0]).hp<1:
+                delay_print("Your pokemon fainted...\nYou loose!!!\n")
+                restorelife(playerpokemon[0])
+                break
+            delay_print("Your {} Attacked...\n".format((playerpokemon[0]).name))
+            ((playerpokemon[0]).damage(playerpokemon[1]))
+
+            delay_print("-------------------------------------------------------------------------\n\
+|Your {}'s Life:{} |                      |Wild {} Life:{}|\n\
+-------------------------------------------------------------------------\n".format((playerpokemon[0]).name,
+            int((playerpokemon[0]).hp),playerpokemon[1].name,int(playerpokemon[1].hp)))
+            if playerpokemon[1].hp<1:
+                delay_print("The enemy {} fainted...\nYou won!!!\n".format(playerpokemon[1].name))
+                (playerpokemon[0]).expgain(playerpokemon[1])
+                (playerpokemon[0]).lvlup(exp_list)
+                restorelife(playerpokemon[0])
+                break
 
 delay_print("Welcome to the marvelous World of Inspermon")
 input()
@@ -1042,7 +1173,7 @@ delay_print("\nThis world is inhabited by creatures called INSPERMON!\n")
 input()
 delay_print("\nFor some people, INSPERMON are pets. Other use them for fights. Myself… I study INSPERMON as a profession.\n")
 input()
-delay_print("\nFirst, what is your name?")
+delay_print("\nFirst, what is your name?\n")
 playername=input("\n")
 playername+=" Ketchum"
 delay_print("Right! So your name is {}!".format(playername.title()))
@@ -1053,9 +1184,9 @@ while boyorgirl!="1" and boyorgirl!="2":
     print("Type a valid command")
     boyorgirl=input("\n")
 
-delay_print("Well done {}.Let's get it started!".format(playername.title()))
+delay_print("Well done {}.Let's get it started!\n".format(playername.title()))
 input()
-delay_print("First you have to get your new partner")
+delay_print("First you have to get your new partner\n")
 input()
 delay_print("What do you prefer?")
 delay_print(Fore.GREEN+"\nGrass"+Fore.BLACK+":(1)")
@@ -1070,19 +1201,19 @@ if firstpokemon=="1":
     playername=Player(playername,Bulbasaur)
     delay_print("Congratulations!!!\nBulbasaur is your new Inspermon\n")
     delay_print(Bulbasaur.attributes)
-    playername.insperdex[Bulbasaur.dexn]="{}-{}:{}".format(Bulbasaur.dexn,Bulbasaur.name,Bulbasaur.type)
+    playername.dexregister(Bulbasaur)
 elif firstpokemon=="3":
     Squirtle=Pokemon(pokemondata["squirtle"],5)
     playername=Player(playername,Squirtle)
     delay_print("Congratulations!!!\nSquirtle is your new Inspermon\n")
     delay_print(Squirtle.attributes)
-    playername.insperdex[Squirtle.dexn]="{}-{}:{}".format(Squirtle.dexn,Squirtle.name,Squirtle.type)
+    playername.dexregister(Squirtle)
 elif firstpokemon=="2":
     Charmander=Pokemon(pokemondata["charmander"],5)
     playername=Player(playername,Charmander)
     delay_print("Congratulations!!!\nCharmander is your new Inspermon\n")
     delay_print(Charmander.attributes)
-    playername.insperdex[Charmander.dexn]="{}-{}:{}".format(Charmander.dexn,Charmander.name,Charmander.type)
+    playername.dexregister(Charmander)
 else:
     playername=Player(playername,0)
     playername.party=[]
@@ -1096,26 +1227,26 @@ else:
         playername=Player(playername,Bulbasaur)
         delay_print("Congratulations!!!\nBulbasaur is your new Inspermon\n")
         delay_print(Bulbasaur.attributes)
-        playername.insperdex[Bulbasaur.dexn]="{}-{}:{}".format(Bulbasaur.dexn,Bulbasaur.name,Bulbasaur.type)
+        playername.dexregister(Bulbasaur)
     elif firstpokemon2=="3":
         Squirtle=Pokemon(pokemondata["squirtle"],5)
         playername=Player(playername,Squirtle)
         delay_print("Congratulations!!!\nSquirtle is your new Inspermon\n")
         delay_print(Squirtle.attributes)
-        playername.insperdex[Squirtle.dexn]="{}-{}:{}".format(Squirtle.dexn,Squirtle.name,Squirtle.type)
+        playername.dexregister(Squirtle)
 
     elif firstpokemon2=="2":
         Charmander=Pokemon(pokemondata["charmander"],5)
         playername=Player(playername,Charmander)
-        delay_print("Congratulations!!!\nSquirtle is your new Inspermon\n")
+        delay_print("Congratulations!!!\nCharmander is your new Inspermon\n")
         delay_print(Charmander.attributes)
-        playername.insperdex[Charmander.dexn]="{}-{}:{}".format(Charmander.dexn,Charmander.name,Charmander.type)
+        playername.dexregister(Charmander)
     else:
-        Pikachu=Pokemon(pokemondata2["pikachu"],10)
+        Pikachu=Pokemon(pokemondata["pikachu"],10)
         playername=Player(playername,Pikachu)
         delay_print("Okay...\nYou win\nCongratulations Pikachu is your new INSPERMON\n")
         delay_print(Pikachu.attributes)
-        playername.insperdex[Pikachu.dexn]="{}-{}:{}".format(Pikachu.dexn,Pikachu.name,Pikachu.type)
+        playername.dexregister(Pikachu)
 
 
 
@@ -1156,374 +1287,11 @@ Press (5) to exit walking around\n")
         if action=="5":
             continue
 
-        # def pokemongenerator():
-        #     pokemon,attributes=rd.choice(list(pokemondata.items()))
-        #     enemy=Pokemon(pokemondata[pokemon],lvlfloor0)
 
 
-
-        elif action=="0":
-            lvlfloor0=rd.randrange(1,6)
-            pokemon,attributes=rd.choice(list(pokemondata.items()))
-            enemy=Pokemon(pokemondata[pokemon],lvlfloor0)
-            message="A wild {} Level:{} appears...\n"
-            delay_print(message.format(enemy.name,enemy.lvl))
-            playername.insperdex[enemy.dexn]="{}-{}:{}".format(enemy.dexn,enemy.name,enemy.type)
-            delay_print("What pokemon do you want to use to battle?\n")
-            numeros=[]
-            for i in range(len(playername.party)):
-                delay_print("For {} press ({}).\n".format(playername.party[i].name,i))
-                numeros.append("{}".format(i))
-            choose=input()
-            while choose not in numeros:
-                print("Type a valid command")
-                choose=input()
-            maxhp=(playername.party[int(choose)]).hp
-            while (playername.party[int(choose)]).hp>0 and enemy.hp>0:
-                choice=input("Are you going to Attack (1) or Run (2) or Check Status on INSPERDEX(3):")
-                if choice=="2":
-                    delay_print("You ran out of the battle...")
-                    restorelife(playername.party[int(choose)])
-                    break
-                if choice=="3":
-                    print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).attributes,enemy.name,enemy.attributes))
-                elif (playername.party[int(choose)]).spd > enemy.spd:
-                    delay_print("-------------------------------------------------------------------------\n\
-|Your {}'s Life:{} |                      |Wild {} Life:{}|\n\
--------------------------------------------------------------------------\n".format((playername.party[int(choose)]).name,
-                    int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    (playername.party[int(choose)]).damage(enemy)
-                    if enemy.hp<1:
-                        delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
-                        (playername.party[int(choose)]).expgain(enemy)
-                        (playername.party[int(choose)]).lvlup(exp_list)
-                        restorelife(playername.party[int(choose)])
-                        break
-
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (enemy.damage(playername.party[int(choose)]))
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if (playername.party[int(choose)]).hp<1:
-                        delay_print("Your pokemon fainted...\nYou loose!!!\n")
-                        restorelife(playername.party[int(choose)])
-                        break
-                elif (playername.party[int(choose)]).spd < enemy.spd:
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (enemy.damage(playername.party[int(choose)]))
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if (playername.party[int(choose)]).hp<1:
-                        delay_print("Your pokemon fainted...\nYou loose!!!\n")
-                        restorelife(playername.party[int(choose)])
-                        break
-                    delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    ((playername.party[int(choose)]).damage(enemy))
-
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if enemy.hp<1:
-                        delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
-                        (playername.party[int(choose)]).expgain(enemy)
-                        (playername.party[int(choose)]).lvlup(exp_list)
-                        restorelife(playername.party[int(choose)])
-                        break
-
-        elif action=="1":
-            lvlfloor1=rd.randrange(5,20)
-            pokemon,attributes=rd.choice(list(pokemondata.items()))
-            enemy=Pokemon(pokemondata[pokemon],lvlfloor1)
-            message="A wild {} Level:{} appears...\n"
-            delay_print(message.format(enemy.name,lvlfloor1))
-            playername.insperdex[enemy.dexn]="{}-{}:{}".format(enemy.dexn,enemy.name,enemy.type)
-            delay_print("What pokemon do you want to use to battle?\n")
-            for i in range(len(playername.party)):
-                delay_print("{}({})".format(playername.party[i].name,i))
-            choose=input()
-            while choose not in numeros:
-                print("Type a valid command")
-                choose=input()
-            maxhp=(playername.party[int(choose)]).hp
-            while (playername.party[int(choose)]).hp>0 and enemy.hp>0:
-
-                choice=input("Are you going to Attack (1) or Run (2) or Check Status on INSPERDEX(3):")
-                if choice=="2":
-                    delay_print("You ran out of the battle...")
-                    restorelife(playername.party[int(choose)])
-                    break
-                if choice=="3":
-                    print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).attributes,enemy.name,enemy.attributes))
-                elif (playername.party[int(choose)]).spd > enemy.spd:
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    ((playername.party[int(choose)]).damage(enemy))
-
-                    if enemy.hp<=0:
-                        delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
-                        (playername.party[int(choose)]).expgain(enemy)
-                        (playername.party[int(choose)]).lvlup(exp_list)
-                        restorelife(playername.party[int(choose)])
-                        break
-
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (enemy.damage(playername.party[int(choose)]))
-
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if (playername.party[int(choose)]).hp<=0:
-                        delay_print("Your pokemon fainted...\nYou loose!!!\n")
-                        restorelife(playername.party[int(choose)])
-                        break
-                elif (playername.party[int(choose)]).spd < enemy.spd:
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (enemy.damage(playername.party[int(choose)]))
-
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if (playername.party[int(choose)]).hp<=0:
-                        delay_print("Your pokemon fainted...\nYou loose!!!\n")
-                        restorelife(playername.party[int(choose)])
-                        break
-                    delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    ((playername.party[int(choose)]).damage(enemy))
-
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if enemy.hp<=0:
-                        delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
-                        (playername.party[int(choose)]).expgain(enemy)
-                        (playername.party[int(choose)]).lvlup(exp_list)
-                        restorelife(playername.party[int(choose)])
-                        break
-
-
-        elif action=="2":
-            lvlfloor2=rd.randrange(20,31)
-            pokemon,attributes=rd.choice(list(pokemondata2.items()))
-            enemy=Pokemon(pokemondata2[pokemon],lvlfloor2)
-            message="A wild {} Level:{} appears...\n"
-            delay_print(message.format(enemy.name,lvlfloor2))
-            playername.insperdex[enemy.dexn]="{}-{}:{}".format(enemy.dexn,enemy.name,enemy.type)
-            delay_print("What pokemon do you want to use to battle?\n")
-            for i in range(len(playername.party)):
-                delay_print("{}({})".format(playername.party[i].name,i))
-            choose=input()
-            while choose not in numeros:
-                print("Type a valid command")
-                choose=input()
-            maxhp=(playername.party[int(choose)]).hp
-            while (playername.party[int(choose)]).hp>0 and enemy.hp>0:
-
-                choice=input("Are you going to Attack (1) or Run (2) or Check Status on INSPERDEX(3):")
-                if choice=="2":
-                    delay_print("You ran out of the battle...")
-                    restorelife(playername.party[int(choose)])
-                    break
-                if choice=="3":
-                    print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).attributes,enemy.name,enemy.attributes))
-                elif (playername.party[int(choose)]).spd > enemy.spd:
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    ((playername.party[int(choose)]).damage(enemy))
-
-                    if enemy.hp<=0:
-                        delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
-                        (playername.party[int(choose)]).expgain(enemy)
-                        (playername.party[int(choose)]).lvlup(exp_list)
-                        restorelife(playername.party[int(choose)])
-                        break
-
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (enemy.damage(playername.party[int(choose)]))
-
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if (playername.party[int(choose)]).hp<=0:
-                        delay_print("Your pokemon fainted...\nYou loose!!!\n")
-                        restorelife(playername.party[int(choose)])
-                        break
-                elif (playername.party[int(choose)]).spd < enemy.spd:
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (enemy.damage(playername.party[int(choose)]))
-
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if (playername.party[int(choose)]).hp<=0:
-                        delay_print("Your pokemon fainted...\nYou loose!!!\n")
-                        restorelife(playername.party[int(choose)])
-                        break
-                    delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    ((playername.party[int(choose)]).damage(enemy))
-
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if enemy.hp<=0:
-                        delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
-                        (playername.party[int(choose)]).expgain(enemy)
-                        (playername.party[int(choose)]).lvlup(exp_list)
-                        restorelife(playername.party[int(choose)])
-                        break
-
-
-
-        elif action=="3":
-            lvlfloor3=rd.randrange(30,41)
-            pokemon,attributes=rd.choice(list(pokemondata2.items()))
-            enemy=Pokemon(pokemondata2[pokemon],lvlfloor3)
-            message="A wild {} Level:{} appears...\n"
-            delay_print(message.format(enemy.name,lvlfloor3))
-            playername.insperdex[enemy.dexn]="{}-{}:{}".format(enemy.dexn,enemy.name,enemy.type)
-            delay_print("What pokemon do you want to use to battle?\n")
-            for i in range(len(playername.party)):
-                delay_print("{}({})".format(playername.party[i].name,i))
-            choose=input()
-            while choose not in numeros:
-                print("Type a valid command")
-                choose=input()
-            maxhp=(playername.party[int(choose)]).hp
-            while (playername.party[int(choose)]).hp>0 and enemy.hp>0:
-
-                choice=input("Are you going to Attack (1) or Run (2) or Check Status on INSPERDEX(3):")
-                if choice=="2":
-                    delay_print("You ran out of the battle...")
-                    restorelife(playername.party[int(choose)])
-                    break
-                if choice=="3":
-                    print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).attributes,enemy.name,enemy.attributes))
-                elif (playername.party[int(choose)]).spd > enemy.spd:
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    ((playername.party[int(choose)]).damage(enemy))
-
-                    if enemy.hp<=0:
-                        delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
-                        (playername.party[int(choose)]).expgain(enemy)
-                        (playername.party[int(choose)]).lvlup(exp_list)
-                        restorelife(playername.party[int(choose)])
-                        break
-
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (enemy.damage(playername.party[int(choose)]))
-
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if (playername.party[int(choose)]).hp<=0:
-                        delay_print("Your pokemon fainted...\nYou loose!!!\n")
-                        restorelife(playername.party[int(choose)])
-                        break
-                elif (playername.party[int(choose)]).spd < enemy.spd:
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (enemy.damage(playername.party[int(choose)]))
-
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if (playername.party[int(choose)]).hp<=0:
-                        delay_print("Your pokemon fainted...\nYou loose!!!\n")
-                        restorelife(playername.party[int(choose)])
-                        break
-                    delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    ((playername.party[int(choose)]).damage(enemy))
-
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if enemy.hp<=0:
-                        delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
-                        (playername.party[int(choose)]).expgain(enemy)
-                        (playername.party[int(choose)]).lvlup(exp_list)
-                        restorelife(playername.party[int(choose)])
-                        break
-
-
-
-
-        elif action=="4":
-            lvlfloor4=rd.randrange(40,51)
-            pokemon,attributes=rd.choice(list(pokemondata3.items()))
-            enemy=Pokemon(pokemondata3[pokemon],lvlfloor4)
-            message="A wild {} Level:{} appears...\n"
-            delay_print(message.format(enemy.name,lvlfloor4))
-            playername.insperdex[enemy.dexn]="{}-{}:{}".format(enemy.dexn,enemy.name,enemy.type)
-            delay_print("What pokemon do you want to use to battle?\n")
-            for i in range(len(playername.party)):
-                delay_print("{}({})".format(playername.party[i].name,i))
-            choose=input()
-            while choose not in numeros:
-                print("Type a valid command")
-                choose=input()
-            maxhp=(playername.party[int(choose)]).hp
-            while (playername.party[int(choose)]).hp>0 and enemy.hp>0:
-
-                choice=input("Are you going to Attack (1) or Run (2) or Check Status on INSPERDEX(3):")
-                if choice=="2":
-                    delay_print("You ran out of the battle...")
-                    restorelife(playername.party[int(choose)])
-                    break
-                if choice=="3":
-                    print("Your {}\n{}\nWild {}\n{}\n".format((playername.party[int(choose)]).name,(playername.party[int(choose)]).attributes,enemy.name,enemy.attributes))
-                elif (playername.party[int(choose)]).spd > enemy.spd:
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    ((playername.party[int(choose)]).damage(enemy))
-
-                    if enemy.hp<=0:
-                        delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
-                        (playername.party[int(choose)]).expgain(enemy)
-                        (playername.party[int(choose)]).lvlup(exp_list)
-                        restorelife(playername.party[int(choose)])
-                        break
-
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (enemy.damage(playername.party[int(choose)]))
-
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if (playername.party[int(choose)]).hp<=0:
-                        delay_print("Your pokemon fainted...\nYou loose!!!\n")
-                        restorelife(playername.party[int(choose)])
-                        break
-                elif (playername.party[int(choose)]).spd < enemy.spd:
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    delay_print("Wild {} Attacked...\n".format(enemy.name))
-                    (enemy.damage(playername.party[int(choose)]))
-
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if (playername.party[int(choose)]).hp<=0:
-                        delay_print("Your pokemon fainted...\nYou loose!!!\n")
-                        restorelife(playername.party[int(choose)])
-                        break
-                    delay_print("Your {} Attacked...\n".format((playername.party[int(choose)]).name))
-                    ((playername.party[int(choose)]).damage(enemy))
-
-                    delay_print("Your {}'s life:{}   Wild {}:{}\n".format((playername.party[int(choose)]).name,
-                                                                          int((playername.party[int(choose)]).hp),enemy.name,int(enemy.hp)))
-                    if enemy.hp<1:
-                        delay_print("The enemy {} fainted...\nYou won!!!\n".format(enemy.name))
-                        (playername.party[int(choose)]).expgain(enemy)
-                        (playername.party[int(choose)]).lvlup(exp_list)
-                        restorelife(playername.party[int(choose)])
-                        break
+        else:
+            while action not in ["0","1","2","3","4","5"]:
+                delay_print("Type a valid command: \n")
+                action=input()
+            floorpokemons(action,pokemondata)
+            batalha(((choosepokemon(playername,(pokemongenerator(action))))))
