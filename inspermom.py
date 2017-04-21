@@ -413,7 +413,6 @@ class Pokemon:
                                                          #agr ja era fion.
 
 
-
     def lvlup(self,exp_list): #metodo para o pokemon passar de level
         #lvlup(self,exp_list,evolution):
         new_level=0
@@ -434,6 +433,7 @@ class Pokemon:
                     self.evolving(pokemondata[self.evolution])
                 delay_print("Your {}'s experience:{} of {} to the next Level...\n".format(self.name,int(self.exp),valor))
                 break
+
 
     def expgain(self,enemy):
         self.exp+=((enemy.basexp*enemy.lvl)/7)*3  #experiencia ganha multiplicada para passar de level mais rapido
@@ -481,10 +481,12 @@ class Player():
         for i in insperdex:
             print(i)
 
+
     def dexregister(self,inspermon):
         #metodo para registrar a insperdex
         self.insperdex[inspermon.dexn]="{}-{}:{}".format(inspermon.dexn,inspermon.name,(inspermon.type).capitalize())
         return
+
 
     def savegame(self):
         # metodo para salvar o jogo
@@ -509,6 +511,7 @@ class Player():
         else:
             delay_print("I'm sorry, the inspermon broke off\n")
 
+
     def showparty(self):
         delay_print("-[Daniel]:Hello {}!Welcome back to the LAB!!\nWhat do you want??\n\
         ----------------------------------------------\n\
@@ -522,8 +525,11 @@ class Player():
             partymon=self.pokemonpicker(1)
             delay_print(partymon.attributes)
         if choice=="2":
-            boxmon=self.pokemonpicker(2)
-            delay_print(boxmon.attributes)
+            if len(self.box)>0:
+                boxmon=self.pokemonpicker(2)
+                delay_print(boxmon.attributes)
+            else:
+                delay_print("You don't have any Inspermons on your Box\n")
         if choice=="3":
             if len(self.box)>0:
                 delay_print("-[Daniel]: Choose which Inspermon you want to put in your party\n")
@@ -545,6 +551,7 @@ class Player():
                         delay_print(" {} ({}).\n".format((self.party[i]).name,i))
             else:
                 delay_print("You don't have any Inspermons on your Box\n")
+
 
     def pokemonpicker(self,num):
         if num==1: # escolher o pokemon da party
