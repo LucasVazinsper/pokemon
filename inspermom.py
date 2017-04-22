@@ -639,9 +639,21 @@ def batalha(playerpokemon):
     while playerpokemon[0].hp>0 and playerpokemon[1].hp>0:  ## onde playerpokemon[0] é o pokemon do player e o playerpokemon[1] é o inimigo
         choice=input("Are you going to Attack (1), Run (2), Check Status on INSPERDEX(3) or try to catch it (4):\n")
         if choice=="4":
+            testecaptura=len(playername.party)
             playername.capture(playerpokemon[1])
-            restorelife(playerpokemon[0])
-            break
+            if testecaptura!=len(playername.party):
+                (playerpokemon[0]).expgain(playerpokemon[1])
+                (playerpokemon[0]).lvlup(exp_list)
+                restorelife(playerpokemon[0])
+                break
+            else:
+                delay_print("Wild {} Attacked...\n".format(playerpokemon[1].name))
+                (playerpokemon[1].damage(playerpokemon[0]))
+                showlife(playerpokemon)
+                if (playerpokemon[0]).hp<1:
+                    delay_print("Your pokemon fainted...\nYou loose!!!\n")
+                    restorelife(playerpokemon[0])
+                    break
         if choice=="2":
             delay_print("You ran out of the battle...\n")
             restorelife(playerpokemon[0])
