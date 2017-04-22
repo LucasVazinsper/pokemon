@@ -538,7 +538,7 @@ class Player():
                 partymon=self.pokemonpicker(1)
                 delay_print("-[Daniel]: Are you sure you want to swap this inspermons Box: {} and Party: {} \nFor YES Press (1)\nFor NO Press (2)\n".format(boxmon.name,partymon.name))
                 sure=input()
-                while sure not in ["1","3"]:
+                while sure not in ["1","2"]:
                     delay_print("Type a valid command\n")
                     sure=input()
                 if sure=="1":
@@ -640,8 +640,9 @@ def batalha(playerpokemon):
         choice=input("Are you going to Attack (1), Run (2), Check Status on INSPERDEX(3) or try to catch it (4):\n")
         if choice=="4":
             testecaptura=len(playername.party)
+            testecaptura2=len(playername.box)
             playername.capture(playerpokemon[1])
-            if testecaptura!=len(playername.party):
+            if testecaptura!=len(playername.party) or testecaptura2!=len(playername.box):
                 (playerpokemon[0]).expgain(playerpokemon[1])
                 (playerpokemon[0]).lvlup(exp_list)
                 restorelife(playerpokemon[0])
