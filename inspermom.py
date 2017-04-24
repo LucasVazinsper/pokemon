@@ -509,7 +509,7 @@ class Player():
                 (self.party).append(pokemon)
             return delay_print("Congratulations!!!\nThe Wild {} was caught!!!\n".format(pokemon.name))
         else:
-            delay_print("I'm sorry, the inspermon broke off\n")
+            delay_print("I'm sorry, the inspermon broke free\n")
 
 
     def showparty(self):
