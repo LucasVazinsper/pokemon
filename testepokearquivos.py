@@ -1,5 +1,6 @@
 import random as rd
 
+
 ########################################
 n=0                # lista de experiencia para cada level, onde n = level
 exp_list=[]
@@ -742,10 +743,10 @@ if game=="1":
     Your very own INSPERMON legend is about to unfold!\nA world of dreams and adventures with INSPERMON awaits! Let's go!\n")
 
 if game=="2":
-    pickle_in=open("dados.pickle","rb")
-    playername=pickle.load(pickle_in)
-    delay_print("Your game has been loaded...\nWelcome Back!!!\n")
-
+    # pickle_in=open("dados.pickle","rb")
+    # playername=pickle.load(pickle_in)
+    # delay_print("Your game has been loaded...\nWelcome Back!!!\n")
+    playername=jsonpickle.decode(save1)
 
 
 
@@ -770,8 +771,8 @@ Press (4) for sleeping\n")
         delay_print("Good night.")
         break
     if action=="2":
-        playername.savegame()
-
+        #playername.savegame()
+        save1=jsonpickle.encode(playername)
 
     if action=="3":
         print("/////////////////////////////////////////////////////////////")
