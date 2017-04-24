@@ -19,8 +19,8 @@ for i in range(1,101):
 
 pickle_in=open("pokemondata.pickle","rb") #Carrega o dicionario com as informacoes de cada pokemon
 
-pokemondata=pickle.load(pickle_in)
 
+pokemondata=pickle.load(pickle_in)
 
 
 class Pokemon:
@@ -559,24 +559,26 @@ class Player():
             for i in range(len(self.party)):
                 delay_print("For {} Lvl:{} press ({}).\n".format(self.party[i].name,self.party[i].lvl,i))
                 numeros.append("{}".format(i))
-            choose=input()
-            while choose not in numeros:
+            global choose2
+            choose2=input()
+            while choose2 not in numeros:
                 print("Type a valid command\n")
-                choose=input()
-            delay_print("You choosed {}!!\n".format((self.party[int(choose)]).name))
-            return self.party[int(choose)]
+                choose2=input()
+            delay_print("You choosed {}!!\n".format((self.party[int(choose2)]).name))
+            return self.party[int(choose2)]
         if num==2: # escolher o pokemon da box
             numeros=[]
             for k in range(len(self.box)):
                 delay_print("For {} press ({}).\n".format((self.box[k]).name,k))
                 numeros.append("{}".format(k))
+            global choose
             choose=input()
             while choose not in numeros:
                 delay_print("Type a valid command\n")
+                choose
                 choose=input()
             delay_print("You choosed {}!!\n".format((self.party[int(choose)]).name))
             return self.box[int(choose)]
-
 
 
 def delay_print(s):
@@ -628,6 +630,7 @@ def choosepokemon(enemy):
     delay_print("A battle is about to begin...\n")
     delay_print("What pokemon do you want to use to battle?\n")
     return playername.pokemonpicker(1),enemy
+
 
 def showlife(playerpokemon):
     delay_print("-------------------------------------------------------------------------\n\
@@ -685,11 +688,13 @@ def batalha(playerpokemon):
                 restorelife(playerpokemon[0])
                 break
 
+
 delay_print("New Game:(1)\n  Load  :(2)")
 game=input()
 while game not in ["1","2"]:
     print("Type a valid command")
     game=input()
+
 
 if game=="1":
     delay_print("Welcome to the marvelous World of Inspermon")
@@ -783,7 +788,7 @@ Your very own INSPERMON legend is about to unfold!\nA world of dreams and advent
 if game=="2":
     pickle_in=open("dados.pickle","rb")
     playername=pickle.load(pickle_in)
-    delay_print("Your game has been loaded...\nWelcome Back {}!!!\n".format(playername.name))
+    delay_print("Your game has been loaded...\nWelcome Back {}!!!\n".format((playername.name)))
 
 
 while True:
