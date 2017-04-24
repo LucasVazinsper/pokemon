@@ -477,7 +477,7 @@ class Player():
     def __init__(self,name,pokemon):
         self.party=[pokemon]  #lista com os pokemons do time do player (maximo de 6 pokemons)
         self.name="{}".format(name) #nome do jogador
-        self.insperdex=["???"]*40 #numero da insperdex
+        self.insperdex=["???"]*41 #numero da insperdex
         self.box=[] #lista com todos os pokemons do player
 
 
