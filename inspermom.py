@@ -599,11 +599,8 @@ def delay_print(s):
 
 
 def restorelife(playerpokemon):
-    delay_print("Press (1) if you want to use a Health Potion on your Inspermom or (2) if you wish to continue: ")
-    hp_potion=input()
-    if hp_potion=="1":
-        playerpokemon.hp=playerpokemon.maxhp
-        return delay_print("Your {} is healed!!!".format((playerpokemon.name)))
+    playerpokemon.hp=playerpokemon.maxhp
+    return delay_print("Your {} is healed!!!\n".format((playerpokemon.name)))
 
 
 def floorpokemons(floor,pokemondatabase):
