@@ -1,4 +1,5 @@
 import random as rd
+#from Pokemondata_all import pokemondata
 
 ########################################
 n=0                # lista de experiencia para cada level, onde n = level
@@ -739,7 +740,7 @@ if game=="1":
             playername.dexregister(Pikachu)
 
     delay_print("\n-Daniel:To see information of your new INSPERMON, you can always use the INSPERDEX.It also can be used in battle for acquiring knowledge of yours enemies strength.\n\
-    Your very own INSPERMON legend is about to unfold!\nA world of dreams and adventures with INSPERMON awaits! Let's go!\n")
+Your very own INSPERMON legend is about to unfold!\nA world of dreams and adventures with INSPERMON awaits! Let's go!\n")
 
 if game=="2":
     pickle_in=open("dados.pickle","rb")
