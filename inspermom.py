@@ -474,9 +474,9 @@ class Pokemon:
 class Player():
     #classe para o usuário
 
-    def __init__(self,name,pokemon):
+    def __init__(self,inputname,pokemon):
         self.party=[pokemon]  #lista com os pokemons do time do player (maximo de 6 pokemons)
-        self.name="{}".format(name) #nome do jogador
+        self.name=inputname #nome do jogador
         self.insperdex=["???"]*41 #numero da insperdex
         self.box=[] #lista com todos os pokemons do player
 
@@ -809,7 +809,7 @@ Your very own INSPERMON legend is about to unfold!\nA world of dreams and advent
 if game=="2":
     pickle_in=open("dados.pickle","rb")
     playername=pickle.load(pickle_in)
-    delay_print2("Your game has been loaded...\nWelcome Back {}!!!\n".format((playername.name)))
+    delay_print2("Your game has been loaded...\nWelcome Back {}!!!\n".format(playername.name))
 
 
 while True:
