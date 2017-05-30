@@ -1,0 +1,2 @@
+************* Module inspermon.py
+F:  1, 0: No module named inspermon.py (fatal)

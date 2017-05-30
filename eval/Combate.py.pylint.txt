@@ -1,0 +1,1209 @@
+************* Module Combate
+W:  7, 0: Cannot decode using encoding "ascii", unexpected byte at position 60 (invalid-encoded-data)
+W: 11, 0: Cannot decode using encoding "ascii", unexpected byte at position 63 (invalid-encoded-data)
+W:335, 0: Cannot decode using encoding "ascii", unexpected byte at position 80 (invalid-encoded-data)
+C:  1, 0: Exactly one space required after comma
+def attack(self,enemy): #dano do ataque do pokemon
+               ^ (bad-whitespace)
+C:  2, 0: Line too long (101/100) (line-too-long)
+W:  2, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:  2, 0: Exactly one space required after comma
+        return ((((2*self.lvl/5)+2)*self.satk*(self.atk/enemy.deff)/50)+2)*(rd.randrange(85,101)/100)
+                                                                                           ^ (bad-whitespace)
+C:  4, 0: Exactly one space required after comma
+def deffense(self,enemy): #dano recebido pelo pokemon
+                 ^ (bad-whitespace)
+C:  5, 0: Line too long (107/100) (line-too-long)
+W:  5, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:  5, 0: Exactly one space required around assignment
+        effectiveness=[0,0.5,1,2] #dano efetivo recebido pelo pokemon(de acordo com as vantagens/fraquezas)
+                     ^ (bad-whitespace)
+C:  5, 0: Exactly one space required after comma
+        effectiveness=[0,0.5,1,2] #dano efetivo recebido pelo pokemon(de acordo com as vantagens/fraquezas)
+                        ^ (bad-whitespace)
+C:  5, 0: Exactly one space required after comma
+        effectiveness=[0,0.5,1,2] #dano efetivo recebido pelo pokemon(de acordo com as vantagens/fraquezas)
+                            ^ (bad-whitespace)
+C:  5, 0: Exactly one space required after comma
+        effectiveness=[0,0.5,1,2] #dano efetivo recebido pelo pokemon(de acordo com as vantagens/fraquezas)
+                              ^ (bad-whitespace)
+W:  6, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:  6, 0: Exactly one space required around assignment
+        dmg=effectiveness[2]
+           ^ (bad-whitespace)
+W:  7, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:  7, 0: Exactly one space required around comparison
+        if self.type=="normal"and enemy.type=="rock": #rock é resistente ao normal
+                    ^^ (bad-whitespace)
+C:  7, 0: Exactly one space required around comparison
+        if self.type=="normal"and enemy.type=="rock": #rock é resistente ao normal
+                                            ^^ (bad-whitespace)
+W:  8, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:  8, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:  9, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:  9, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W: 11, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 11, 0: Exactly one space required around comparison
+        if self.type=="normal" and enemy.type=="ghost": #ghost é imune ao normal
+                    ^^ (bad-whitespace)
+C: 11, 0: Exactly one space required around comparison
+        if self.type=="normal" and enemy.type=="ghost": #ghost é imune ao normal
+                                             ^^ (bad-whitespace)
+W: 12, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 12, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W: 13, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 13, 0: Exactly one space required around assignment
+            dmg=effectiveness[0]
+               ^ (bad-whitespace)
+W: 15, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 15, 0: Exactly one space required around comparison
+        if self.type=="fire" and enemy.type=="fire":
+                    ^^ (bad-whitespace)
+C: 15, 0: Exactly one space required around comparison
+        if self.type=="fire" and enemy.type=="fire":
+                                           ^^ (bad-whitespace)
+W: 16, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 16, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W: 18, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 18, 0: Exactly one space required around comparison
+        if self.type=="fire"and enemy.type=="water":
+                    ^^ (bad-whitespace)
+C: 18, 0: Exactly one space required around comparison
+        if self.type=="fire"and enemy.type=="water":
+                                          ^^ (bad-whitespace)
+W: 19, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 19, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W: 20, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 20, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W: 22, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 22, 0: Exactly one space required around comparison
+        if self.type=="fire"and enemy.type=="rock":
+                    ^^ (bad-whitespace)
+C: 22, 0: Exactly one space required around comparison
+        if self.type=="fire"and enemy.type=="rock":
+                                          ^^ (bad-whitespace)
+W: 23, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 23, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W: 24, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 24, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W: 26, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 26, 0: Exactly one space required around comparison
+        if self.type=="fire"and enemy.type=="dragon":
+                    ^^ (bad-whitespace)
+C: 26, 0: Exactly one space required around comparison
+        if self.type=="fire"and enemy.type=="dragon":
+                                          ^^ (bad-whitespace)
+W: 27, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 27, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W: 28, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 28, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W: 30, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 30, 0: Exactly one space required around comparison
+        if self.type=="fire"and enemy.type=="grass":
+                    ^^ (bad-whitespace)
+C: 30, 0: Exactly one space required around comparison
+        if self.type=="fire"and enemy.type=="grass":
+                                          ^^ (bad-whitespace)
+W: 31, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 31, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W: 32, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 32, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W: 34, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 34, 0: Exactly one space required around comparison
+        if self.type=="fire"and enemy.type=="ice":
+                    ^^ (bad-whitespace)
+C: 34, 0: Exactly one space required around comparison
+        if self.type=="fire"and enemy.type=="ice":
+                                          ^^ (bad-whitespace)
+W: 35, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 35, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W: 36, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 36, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W: 38, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 38, 0: Exactly one space required around comparison
+        if self.type=="fire"and enemy.type=="bug":
+                    ^^ (bad-whitespace)
+C: 38, 0: Exactly one space required around comparison
+        if self.type=="fire"and enemy.type=="bug":
+                                          ^^ (bad-whitespace)
+W: 39, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 39, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W: 40, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 40, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W: 42, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 42, 0: Exactly one space required around comparison
+        if self.type=="water"and enemy.type=="fire":
+                    ^^ (bad-whitespace)
+C: 42, 0: Exactly one space required around comparison
+        if self.type=="water"and enemy.type=="fire":
+                                           ^^ (bad-whitespace)
+W: 43, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 43, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W: 44, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 44, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W: 46, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 46, 0: Exactly one space required around comparison
+        if self.type=="water"and enemy.type=="ground":
+                    ^^ (bad-whitespace)
+C: 46, 0: Exactly one space required around comparison
+        if self.type=="water"and enemy.type=="ground":
+                                           ^^ (bad-whitespace)
+W: 47, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 47, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W: 48, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 48, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W: 50, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 50, 0: Exactly one space required around comparison
+        if self.type=="water"and enemy.type=="rock":
+                    ^^ (bad-whitespace)
+C: 50, 0: Exactly one space required around comparison
+        if self.type=="water"and enemy.type=="rock":
+                                           ^^ (bad-whitespace)
+W: 51, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 51, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W: 52, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 52, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W: 54, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 54, 0: Exactly one space required around comparison
+        if self.type=="water"and enemy.type=="water":
+                    ^^ (bad-whitespace)
+C: 54, 0: Exactly one space required around comparison
+        if self.type=="water"and enemy.type=="water":
+                                           ^^ (bad-whitespace)
+W: 55, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 55, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W: 56, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 56, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W: 58, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 58, 0: Exactly one space required around comparison
+        if self.type=="water"and enemy.type=="grass":
+                    ^^ (bad-whitespace)
+C: 58, 0: Exactly one space required around comparison
+        if self.type=="water"and enemy.type=="grass":
+                                           ^^ (bad-whitespace)
+W: 59, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 59, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W: 60, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 60, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W: 62, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 62, 0: Exactly one space required around comparison
+        if self.type=="water"and enemy.type=="dragon":
+                    ^^ (bad-whitespace)
+C: 62, 0: Exactly one space required around comparison
+        if self.type=="water"and enemy.type=="dragon":
+                                           ^^ (bad-whitespace)
+W: 63, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 63, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W: 64, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 64, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W: 66, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 66, 0: Exactly one space required around comparison
+        if self.type=="eletric"and enemy.type=="eletric":
+                    ^^ (bad-whitespace)
+C: 66, 0: Exactly one space required around comparison
+        if self.type=="eletric"and enemy.type=="eletric":
+                                             ^^ (bad-whitespace)
+W: 67, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 67, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W: 68, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 68, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W: 70, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 70, 0: Exactly one space required around comparison
+        if self.type=="eletric"and enemy.type=="grass":
+                    ^^ (bad-whitespace)
+C: 70, 0: Exactly one space required around comparison
+        if self.type=="eletric"and enemy.type=="grass":
+                                             ^^ (bad-whitespace)
+W: 71, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 71, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W: 72, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 72, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W: 74, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 74, 0: Exactly one space required around comparison
+        if self.type=="eletric"and enemy.type=="dragon":
+                    ^^ (bad-whitespace)
+C: 74, 0: Exactly one space required around comparison
+        if self.type=="eletric"and enemy.type=="dragon":
+                                             ^^ (bad-whitespace)
+W: 75, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 75, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W: 76, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 76, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W: 78, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 78, 0: Exactly one space required around comparison
+        if self.type=="eletric"and enemy.type=="water":
+                    ^^ (bad-whitespace)
+C: 78, 0: Exactly one space required around comparison
+        if self.type=="eletric"and enemy.type=="water":
+                                             ^^ (bad-whitespace)
+W: 79, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 79, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W: 80, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 80, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W: 82, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 82, 0: Exactly one space required around comparison
+        if self.type=="eletric"and enemy.type=="flying":
+                    ^^ (bad-whitespace)
+C: 82, 0: Exactly one space required around comparison
+        if self.type=="eletric"and enemy.type=="flying":
+                                             ^^ (bad-whitespace)
+W: 83, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 83, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W: 84, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 84, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W: 86, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 86, 0: Exactly one space required around comparison
+        if self.type=="eletric"and enemy.type=="ground":
+                    ^^ (bad-whitespace)
+C: 86, 0: Exactly one space required around comparison
+        if self.type=="eletric"and enemy.type=="ground":
+                                             ^^ (bad-whitespace)
+W: 87, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 87, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W: 88, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 88, 0: Exactly one space required around assignment
+            dmg=effectiveness[0]
+               ^ (bad-whitespace)
+W: 90, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 90, 0: Exactly one space required around comparison
+        if self.type=="grass"and enemy.type=="fire":
+                    ^^ (bad-whitespace)
+C: 90, 0: Exactly one space required around comparison
+        if self.type=="grass"and enemy.type=="fire":
+                                           ^^ (bad-whitespace)
+W: 91, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 91, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W: 92, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 92, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W: 94, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 94, 0: Exactly one space required around comparison
+        if self.type=="grass"and enemy.type=="grass":
+                    ^^ (bad-whitespace)
+C: 94, 0: Exactly one space required around comparison
+        if self.type=="grass"and enemy.type=="grass":
+                                           ^^ (bad-whitespace)
+W: 95, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 95, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W: 96, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 96, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W: 98, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C: 98, 0: Exactly one space required around comparison
+        if self.type=="grass"and enemy.type=="poison":
+                    ^^ (bad-whitespace)
+C: 98, 0: Exactly one space required around comparison
+        if self.type=="grass"and enemy.type=="poison":
+                                           ^^ (bad-whitespace)
+W: 99, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C: 99, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:100, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:100, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:102, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:102, 0: Exactly one space required around comparison
+        if self.type=="grass"and enemy.type=="flying":
+                    ^^ (bad-whitespace)
+C:102, 0: Exactly one space required around comparison
+        if self.type=="grass"and enemy.type=="flying":
+                                           ^^ (bad-whitespace)
+W:103, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:103, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:104, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:104, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:106, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:106, 0: Exactly one space required around comparison
+        if self.type=="grass"and enemy.type=="bug":
+                    ^^ (bad-whitespace)
+C:106, 0: Exactly one space required around comparison
+        if self.type=="grass"and enemy.type=="bug":
+                                           ^^ (bad-whitespace)
+W:107, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:107, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:108, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:108, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:110, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:110, 0: Exactly one space required around comparison
+        if self.type=="grass"and enemy.type=="dragon":
+                    ^^ (bad-whitespace)
+C:110, 0: Exactly one space required around comparison
+        if self.type=="grass"and enemy.type=="dragon":
+                                           ^^ (bad-whitespace)
+W:111, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:111, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:112, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:112, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:114, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:114, 0: Exactly one space required around comparison
+        if self.type=="grass"and enemy.type=="water":
+                    ^^ (bad-whitespace)
+C:114, 0: Exactly one space required around comparison
+        if self.type=="grass"and enemy.type=="water":
+                                           ^^ (bad-whitespace)
+W:115, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:115, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:116, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:116, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:118, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:118, 0: Exactly one space required around comparison
+        if self.type=="grass"and enemy.type=="ground":
+                    ^^ (bad-whitespace)
+C:118, 0: Exactly one space required around comparison
+        if self.type=="grass"and enemy.type=="ground":
+                                           ^^ (bad-whitespace)
+W:119, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:119, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:120, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:120, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:122, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:122, 0: Exactly one space required around comparison
+        if self.type=="grass"and enemy.type=="rock":
+                    ^^ (bad-whitespace)
+C:122, 0: Exactly one space required around comparison
+        if self.type=="grass"and enemy.type=="rock":
+                                           ^^ (bad-whitespace)
+W:123, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:123, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:124, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:124, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:126, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:126, 0: Exactly one space required around comparison
+        if self.type=="ice"and enemy.type=="fire":
+                    ^^ (bad-whitespace)
+C:126, 0: Exactly one space required around comparison
+        if self.type=="ice"and enemy.type=="fire":
+                                         ^^ (bad-whitespace)
+W:127, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:127, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:128, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:128, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:130, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:130, 0: Exactly one space required around comparison
+        if self.type=="ice"and enemy.type=="water":
+                    ^^ (bad-whitespace)
+C:130, 0: Exactly one space required around comparison
+        if self.type=="ice"and enemy.type=="water":
+                                         ^^ (bad-whitespace)
+W:131, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:131, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:132, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:132, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:135, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:135, 0: Exactly one space required around comparison
+        if self.type=="ice"and enemy.type=="ice":
+                    ^^ (bad-whitespace)
+C:135, 0: Exactly one space required around comparison
+        if self.type=="ice"and enemy.type=="ice":
+                                         ^^ (bad-whitespace)
+W:136, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:136, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:137, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:137, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:139, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:139, 0: Exactly one space required around comparison
+        if self.type=="ice"and enemy.type=="grass":
+                    ^^ (bad-whitespace)
+C:139, 0: Exactly one space required around comparison
+        if self.type=="ice"and enemy.type=="grass":
+                                         ^^ (bad-whitespace)
+W:140, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:140, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:141, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:141, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:143, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:143, 0: Exactly one space required around comparison
+        if self.type=="ice"and enemy.type=="flying":
+                    ^^ (bad-whitespace)
+C:143, 0: Exactly one space required around comparison
+        if self.type=="ice"and enemy.type=="flying":
+                                         ^^ (bad-whitespace)
+W:144, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:144, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:145, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:145, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:147, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:147, 0: Exactly one space required around comparison
+        if self.type=="ice"and enemy.type=="ground":
+                    ^^ (bad-whitespace)
+C:147, 0: Exactly one space required around comparison
+        if self.type=="ice"and enemy.type=="ground":
+                                         ^^ (bad-whitespace)
+W:148, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:148, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:149, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:149, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:151, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:151, 0: Exactly one space required around comparison
+        if self.type=="ice"and enemy.type=="dragon":
+                    ^^ (bad-whitespace)
+C:151, 0: Exactly one space required around comparison
+        if self.type=="ice"and enemy.type=="dragon":
+                                         ^^ (bad-whitespace)
+W:152, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:152, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:153, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:153, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:155, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:155, 0: Exactly one space required around comparison
+        if self.type=="fighting"and enemy.type=="poison":
+                    ^^ (bad-whitespace)
+C:155, 0: Exactly one space required around comparison
+        if self.type=="fighting"and enemy.type=="poison":
+                                              ^^ (bad-whitespace)
+W:156, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:156, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:157, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:157, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:159, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:159, 0: Exactly one space required around comparison
+        if self.type=="fighting"and enemy.type=="flying":
+                    ^^ (bad-whitespace)
+C:159, 0: Exactly one space required around comparison
+        if self.type=="fighting"and enemy.type=="flying":
+                                              ^^ (bad-whitespace)
+W:160, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:160, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:161, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:161, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:163, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:163, 0: Exactly one space required around comparison
+        if self.type=="fighting"and enemy.type=="psychic":
+                    ^^ (bad-whitespace)
+C:163, 0: Exactly one space required around comparison
+        if self.type=="fighting"and enemy.type=="psychic":
+                                              ^^ (bad-whitespace)
+W:164, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:164, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:165, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:165, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:167, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:167, 0: Exactly one space required around comparison
+        if self.type=="fighting"and enemy.type=="bug":
+                    ^^ (bad-whitespace)
+C:167, 0: Exactly one space required around comparison
+        if self.type=="fighting"and enemy.type=="bug":
+                                              ^^ (bad-whitespace)
+W:168, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:168, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:169, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:169, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:171, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:171, 0: Exactly one space required around comparison
+        if self.type=="fighting"and enemy.type=="normal":
+                    ^^ (bad-whitespace)
+C:171, 0: Exactly one space required around comparison
+        if self.type=="fighting"and enemy.type=="normal":
+                                              ^^ (bad-whitespace)
+W:172, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:172, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:173, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:173, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:175, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:175, 0: Exactly one space required around comparison
+        if self.type=="fighting"and enemy.type=="ice":
+                    ^^ (bad-whitespace)
+C:175, 0: Exactly one space required around comparison
+        if self.type=="fighting"and enemy.type=="ice":
+                                              ^^ (bad-whitespace)
+W:176, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:176, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:177, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:177, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:179, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:179, 0: Exactly one space required around comparison
+        if self.type=="fighting"and enemy.type=="rock":
+                    ^^ (bad-whitespace)
+C:179, 0: Exactly one space required around comparison
+        if self.type=="fighting"and enemy.type=="rock":
+                                              ^^ (bad-whitespace)
+W:180, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:180, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:181, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:181, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:183, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:183, 0: Exactly one space required around comparison
+        if self.type=="fighting"and enemy.type=="ghost":
+                    ^^ (bad-whitespace)
+C:183, 0: Exactly one space required around comparison
+        if self.type=="fighting"and enemy.type=="ghost":
+                                              ^^ (bad-whitespace)
+W:184, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:184, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:185, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:185, 0: Exactly one space required around assignment
+            dmg=effectiveness[0]
+               ^ (bad-whitespace)
+W:187, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:187, 0: Exactly one space required around comparison
+        if self.type=="poison"and enemy.type=="poison":
+                    ^^ (bad-whitespace)
+C:187, 0: Exactly one space required around comparison
+        if self.type=="poison"and enemy.type=="poison":
+                                            ^^ (bad-whitespace)
+W:188, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:188, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:189, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:189, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:191, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:191, 0: Exactly one space required around comparison
+        if self.type=="poison"and enemy.type=="ground":
+                    ^^ (bad-whitespace)
+C:191, 0: Exactly one space required around comparison
+        if self.type=="poison"and enemy.type=="ground":
+                                            ^^ (bad-whitespace)
+W:192, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:192, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:193, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:193, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:195, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:195, 0: Exactly one space required around comparison
+        if self.type=="poison"and enemy.type=="rock":
+                    ^^ (bad-whitespace)
+C:195, 0: Exactly one space required around comparison
+        if self.type=="poison"and enemy.type=="rock":
+                                            ^^ (bad-whitespace)
+W:196, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:196, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:197, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:197, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:199, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:199, 0: Exactly one space required around comparison
+        if self.type=="poison"and enemy.type=="ghost":
+                    ^^ (bad-whitespace)
+C:199, 0: Exactly one space required around comparison
+        if self.type=="poison"and enemy.type=="ghost":
+                                            ^^ (bad-whitespace)
+W:200, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:200, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:201, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:201, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:203, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:203, 0: Exactly one space required around comparison
+        if self.type=="poison"and enemy.type=="grass":
+                    ^^ (bad-whitespace)
+C:203, 0: Exactly one space required around comparison
+        if self.type=="poison"and enemy.type=="grass":
+                                            ^^ (bad-whitespace)
+W:204, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:204, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:205, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:205, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:207, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:207, 0: Exactly one space required around comparison
+        if self.type=="grond"and enemy.type=="grass":
+                    ^^ (bad-whitespace)
+C:207, 0: Exactly one space required around comparison
+        if self.type=="grond"and enemy.type=="grass":
+                                           ^^ (bad-whitespace)
+W:208, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:208, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:209, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:209, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:211, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:211, 0: Exactly one space required around comparison
+        if self.type=="grond"and enemy.type=="bug":
+                    ^^ (bad-whitespace)
+C:211, 0: Exactly one space required around comparison
+        if self.type=="grond"and enemy.type=="bug":
+                                           ^^ (bad-whitespace)
+W:212, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:212, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:213, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:213, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:215, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:215, 0: Exactly one space required around comparison
+        if self.type=="grond"and enemy.type=="fire":
+                    ^^ (bad-whitespace)
+C:215, 0: Exactly one space required around comparison
+        if self.type=="grond"and enemy.type=="fire":
+                                           ^^ (bad-whitespace)
+W:216, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:216, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:217, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:217, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:219, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:219, 0: Exactly one space required around comparison
+        if self.type=="ground"and enemy.type=="eletric":
+                    ^^ (bad-whitespace)
+C:219, 0: Exactly one space required around comparison
+        if self.type=="ground"and enemy.type=="eletric":
+                                            ^^ (bad-whitespace)
+W:220, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:220, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:221, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:221, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:223, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:223, 0: Exactly one space required around comparison
+        if self.type=="ground"and enemy.type=="poison":
+                    ^^ (bad-whitespace)
+C:223, 0: Exactly one space required around comparison
+        if self.type=="ground"and enemy.type=="poison":
+                                            ^^ (bad-whitespace)
+W:224, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:224, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:225, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:225, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:227, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:227, 0: Exactly one space required around comparison
+        if self.type=="ground"and enemy.type=="rock":
+                    ^^ (bad-whitespace)
+C:227, 0: Exactly one space required around comparison
+        if self.type=="ground"and enemy.type=="rock":
+                                            ^^ (bad-whitespace)
+W:228, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:228, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:229, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:229, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:231, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:231, 0: Exactly one space required around comparison
+        if self.type=="ground"and enemy.type=="flying":
+                    ^^ (bad-whitespace)
+C:231, 0: Exactly one space required around comparison
+        if self.type=="ground"and enemy.type=="flying":
+                                            ^^ (bad-whitespace)
+W:232, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:232, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:233, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:233, 0: Exactly one space required around assignment
+            dmg=effectiveness[0]
+               ^ (bad-whitespace)
+W:235, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:235, 0: Exactly one space required around comparison
+        if self.type=="flying"and enemy.type=="eletric":
+                    ^^ (bad-whitespace)
+C:235, 0: Exactly one space required around comparison
+        if self.type=="flying"and enemy.type=="eletric":
+                                            ^^ (bad-whitespace)
+W:236, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:236, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:237, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:237, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:239, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:239, 0: Exactly one space required around comparison
+        if self.type=="flying"and enemy.type=="rock":
+                    ^^ (bad-whitespace)
+C:239, 0: Exactly one space required around comparison
+        if self.type=="flying"and enemy.type=="rock":
+                                            ^^ (bad-whitespace)
+W:240, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:240, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:241, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:241, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:243, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:243, 0: Exactly one space required around comparison
+        if self.type=="flying"and enemy.type=="grass":
+                    ^^ (bad-whitespace)
+C:243, 0: Exactly one space required around comparison
+        if self.type=="flying"and enemy.type=="grass":
+                                            ^^ (bad-whitespace)
+W:244, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:244, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:245, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:245, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:247, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:247, 0: Exactly one space required around comparison
+        if self.type=="flying"and enemy.type=="fighting":
+                    ^^ (bad-whitespace)
+C:247, 0: Exactly one space required around comparison
+        if self.type=="flying"and enemy.type=="fighting":
+                                            ^^ (bad-whitespace)
+W:248, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:248, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:249, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:249, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:251, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:251, 0: Exactly one space required around comparison
+        if self.type=="flying"and enemy.type=="bug":
+                    ^^ (bad-whitespace)
+C:251, 0: Exactly one space required around comparison
+        if self.type=="flying"and enemy.type=="bug":
+                                            ^^ (bad-whitespace)
+W:252, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:252, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:253, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:253, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:255, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:255, 0: Exactly one space required around comparison
+        if self.type=="psychic"and enemy.type=="psychic":
+                    ^^ (bad-whitespace)
+C:255, 0: Exactly one space required around comparison
+        if self.type=="psychic"and enemy.type=="psychic":
+                                             ^^ (bad-whitespace)
+W:256, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:256, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:257, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:257, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:259, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:259, 0: Exactly one space required around comparison
+        if self.type=="psychic"and enemy.type=="fighting":
+                    ^^ (bad-whitespace)
+C:259, 0: Exactly one space required around comparison
+        if self.type=="psychic"and enemy.type=="fighting":
+                                             ^^ (bad-whitespace)
+W:260, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:260, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:261, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:261, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:263, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:263, 0: Exactly one space required around comparison
+        if self.type=="psychic"and enemy.type=="poison":
+                    ^^ (bad-whitespace)
+C:263, 0: Exactly one space required around comparison
+        if self.type=="psychic"and enemy.type=="poison":
+                                             ^^ (bad-whitespace)
+W:264, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:264, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:265, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:265, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:267, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:267, 0: Exactly one space required around comparison
+        if self.type=="bug"and enemy.type=="fire":
+                    ^^ (bad-whitespace)
+C:267, 0: Exactly one space required around comparison
+        if self.type=="bug"and enemy.type=="fire":
+                                         ^^ (bad-whitespace)
+W:268, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:268, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:269, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:269, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:271, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:271, 0: Exactly one space required around comparison
+        if self.type=="bug"and enemy.type=="fighting":
+                    ^^ (bad-whitespace)
+C:271, 0: Exactly one space required around comparison
+        if self.type=="bug"and enemy.type=="fighting":
+                                         ^^ (bad-whitespace)
+W:272, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:272, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:273, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:273, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:275, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:275, 0: Exactly one space required around comparison
+        if self.type=="bug"and enemy.type=="poison":
+                    ^^ (bad-whitespace)
+C:275, 0: Exactly one space required around comparison
+        if self.type=="bug"and enemy.type=="poison":
+                                         ^^ (bad-whitespace)
+W:276, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:276, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:277, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:277, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:279, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:279, 0: Exactly one space required around comparison
+        if self.type=="bug"and enemy.type=="flying":
+                    ^^ (bad-whitespace)
+C:279, 0: Exactly one space required around comparison
+        if self.type=="bug"and enemy.type=="flying":
+                                         ^^ (bad-whitespace)
+W:280, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:280, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:281, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:281, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:283, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:283, 0: Exactly one space required around comparison
+        if self.type=="bug"and enemy.type=="ghost":
+                    ^^ (bad-whitespace)
+C:283, 0: Exactly one space required around comparison
+        if self.type=="bug"and enemy.type=="ghost":
+                                         ^^ (bad-whitespace)
+W:284, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:284, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:285, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:285, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:287, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:287, 0: Exactly one space required around comparison
+        if self.type=="bug"and enemy.type=="grass":
+                    ^^ (bad-whitespace)
+C:287, 0: Exactly one space required around comparison
+        if self.type=="bug"and enemy.type=="grass":
+                                         ^^ (bad-whitespace)
+W:288, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:288, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:289, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:289, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:291, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:291, 0: Exactly one space required around comparison
+        if self.type=="bug"and enemy.type=="psychic":
+                    ^^ (bad-whitespace)
+C:291, 0: Exactly one space required around comparison
+        if self.type=="bug"and enemy.type=="psychic":
+                                         ^^ (bad-whitespace)
+W:292, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:292, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:293, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:293, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:295, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:295, 0: Exactly one space required around comparison
+        if self.type=="rock"and enemy.type=="fighting":
+                    ^^ (bad-whitespace)
+C:295, 0: Exactly one space required around comparison
+        if self.type=="rock"and enemy.type=="fighting":
+                                          ^^ (bad-whitespace)
+W:296, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:296, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:297, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:297, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:299, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:299, 0: Exactly one space required around comparison
+        if self.type=="rock"and enemy.type=="ground":
+                    ^^ (bad-whitespace)
+C:299, 0: Exactly one space required around comparison
+        if self.type=="rock"and enemy.type=="ground":
+                                          ^^ (bad-whitespace)
+W:300, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:300, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:301, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:301, 0: Exactly one space required around assignment
+            dmg=effectiveness[1]
+               ^ (bad-whitespace)
+W:303, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:303, 0: Exactly one space required around comparison
+        if self.type=="rock"and enemy.type=="fire":
+                    ^^ (bad-whitespace)
+C:303, 0: Exactly one space required around comparison
+        if self.type=="rock"and enemy.type=="fire":
+                                          ^^ (bad-whitespace)
+W:304, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:304, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:305, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:305, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:307, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:307, 0: Exactly one space required around comparison
+        if self.type=="rock"and enemy.type=="ice":
+                    ^^ (bad-whitespace)
+C:307, 0: Exactly one space required around comparison
+        if self.type=="rock"and enemy.type=="ice":
+                                          ^^ (bad-whitespace)
+W:308, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:308, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:309, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:309, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:311, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:311, 0: Exactly one space required around comparison
+        if self.type=="rock"and enemy.type=="flying":
+                    ^^ (bad-whitespace)
+C:311, 0: Exactly one space required around comparison
+        if self.type=="rock"and enemy.type=="flying":
+                                          ^^ (bad-whitespace)
+W:312, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:312, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:313, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:313, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:315, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:315, 0: Exactly one space required around comparison
+        if self.type=="rock"and enemy.type=="bug":
+                    ^^ (bad-whitespace)
+C:315, 0: Exactly one space required around comparison
+        if self.type=="rock"and enemy.type=="bug":
+                                          ^^ (bad-whitespace)
+W:316, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:316, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:317, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:317, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:319, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:319, 0: Exactly one space required around comparison
+        if self.type=="ghost"and enemy.type=="psychic":
+                    ^^ (bad-whitespace)
+C:319, 0: Exactly one space required around comparison
+        if self.type=="ghost"and enemy.type=="psychic":
+                                           ^^ (bad-whitespace)
+W:320, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:320, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:321, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:321, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:323, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:323, 0: Exactly one space required around comparison
+        if self.type=="ghost"and enemy.type=="ghost":
+                    ^^ (bad-whitespace)
+C:323, 0: Exactly one space required around comparison
+        if self.type=="ghost"and enemy.type=="ghost":
+                                           ^^ (bad-whitespace)
+W:324, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:324, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:325, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:325, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+W:327, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:327, 0: Exactly one space required around comparison
+        if self.type=="ghost"and enemy.type=="normal":
+                    ^^ (bad-whitespace)
+C:327, 0: Exactly one space required around comparison
+        if self.type=="ghost"and enemy.type=="normal":
+                                           ^^ (bad-whitespace)
+W:328, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:328, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:329, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:329, 0: Exactly one space required around assignment
+            dmg=effectiveness[0]
+               ^ (bad-whitespace)
+W:331, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:331, 0: Exactly one space required around comparison
+        if self.type=="dragon"and enemy.type=="dragon":
+                    ^^ (bad-whitespace)
+C:331, 0: Exactly one space required around comparison
+        if self.type=="dragon"and enemy.type=="dragon":
+                                            ^^ (bad-whitespace)
+W:332, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:332, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+W:333, 0: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+C:333, 0: Exactly one space required around assignment
+            dmg=effectiveness[3]
+               ^ (bad-whitespace)
+C:335, 0: Line too long (105/100) (line-too-long)
+W:335, 0: Bad indentation. Found 8 spaces, expected 4 (bad-indentation)
+C:  1, 0: Missing module docstring (missing-docstring)
+C:  1, 0: Missing function docstring (missing-docstring)
+E:  2,76: Undefined variable 'rd' (undefined-variable)
+C:  4, 0: Missing function docstring (missing-docstring)
+R:  9,12: Redefinition of dmg type from int to float (redefined-variable-type)
+R:  4, 0: Too many branches (82/12) (too-many-branches)
+R:  4, 0: Too many statements (248/50) (too-many-statements)
+
+
+Report
+======
+251 statements analysed.
+
+Statistics by type
+------------------
+
++---------+-------+-----------+-----------+------------+---------+
+|type     |number |old number |difference |%documented |%badname |
++=========+=======+===========+===========+============+=========+
+|module   |1      |NC         |NC         |0.00        |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|class    |0      |NC         |NC         |0           |0        |
++---------+-------+-----------+-----------+------------+---------+
+|method   |0      |NC         |NC         |0           |0        |
++---------+-------+-----------+-----------+------------+---------+
+|function |2      |NC         |NC         |0.00        |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+
+
+
+Raw metrics
+-----------
+
++----------+-------+------+---------+-----------+
+|type      |number |%     |previous |difference |
++==========+=======+======+=========+===========+
+|code      |252    |74.78 |NC       |NC         |
++----------+-------+------+---------+-----------+
+|docstring |0      |0.00  |NC       |NC         |
++----------+-------+------+---------+-----------+
+|comment   |1      |0.30  |NC       |NC         |
++----------+-------+------+---------+-----------+
+|empty     |84     |24.93 |NC       |NC         |
++----------+-------+------+---------+-----------+
+
+
+
+Duplication
+-----------
+
++-------------------------+------+---------+-----------+
+|                         |now   |previous |difference |
++=========================+======+=========+===========+
+|nb duplicated lines      |0     |NC       |NC         |
++-------------------------+------+---------+-----------+
+|percent duplicated lines |0.000 |NC       |NC         |
++-------------------------+------+---------+-----------+
+
+
+
+Messages by category
+--------------------
+
++-----------+-------+---------+-----------+
+|type       |number |previous |difference |
++===========+=======+=========+===========+
+|convention |341    |NC       |NC         |
++-----------+-------+---------+-----------+
+|refactor   |3      |NC       |NC         |
++-----------+-------+---------+-----------+
+|warning    |252    |NC       |NC         |
++-----------+-------+---------+-----------+
+|error      |1      |NC       |NC         |
++-----------+-------+---------+-----------+
+
+
+
+Messages
+--------
+
++------------------------+------------+
+|message id              |occurrences |
++========================+============+
+|bad-whitespace          |254         |
++------------------------+------------+
+|bad-indentation         |249         |
++------------------------+------------+
+|superfluous-parens      |81          |
++------------------------+------------+
+|missing-docstring       |3           |
++------------------------+------------+
+|line-too-long           |3           |
++------------------------+------------+
+|invalid-encoded-data    |3           |
++------------------------+------------+
+|undefined-variable      |1           |
++------------------------+------------+
+|too-many-statements     |1           |
++------------------------+------------+
+|too-many-branches       |1           |
++------------------------+------------+
+|redefined-variable-type |1           |
++------------------------+------------+
+
+
+
+Global evaluation
+-----------------
+Your code has been rated at -13.94/10
+

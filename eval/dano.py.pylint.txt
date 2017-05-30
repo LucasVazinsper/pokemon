@@ -1,0 +1,117 @@
+************* Module dano
+C:  1, 0: Exactly one space required after comma
+def dano(atk,lvl,move,deff):
+            ^ (bad-whitespace)
+C:  1, 0: Exactly one space required after comma
+def dano(atk,lvl,move,deff):
+                ^ (bad-whitespace)
+C:  1, 0: Exactly one space required after comma
+def dano(atk,lvl,move,deff):
+                     ^ (bad-whitespace)
+C:  2, 0: Exactly one space required around assignment
+    ran=random.randrange(85,100)
+       ^ (bad-whitespace)
+C:  2, 0: Exactly one space required after comma
+    ran=random.randrange(85,100)
+                           ^ (bad-whitespace)
+C:  3, 0: Exactly one space required around assignment
+    x=1 #modificador(super efetivo)
+     ^ (bad-whitespace)
+C:  4, 0: Exactly one space required around assignment
+    damage=((((2*lvl/5)+2)*move*(atk/deff)/50)+2)*(ran/100)*(x)
+          ^ (bad-whitespace)
+C:  1, 0: Missing module docstring (missing-docstring)
+C:  1, 0: Missing function docstring (missing-docstring)
+E:  2, 8: Undefined variable 'random' (undefined-variable)
+C:  3, 4: Invalid variable name "x" (invalid-name)
+
+
+Report
+======
+5 statements analysed.
+
+Statistics by type
+------------------
+
++---------+-------+-----------+-----------+------------+---------+
+|type     |number |old number |difference |%documented |%badname |
++=========+=======+===========+===========+============+=========+
+|module   |1      |NC         |NC         |0.00        |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|class    |0      |NC         |NC         |0           |0        |
++---------+-------+-----------+-----------+------------+---------+
+|method   |0      |NC         |NC         |0           |0        |
++---------+-------+-----------+-----------+------------+---------+
+|function |1      |NC         |NC         |0.00        |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+
+
+
+Raw metrics
+-----------
+
++----------+-------+------+---------+-----------+
+|type      |number |%     |previous |difference |
++==========+=======+======+=========+===========+
+|code      |6      |42.86 |NC       |NC         |
++----------+-------+------+---------+-----------+
+|docstring |0      |0.00  |NC       |NC         |
++----------+-------+------+---------+-----------+
+|comment   |1      |7.14  |NC       |NC         |
++----------+-------+------+---------+-----------+
+|empty     |7      |50.00 |NC       |NC         |
++----------+-------+------+---------+-----------+
+
+
+
+Duplication
+-----------
+
++-------------------------+------+---------+-----------+
+|                         |now   |previous |difference |
++=========================+======+=========+===========+
+|nb duplicated lines      |0     |NC       |NC         |
++-------------------------+------+---------+-----------+
+|percent duplicated lines |0.000 |NC       |NC         |
++-------------------------+------+---------+-----------+
+
+
+
+Messages by category
+--------------------
+
++-----------+-------+---------+-----------+
+|type       |number |previous |difference |
++===========+=======+=========+===========+
+|convention |10     |NC       |NC         |
++-----------+-------+---------+-----------+
+|refactor   |0      |NC       |NC         |
++-----------+-------+---------+-----------+
+|warning    |0      |NC       |NC         |
++-----------+-------+---------+-----------+
+|error      |1      |NC       |NC         |
++-----------+-------+---------+-----------+
+
+
+
+Messages
+--------
+
++-------------------+------------+
+|message id         |occurrences |
++===================+============+
+|bad-whitespace     |7           |
++-------------------+------------+
+|missing-docstring  |2           |
++-------------------+------------+
+|undefined-variable |1           |
++-------------------+------------+
+|invalid-name       |1           |
++-------------------+------------+
+
+
+
+Global evaluation
+-----------------
+Your code has been rated at -20.00/10
+
