@@ -1,0 +1,737 @@
+************* Module ClassesConcertadasteste1
+W:221, 0: Cannot decode using encoding "ascii", unexpected byte at position 42 (invalid-encoded-data)
+W:223, 0: Cannot decode using encoding "ascii", unexpected byte at position 34 (invalid-encoded-data)
+C:  3, 0: Line too long (133/100) (line-too-long)
+C:  3, 0: Exactly one space required around assignment
+Tipos=["Normal","Fire","Water","Eletric","Grass","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Ghost","Rock","Dragon"]
+     ^ (bad-whitespace)
+C:  3, 0: Exactly one space required after comma
+Tipos=["Normal","Fire","Water","Eletric","Grass","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Ghost","Rock","Dragon"]
+               ^ (bad-whitespace)
+C:  3, 0: Exactly one space required after comma
+Tipos=["Normal","Fire","Water","Eletric","Grass","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Ghost","Rock","Dragon"]
+                      ^ (bad-whitespace)
+C:  3, 0: Exactly one space required after comma
+Tipos=["Normal","Fire","Water","Eletric","Grass","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Ghost","Rock","Dragon"]
+                              ^ (bad-whitespace)
+C:  3, 0: Exactly one space required after comma
+Tipos=["Normal","Fire","Water","Eletric","Grass","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Ghost","Rock","Dragon"]
+                                        ^ (bad-whitespace)
+C:  3, 0: Exactly one space required after comma
+Tipos=["Normal","Fire","Water","Eletric","Grass","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Ghost","Rock","Dragon"]
+                                                ^ (bad-whitespace)
+C:  3, 0: Exactly one space required after comma
+Tipos=["Normal","Fire","Water","Eletric","Grass","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Ghost","Rock","Dragon"]
+                                                      ^ (bad-whitespace)
+C:  3, 0: Exactly one space required after comma
+Tipos=["Normal","Fire","Water","Eletric","Grass","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Ghost","Rock","Dragon"]
+                                                                 ^ (bad-whitespace)
+C:  3, 0: Exactly one space required after comma
+Tipos=["Normal","Fire","Water","Eletric","Grass","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Ghost","Rock","Dragon"]
+                                                                          ^ (bad-whitespace)
+C:  3, 0: Exactly one space required after comma
+Tipos=["Normal","Fire","Water","Eletric","Grass","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Ghost","Rock","Dragon"]
+                                                                                   ^ (bad-whitespace)
+C:  3, 0: Exactly one space required after comma
+Tipos=["Normal","Fire","Water","Eletric","Grass","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Ghost","Rock","Dragon"]
+                                                                                            ^ (bad-whitespace)
+C:  3, 0: Exactly one space required after comma
+Tipos=["Normal","Fire","Water","Eletric","Grass","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Ghost","Rock","Dragon"]
+                                                                                                      ^ (bad-whitespace)
+C:  3, 0: Exactly one space required after comma
+Tipos=["Normal","Fire","Water","Eletric","Grass","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Ghost","Rock","Dragon"]
+                                                                                                            ^ (bad-whitespace)
+C:  3, 0: Exactly one space required after comma
+Tipos=["Normal","Fire","Water","Eletric","Grass","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Ghost","Rock","Dragon"]
+                                                                                                                    ^ (bad-whitespace)
+C:  3, 0: Exactly one space required after comma
+Tipos=["Normal","Fire","Water","Eletric","Grass","Ice","Fighting","Poison","Ground","Flying","Psychic","Bug","Ghost","Rock","Dragon"]
+                                                                                                                           ^ (bad-whitespace)
+C:  6, 0: Exactly one space required around assignment
+pokemondata={"bulbasaur":{"type":"grass",
+           ^ (bad-whitespace)
+C:  7, 0: Wrong continued indentation (add 21 spaces).
+					"hp":45,
+     ^                    | (bad-continuation)
+C:  8, 0: Wrong continued indentation (add 21 spaces).
+					"atk":49,
+     ^                    | (bad-continuation)
+C:  9, 0: Wrong continued indentation (add 21 spaces).
+					"deff":49,
+     ^                    | (bad-continuation)
+C: 10, 0: Wrong continued indentation (add 21 spaces).
+					"spd":40,
+     ^                    | (bad-continuation)
+C: 11, 0: Wrong continued indentation (add 21 spaces).
+					"satk":40},
+     ^                    | (bad-continuation)
+C: 12, 0: Wrong continued indentation (add 12 spaces).
+	"charmander":{"type":"fire",
+ ^           | (bad-continuation)
+C: 13, 0: Wrong continued indentation (add 10 spaces).
+					"hp":49,
+     ^         | (bad-continuation)
+C: 14, 0: Wrong continued indentation (add 10 spaces).
+					"atk":52,
+     ^         | (bad-continuation)
+C: 15, 0: Wrong continued indentation (add 10 spaces).
+					"deff":43,
+     ^         | (bad-continuation)
+C: 16, 0: Wrong continued indentation (add 10 spaces).
+					"spd":65,
+     ^         | (bad-continuation)
+C: 17, 0: Wrong continued indentation (add 10 spaces).
+					"satk":40},
+     ^         | (bad-continuation)
+C: 18, 0: Wrong continued indentation (add 12 spaces).
+	"squirtle":{"type":"water",
+ ^           | (bad-continuation)
+C: 19, 0: Wrong continued indentation (remove 2 spaces).
+	              "hp":44,
+             | ^ (bad-continuation)
+C: 20, 0: Wrong continued indentation (remove 5 spaces).
+                  "atk":50,
+             |    ^ (bad-continuation)
+C: 21, 0: Wrong continued indentation (add 7 spaces).
+				  "deff":65,
+      ^      | (bad-continuation)
+C: 22, 0: Wrong continued indentation (add 7 spaces).
+				  "spd":43,
+      ^      | (bad-continuation)
+C: 23, 0: Wrong continued indentation (add 7 spaces).
+				  "satk":40},
+      ^      | (bad-continuation)
+C: 24, 0: Wrong continued indentation (add 12 spaces).
+	"caterpie":{"type":"bug",
+ ^           | (bad-continuation)
+C: 25, 0: Wrong continued indentation (remove 2 spaces).
+	              "hp":45,
+             | ^ (bad-continuation)
+C: 26, 0: Wrong continued indentation (add 7 spaces).
+				  "atk":30,
+      ^      | (bad-continuation)
+C: 27, 0: Wrong continued indentation (add 7 spaces).
+				  "deff":35,
+      ^      | (bad-continuation)
+C: 28, 0: Wrong continued indentation (add 7 spaces).
+				  "spd":45,
+      ^      | (bad-continuation)
+C: 29, 0: Wrong continued indentation (add 7 spaces).
+				  "satk":40},
+      ^      | (bad-continuation)
+C: 30, 0: Wrong continued indentation (add 12 spaces).
+	"pidgey":{"type":"flying",
+ ^           | (bad-continuation)
+C: 31, 0: Wrong continued indentation (remove 4 spaces).
+	              "hp":40,
+           |   ^ (bad-continuation)
+C: 32, 0: Wrong continued indentation (add 5 spaces).
+				  "atk":45,
+      ^    | (bad-continuation)
+C: 33, 0: Wrong continued indentation (add 5 spaces).
+				  "deff":40,
+      ^    | (bad-continuation)
+C: 34, 0: Wrong continued indentation (add 5 spaces).
+				  "spd":56,
+      ^    | (bad-continuation)
+C: 35, 0: Wrong continued indentation (add 5 spaces).
+				  "satk":40},
+      ^    | (bad-continuation)
+C: 36, 0: Wrong continued indentation (add 12 spaces).
+	"pichu":{"type":"eletric",
+ ^           | (bad-continuation)
+C: 37, 0: Wrong continued indentation (remove 8 spaces).
+                  "hp":20,
+          |       ^ (bad-continuation)
+C: 38, 0: Wrong continued indentation (add 4 spaces).
+				  "atk":40,
+      ^   | (bad-continuation)
+C: 39, 0: Wrong continued indentation (add 4 spaces).
+				  "deff":15,
+      ^   | (bad-continuation)
+C: 40, 0: Wrong continued indentation (add 4 spaces).
+				  "spd":60,
+      ^   | (bad-continuation)
+C: 41, 0: Wrong continued indentation (add 4 spaces).
+				  "satk":40},
+      ^   | (bad-continuation)
+C: 42, 0: Wrong continued indentation (add 12 spaces).
+	"abra":{"type":"psychic",
+ ^           | (bad-continuation)
+C: 43, 0: Wrong continued indentation (remove 6 spaces).
+	              "hp":25,
+         |     ^ (bad-continuation)
+C: 44, 0: Wrong continued indentation (add 3 spaces).
+				  "atk":105,
+      ^  | (bad-continuation)
+C: 45, 0: Wrong continued indentation (add 3 spaces).
+				  "deff":55,
+      ^  | (bad-continuation)
+C: 46, 0: Wrong continued indentation (add 3 spaces).
+				  "spd":90,
+      ^  | (bad-continuation)
+C: 47, 0: Wrong continued indentation (add 3 spaces).
+				  "satk":40},
+      ^  | (bad-continuation)
+C: 48, 0: Wrong continued indentation (add 12 spaces).
+	"machop":{"type":"fighting",
+ ^           | (bad-continuation)
+C: 49, 0: Wrong continued indentation (remove 4 spaces).
+	              "hp":70,
+           |   ^ (bad-continuation)
+C: 50, 0: Wrong continued indentation (add 5 spaces).
+				  "atk":80,
+      ^    | (bad-continuation)
+C: 51, 0: Wrong continued indentation (add 5 spaces).
+				  "deff":50,
+      ^    | (bad-continuation)
+C: 52, 0: Wrong continued indentation (add 5 spaces).
+				  "spd":35,
+      ^    | (bad-continuation)
+C: 53, 0: Wrong continued indentation (add 5 spaces).
+				  "satk":40},
+      ^    | (bad-continuation)
+C: 54, 0: Wrong continued indentation (add 12 spaces).
+	"gastly":{"type":"ghost",
+ ^           | (bad-continuation)
+C: 55, 0: Wrong continued indentation (remove 4 spaces).
+	              "hp":30,
+           |   ^ (bad-continuation)
+C: 56, 0: Wrong continued indentation (add 5 spaces).
+				  "atk":100,
+      ^    | (bad-continuation)
+C: 57, 0: Wrong continued indentation (add 5 spaces).
+				  "deff":35,
+      ^    | (bad-continuation)
+C: 58, 0: Wrong continued indentation (add 5 spaces).
+				  "spd":80,
+      ^    | (bad-continuation)
+C: 59, 0: Wrong continued indentation (add 5 spaces).
+				  "satk":40},
+      ^    | (bad-continuation)
+C: 60, 0: Wrong continued indentation (add 12 spaces).
+	"grimer":{"type":"poison",
+ ^           | (bad-continuation)
+C: 61, 0: Wrong continued indentation (remove 4 spaces).
+	              "hp":80,
+           |   ^ (bad-continuation)
+C: 62, 0: Wrong continued indentation (add 5 spaces).
+				  "atk":80,
+      ^    | (bad-continuation)
+C: 63, 0: Wrong continued indentation (add 5 spaces).
+				  "def":50,
+      ^    | (bad-continuation)
+C: 64, 0: Wrong continued indentation (add 5 spaces).
+				  "spd":25,
+      ^    | (bad-continuation)
+C: 65, 0: Wrong continued indentation (add 5 spaces).
+				  "satk":40},
+      ^    | (bad-continuation)
+C: 66, 0: Wrong continued indentation (add 12 spaces).
+	"rhyhorn":{"type":"rock",
+ ^           | (bad-continuation)
+C: 67, 0: Wrong continued indentation (remove 3 spaces).
+	              "hp":80,
+            |  ^ (bad-continuation)
+C: 68, 0: Wrong continued indentation (add 6 spaces).
+				  "atk":85,
+      ^     | (bad-continuation)
+C: 69, 0: Wrong continued indentation (add 6 spaces).
+				  "deff":95,
+      ^     | (bad-continuation)
+C: 70, 0: Wrong continued indentation (add 6 spaces).
+				  "spd":25,
+      ^     | (bad-continuation)
+C: 71, 0: Wrong continued indentation (add 6 spaces).
+				  "satk":50},
+      ^     | (bad-continuation)
+C: 72, 0: Wrong continued indentation (add 12 spaces).
+	"dratini":{"type":"dragon",
+ ^           | (bad-continuation)
+C: 73, 0: Wrong continued indentation (remove 3 spaces).
+	              "hp":41,
+            |  ^ (bad-continuation)
+C: 74, 0: Wrong continued indentation (add 6 spaces).
+				  "atk":64,
+      ^     | (bad-continuation)
+C: 75, 0: Wrong continued indentation (add 6 spaces).
+				  "deff":50,
+      ^     | (bad-continuation)
+C: 76, 0: Wrong continued indentation (add 6 spaces).
+				  "spd":50,
+      ^     | (bad-continuation)
+C: 77, 0: Wrong continued indentation (add 6 spaces).
+				  "satk":40},
+      ^     | (bad-continuation)
+C: 78, 0: Wrong continued indentation (add 12 spaces).
+	"bergmite":{"type":"ice",
+ ^           | (bad-continuation)
+C: 79, 0: Wrong continued indentation (remove 2 spaces).
+	              "hp":55,
+             | ^ (bad-continuation)
+C: 80, 0: Wrong continued indentation (add 7 spaces).
+				  "atk":69,
+      ^      | (bad-continuation)
+C: 81, 0: Wrong continued indentation (add 7 spaces).
+				  "deff":85,
+      ^      | (bad-continuation)
+C: 82, 0: Wrong continued indentation (add 7 spaces).
+				  "spd":28,
+      ^      | (bad-continuation)
+C: 83, 0: Wrong continued indentation (add 7 spaces).
+				  "satk":55},
+      ^      | (bad-continuation)
+C: 84, 0: Wrong continued indentation (add 12 spaces).
+	"sandile":{"type":"ground",
+ ^           | (bad-continuation)
+C: 85, 0: Wrong continued indentation (remove 3 spaces).
+	              "hp":50,
+            |  ^ (bad-continuation)
+C: 86, 0: Wrong continued indentation (add 6 spaces).
+				  "atk":72,
+      ^     | (bad-continuation)
+C: 87, 0: Wrong continued indentation (add 6 spaces).
+				  "deff":35,
+      ^     | (bad-continuation)
+C: 88, 0: Wrong continued indentation (add 6 spaces).
+				  "spd":65,
+      ^     | (bad-continuation)
+C: 89, 0: Wrong continued indentation (add 6 spaces).
+				  "satk":40},
+      ^     | (bad-continuation)
+C: 90, 0: Wrong continued indentation (add 12 spaces).
+	"meowth":{"type":"normal",
+ ^           | (bad-continuation)
+C: 91, 0: Wrong continued indentation (remove 4 spaces).
+	              "hp":40,
+           |   ^ (bad-continuation)
+C: 92, 0: Wrong continued indentation (add 5 spaces).
+				  "atk":45,
+      ^    | (bad-continuation)
+C: 93, 0: Wrong continued indentation (add 5 spaces).
+				  "deff":40,
+      ^    | (bad-continuation)
+C: 94, 0: Wrong continued indentation (add 5 spaces).
+				  "spd":90,
+      ^    | (bad-continuation)
+C: 95, 0: Wrong continued indentation (add 5 spaces).
+				  "satk":40}}
+      ^    | (bad-continuation)
+C:101, 0: Exactly one space required after comma
+    def __init__(self,pokemon,lvl):
+                     ^ (bad-whitespace)
+C:101, 0: Exactly one space required after comma
+    def __init__(self,pokemon,lvl):
+                             ^ (bad-whitespace)
+C:102, 0: Exactly one space required around assignment
+        self.type=pokemon["type"] #tipo do pokemon
+                 ^ (bad-whitespace)
+C:103, 0: Exactly one space required around assignment
+        self.lvl=lvl #lvl do pokemon
+                ^ (bad-whitespace)
+C:104, 0: Line too long (101/100) (line-too-long)
+C:104, 0: Exactly one space required around assignment
+        self.hp=(((2*pokemon["hp"]+rd.randrange(1,32)+(50/4))*lvl)/100)+lvl+10 #vida atual do pokemon
+               ^ (bad-whitespace)
+C:104, 0: Exactly one space required after comma
+        self.hp=(((2*pokemon["hp"]+rd.randrange(1,32)+(50/4))*lvl)/100)+lvl+10 #vida atual do pokemon
+                                                 ^ (bad-whitespace)
+C:105, 0: Exactly one space required around assignment
+        self.atk=(((2*pokemon["atk"]+rd.randrange(1,32)+(50/4))*lvl)/100)+5 #ataque atual do pokemon
+                ^ (bad-whitespace)
+C:105, 0: Exactly one space required after comma
+        self.atk=(((2*pokemon["atk"]+rd.randrange(1,32)+(50/4))*lvl)/100)+5 #ataque atual do pokemon
+                                                   ^ (bad-whitespace)
+C:106, 0: Line too long (102/100) (line-too-long)
+C:106, 0: Exactly one space required around assignment
+        self.deff=(((2*pokemon["deff"]+rd.randrange(1,32)+(50/4))*lvl)/100)+5 #defesa atual do pokemon
+                 ^ (bad-whitespace)
+C:106, 0: Exactly one space required after comma
+        self.deff=(((2*pokemon["deff"]+rd.randrange(1,32)+(50/4))*lvl)/100)+5 #defesa atual do pokemon
+                                                     ^ (bad-whitespace)
+C:107, 0: Line too long (104/100) (line-too-long)
+C:107, 0: Exactly one space required around assignment
+        self.spd=(((2*pokemon["spd"]+rd.randrange(1,32)+(50/4))*lvl)/100)+5 #velocidade atual do pokemon
+                ^ (bad-whitespace)
+C:107, 0: Exactly one space required after comma
+        self.spd=(((2*pokemon["spd"]+rd.randrange(1,32)+(50/4))*lvl)/100)+5 #velocidade atual do pokemon
+                                                   ^ (bad-whitespace)
+C:108, 0: Exactly one space required around assignment
+        self.satk=pokemon["satk"]
+                 ^ (bad-whitespace)
+C:109, 0: Exactly one space required around assignment
+        self.exp=0
+                ^ (bad-whitespace)
+C:110, 0: Line too long (163/100) (line-too-long)
+C:110, 0: Exactly one space required around assignment
+        self.atributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\n".format((self.type).capitalize(),self.lvl,self.hp,self.atk,self.deff,self.spd)
+                      ^ (bad-whitespace)
+C:110, 0: Exactly one space required after comma
+        self.atributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\n".format((self.type).capitalize(),self.lvl,self.hp,self.atk,self.deff,self.spd)
+                                                                                                                     ^ (bad-whitespace)
+C:110, 0: Exactly one space required after comma
+        self.atributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\n".format((self.type).capitalize(),self.lvl,self.hp,self.atk,self.deff,self.spd)
+                                                                                                                              ^ (bad-whitespace)
+C:110, 0: Exactly one space required after comma
+        self.atributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\n".format((self.type).capitalize(),self.lvl,self.hp,self.atk,self.deff,self.spd)
+                                                                                                                                      ^ (bad-whitespace)
+C:110, 0: Exactly one space required after comma
+        self.atributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\n".format((self.type).capitalize(),self.lvl,self.hp,self.atk,self.deff,self.spd)
+                                                                                                                                               ^ (bad-whitespace)
+C:110, 0: Exactly one space required after comma
+        self.atributes="Type:{}\nLevel:{}\nHp:{}\nAttack:{}\nDeffense:{}\nSpeed:{}\n".format((self.type).capitalize(),self.lvl,self.hp,self.atk,self.deff,self.spd)
+                                                                                                                                                         ^ (bad-whitespace)
+C:113, 0: Exactly one space required after comma
+    def attack(self,enemy): #dano do ataque do pokemon
+                   ^ (bad-whitespace)
+C:114, 0: Line too long (101/100) (line-too-long)
+C:114, 0: Exactly one space required after comma
+        return ((((2*self.lvl/5)+2)*self.satk*(self.atk/enemy.deff)/50)+2)*(rd.randrange(85,101)/100)
+                                                                                           ^ (bad-whitespace)
+C:117, 0: Exactly one space required around comparison
+        if self.exp==25:
+                   ^^ (bad-whitespace)
+C:118, 0: Exactly one space required around assignment
+            self.lvl+=1
+                    ^^ (bad-whitespace)
+C:119, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+C:120, 0: Exactly one space required around comparison
+        if self.exp==50:
+                   ^^ (bad-whitespace)
+C:121, 0: Exactly one space required around assignment
+            self.lvl+=1
+                    ^^ (bad-whitespace)
+C:122, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+C:123, 0: Exactly one space required around comparison
+        if self.exp==75:
+                   ^^ (bad-whitespace)
+C:124, 0: Exactly one space required around assignment
+            self.lvl+=1
+                    ^^ (bad-whitespace)
+C:125, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+C:126, 0: Exactly one space required around comparison
+        if self.exp==100:
+                   ^^ (bad-whitespace)
+C:127, 0: Exactly one space required around assignment
+            self.lvl+=1
+                    ^^ (bad-whitespace)
+C:128, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+C:129, 0: Exactly one space required around comparison
+        if self.exp==125:
+                   ^^ (bad-whitespace)
+C:130, 0: Exactly one space required around assignment
+            self.lvl+=1
+                    ^^ (bad-whitespace)
+C:131, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+C:132, 0: Exactly one space required around comparison
+        if self.exp==150:
+                   ^^ (bad-whitespace)
+C:133, 0: Exactly one space required around assignment
+            self.lvl+=1
+                    ^^ (bad-whitespace)
+C:134, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+C:135, 0: Exactly one space required around comparison
+        if self.exp==175:
+                   ^^ (bad-whitespace)
+C:136, 0: Exactly one space required around assignment
+            self.lvl+=1
+                    ^^ (bad-whitespace)
+C:137, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+C:138, 0: Exactly one space required around comparison
+        if self.exp==200:
+                   ^^ (bad-whitespace)
+C:139, 0: Exactly one space required around assignment
+            self.lvl+=1
+                    ^^ (bad-whitespace)
+C:140, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+C:141, 0: Exactly one space required around comparison
+        if self.exp==225:
+                   ^^ (bad-whitespace)
+C:142, 0: Exactly one space required around assignment
+            self.lvl+=1
+                    ^^ (bad-whitespace)
+C:143, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+C:170, 0: No space allowed after bracket
+        sys.stdout.write( '%s' % c )
+                        ^ (bad-whitespace)
+C:170, 0: No space allowed before bracket
+        sys.stdout.write( '%s' % c )
+                                   ^ (bad-whitespace)
+C:173, 0: Exactly one space required around assignment
+ok=True
+  ^ (bad-whitespace)
+C:175, 0: Exactly one space required around assignment
+    a=input("passear (0) ou dormir (1): ")
+     ^ (bad-whitespace)
+C:176, 0: Exactly one space required around assignment
+    Charmanderplayer=Pokemon(pokemondata["charmander"],2)
+                    ^ (bad-whitespace)
+C:176, 0: Exactly one space required after comma
+    Charmanderplayer=Pokemon(pokemondata["charmander"],2)
+                                                      ^ (bad-whitespace)
+C:177, 0: Exactly one space required around comparison
+    if a=="1":
+        ^^ (bad-whitespace)
+C:179, 0: Exactly one space required around comparison
+    if a=="0":
+        ^^ (bad-whitespace)
+C:180, 0: Exactly one space required around assignment
+        lvlfloor1=rd.randrange(1,11)
+                 ^ (bad-whitespace)
+C:180, 0: Exactly one space required after comma
+        lvlfloor1=rd.randrange(1,11)
+                                ^ (bad-whitespace)
+C:181, 0: Exactly one space required after comma
+        po,atributos=rd.choice(list(pokemondata.items()))
+          ^ (bad-whitespace)
+C:181, 0: Exactly one space required around assignment
+        po,atributos=rd.choice(list(pokemondata.items()))
+                    ^ (bad-whitespace)
+C:182, 0: Exactly one space required around assignment
+        enemy=Pokemon(pokemondata[po],1)
+             ^ (bad-whitespace)
+C:182, 0: Exactly one space required after comma
+        enemy=Pokemon(pokemondata[po],1)
+                                     ^ (bad-whitespace)
+C:183, 0: Exactly one space required around assignment
+        mensagem="A wild pokemon appears....\nIt's a {} LvL:{}\n "
+                ^ (bad-whitespace)
+C:184, 0: Exactly one space required around assignment
+        vowals=["a","e","i","o","u"]
+              ^ (bad-whitespace)
+C:184, 0: Exactly one space required after comma
+        vowals=["a","e","i","o","u"]
+                   ^ (bad-whitespace)
+C:184, 0: Exactly one space required after comma
+        vowals=["a","e","i","o","u"]
+                       ^ (bad-whitespace)
+C:184, 0: Exactly one space required after comma
+        vowals=["a","e","i","o","u"]
+                           ^ (bad-whitespace)
+C:184, 0: Exactly one space required after comma
+        vowals=["a","e","i","o","u"]
+                               ^ (bad-whitespace)
+C:186, 0: Exactly one space required around assignment
+            mensagem="A wild pokemon appears....\nIt's an {} Lvl:{}\n "
+                    ^ (bad-whitespace)
+C:187, 0: Exactly one space required after comma
+        delay_print(mensagem.format(po.capitalize(),1))
+                                                   ^ (bad-whitespace)
+C:188, 0: Exactly one space required around comparison
+        while Charmanderplayer.hp>0 and enemy.hp>0:
+                                 ^ (bad-whitespace)
+C:188, 0: Exactly one space required around comparison
+        while Charmanderplayer.hp>0 and enemy.hp>0:
+                                                ^ (bad-whitespace)
+C:189, 0: Exactly one space required around assignment
+            acao=input("atacar:0\ncorrer:1\n    ")
+                ^ (bad-whitespace)
+C:190, 0: Exactly one space required around comparison
+            if acao=="1":
+                   ^^ (bad-whitespace)
+C:193, 0: Exactly one space required around comparison
+            elif acao=="0" and Charmanderplayer.spd>enemy.spd:
+                     ^^ (bad-whitespace)
+C:193, 0: Exactly one space required around comparison
+            elif acao=="0" and Charmanderplayer.spd>enemy.spd:
+                                                   ^ (bad-whitespace)
+C:194, 0: Exactly one space required around assignment
+                enemy.hp=enemy.hp-Charmanderplayer.attack(enemy)
+                        ^ (bad-whitespace)
+C:195, 0: Line too long (110/100) (line-too-long)
+C:195, 0: Exactly one space required after comma
+                delay_print("sua vida:{} vida do inimigo:{}\n".format(int(Charmanderplayer.hp),int(enemy.hp)))
+                                                                                              ^ (bad-whitespace)
+C:196, 0: Exactly one space required around comparison
+                if Charmanderplayer.hp>0 and enemy.hp>0:
+                                      ^ (bad-whitespace)
+C:196, 0: Exactly one space required around comparison
+                if Charmanderplayer.hp>0 and enemy.hp>0:
+                                                     ^ (bad-whitespace)
+C:197, 0: Exactly one space required around assignment
+                    Charmanderplayer.hp+=-enemy.attack(Charmanderplayer)
+                                       ^^ (bad-whitespace)
+C:198, 0: Line too long (114/100) (line-too-long)
+C:198, 0: Exactly one space required after comma
+                    delay_print("sua vida:{} vida do inimigo:{}\n".format(int(Charmanderplayer.hp),int(enemy.hp)))
+                                                                                                  ^ (bad-whitespace)
+C:199, 0: Exactly one space required around comparison
+                if enemy.hp<=0:
+                           ^^ (bad-whitespace)
+C:201, 0: Exactly one space required around assignment
+                    Charmanderplayer.exp+=50
+                                        ^^ (bad-whitespace)
+C:204, 0: Exactly one space required around comparison
+                elif Charmanderplayer.hp<=0:
+                                        ^^ (bad-whitespace)
+C:206, 0: Exactly one space required around comparison
+            elif acao=="0" and Charmanderplayer.spd<enemy.spd:
+                     ^^ (bad-whitespace)
+C:206, 0: Exactly one space required around comparison
+            elif acao=="0" and Charmanderplayer.spd<enemy.spd:
+                                                   ^ (bad-whitespace)
+C:207, 0: Exactly one space required around assignment
+                Charmanderplayer.hp+=-enemy.attack(Charmanderplayer)
+                                   ^^ (bad-whitespace)
+C:208, 0: Line too long (110/100) (line-too-long)
+C:208, 0: Exactly one space required after comma
+                delay_print("sua vida:{} vida do inimigo:{}\n".format(int(Charmanderplayer.hp),int(enemy.hp)))
+                                                                                              ^ (bad-whitespace)
+C:209, 0: Exactly one space required around comparison
+                if Charmanderplayer.hp>0 and enemy.hp>0:
+                                      ^ (bad-whitespace)
+C:209, 0: Exactly one space required around comparison
+                if Charmanderplayer.hp>0 and enemy.hp>0:
+                                                     ^ (bad-whitespace)
+C:210, 0: Exactly one space required around assignment
+                    enemy.hp=enemy.hp-Charmanderplayer.attack(enemy)
+                            ^ (bad-whitespace)
+C:211, 0: Line too long (114/100) (line-too-long)
+C:211, 0: Exactly one space required after comma
+                    delay_print("sua vida:{} vida do inimigo:{}\n".format(int(Charmanderplayer.hp),int(enemy.hp)))
+                                                                                                  ^ (bad-whitespace)
+C:212, 0: Exactly one space required around comparison
+                if enemy.hp<=0:
+                           ^^ (bad-whitespace)
+C:214, 0: Exactly one space required around assignment
+                    Charmanderplayer.exp+=50
+                                        ^^ (bad-whitespace)
+C:217, 0: Exactly one space required around comparison
+                elif Charmanderplayer.hp<=0:
+                                        ^^ (bad-whitespace)
+C:221, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+C:223, 0: Unnecessary parens after 'print' keyword (superfluous-parens)
+C:  1, 0: Missing module docstring (missing-docstring)
+C:  3, 0: Invalid constant name "Tipos" (invalid-name)
+C:  6, 0: Invalid constant name "pokemondata" (invalid-name)
+C:104, 8: Invalid attribute name "hp" (invalid-name)
+C: 98, 0: Missing class docstring (missing-docstring)
+R: 98, 0: Too many instance attributes (9/7) (too-many-instance-attributes)
+C: 98, 0: Old-style class defined. (old-style-class)
+W:113,20: Redefining name 'enemy' from outer scope (line 182) (redefined-outer-name)
+C:113, 4: Missing method docstring (missing-docstring)
+C:116, 4: Missing method docstring (missing-docstring)
+C:165, 0: Import "import time" should be placed at the top of the module (wrong-import-position)
+C:166, 0: Import "import sys" should be placed at the top of the module (wrong-import-position)
+C:168, 0: Invalid argument name "s" (invalid-name)
+C:168, 0: Missing function docstring (missing-docstring)
+C:169, 8: Invalid variable name "c" (invalid-name)
+C:173, 0: Invalid constant name "ok" (invalid-name)
+C:175, 4: Invalid constant name "a" (invalid-name)
+C:176, 4: Invalid constant name "Charmanderplayer" (invalid-name)
+C:180, 8: Invalid constant name "lvlfloor1" (invalid-name)
+C:181, 8: Invalid constant name "po" (invalid-name)
+C:181,11: Invalid constant name "atributos" (invalid-name)
+C:182, 8: Invalid constant name "enemy" (invalid-name)
+C:183, 8: Invalid constant name "mensagem" (invalid-name)
+C:184, 8: Invalid constant name "vowals" (invalid-name)
+C:186,12: Invalid constant name "mensagem" (invalid-name)
+C:189,12: Invalid constant name "acao" (invalid-name)
+E:213,20: Undefined variable 'delau_print' (undefined-variable)
+
+
+Report
+======
+98 statements analysed.
+
+Statistics by type
+------------------
+
++---------+-------+-----------+-----------+------------+---------+
+|type     |number |old number |difference |%documented |%badname |
++=========+=======+===========+===========+============+=========+
+|module   |1      |NC         |NC         |0.00        |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|class    |1      |NC         |NC         |0.00        |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|method   |3      |NC         |NC         |33.33       |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|function |1      |NC         |NC         |0.00        |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+
+
+
+Raw metrics
+-----------
+
++----------+-------+------+---------+-----------+
+|type      |number |%     |previous |difference |
++==========+=======+======+=========+===========+
+|code      |101    |44.89 |NC       |NC         |
++----------+-------+------+---------+-----------+
+|docstring |89     |39.56 |NC       |NC         |
++----------+-------+------+---------+-----------+
+|comment   |10     |4.44  |NC       |NC         |
++----------+-------+------+---------+-----------+
+|empty     |25     |11.11 |NC       |NC         |
++----------+-------+------+---------+-----------+
+
+
+
+Duplication
+-----------
+
++-------------------------+------+---------+-----------+
+|                         |now   |previous |difference |
++=========================+======+=========+===========+
+|nb duplicated lines      |0     |NC       |NC         |
++-------------------------+------+---------+-----------+
+|percent duplicated lines |0.000 |NC       |NC         |
++-------------------------+------+---------+-----------+
+
+
+
+Messages by category
+--------------------
+
++-----------+-------+---------+-----------+
+|type       |number |previous |difference |
++===========+=======+=========+===========+
+|convention |238    |NC       |NC         |
++-----------+-------+---------+-----------+
+|refactor   |1      |NC       |NC         |
++-----------+-------+---------+-----------+
+|warning    |3      |NC       |NC         |
++-----------+-------+---------+-----------+
+|error      |1      |NC       |NC         |
++-----------+-------+---------+-----------+
+
+
+
+Messages
+--------
+
++-----------------------------+------------+
+|message id                   |occurrences |
++=============================+============+
+|bad-whitespace               |104         |
++-----------------------------+------------+
+|bad-continuation             |89          |
++-----------------------------+------------+
+|invalid-name                 |16          |
++-----------------------------+------------+
+|superfluous-parens           |11          |
++-----------------------------+------------+
+|line-too-long                |10          |
++-----------------------------+------------+
+|missing-docstring            |5           |
++-----------------------------+------------+
+|wrong-import-position        |2           |
++-----------------------------+------------+
+|invalid-encoded-data         |2           |
++-----------------------------+------------+
+|undefined-variable           |1           |
++-----------------------------+------------+
+|too-many-instance-attributes |1           |
++-----------------------------+------------+
+|redefined-outer-name         |1           |
++-----------------------------+------------+
+|old-style-class              |1           |
++-----------------------------+------------+
+
+
+
+Global evaluation
+-----------------
+Your code has been rated at -15.20/10
+
